@@ -1,0 +1,151 @@
+{
+  "ENTITY_ID_FIELD": "entity_id",
+  "HEAD_ENTITY_ID_FIELD": "head_id",
+  "ITEM_ID_FIELD": "item_id",
+  "ITEM_LIST_LENGTH_FIELD": "item_length",
+  "LABEL_FIELD": "label",
+  "LIST_SUFFIX": "_list",
+  "MAX_ITEM_LIST_LENGTH": 50,
+  "MODEL_INPUT_TYPE": "InputType.POINTWISE",
+  "MODEL_TYPE": "ModelType.CONTEXT",
+  "NEG_PREFIX": "neg_",
+  "POSITION_FIELD": "position_id",
+  "RATING_FIELD": "rating",
+  "RELATION_ID_FIELD": "relation_id",
+  "TAIL_ENTITY_ID_FIELD": "tail_id",
+  "TIME_FIELD": "timestamp",
+  "USER_ID_FIELD": "user_id",
+  "additional_feat_suffix": null,
+  "alias_of_entity_id": null,
+  "alias_of_item_id": null,
+  "alias_of_relation_id": null,
+  "alias_of_user_id": null,
+  "benchmark_filename": null,
+  "checkpoint_dir": "${S3_RUN}/backbones",
+  "clip_grad_norm": null,
+  "data_path": "${DATA_ROOT}/yelp2018",
+  "dataloaders_save_path": null,
+  "dataset": "yelp2018-paper",
+  "dataset_save_path": null,
+  "device": "cpu",
+  "discretization": null,
+  "dropout_prob": 0.5,
+  "embedding_size": 64,
+  "enable_amp": false,
+  "enable_scaler": false,
+  "entity_kg_num_interval": "[0,inf)",
+  "epochs": 300,
+  "eval_args": {
+    "group_by": null,
+    "mode": {
+      "test": "labeled",
+      "valid": "labeled"
+    },
+    "order": "RO",
+    "split": {
+      "RS": [
+        0.8,
+        0.1,
+        0.1
+      ]
+    }
+  },
+  "eval_batch_size": 4096,
+  "eval_step": 1,
+  "eval_type": "EvaluatorType.RANKING",
+  "field_separator": "\t",
+  "filter_inter_by_user_or_item": true,
+  "gpu_id": "1",
+  "item_inter_num_interval": "[10,inf)",
+  "kg_reverse_r": false,
+  "learner": "adam",
+  "learning_rate": 0.0001,
+  "load_col": {
+    "inter": [
+      "user_id",
+      "item_id",
+      "rating"
+    ],
+    "item": [
+      "item_id",
+      "item_review_count",
+      "categories"
+    ],
+    "user": [
+      "user_id",
+      "user_review_count",
+      "yelping_since"
+    ]
+  },
+  "local_rank": 0,
+  "log_wandb": false,
+  "loss_decimal_place": 4,
+  "metric_decimal_place": 4,
+  "metrics": [
+    "NDCG",
+    "Recall"
+  ],
+  "mlp_hidden_size": [
+    512,
+    512,
+    512
+  ],
+  "model": "NFM",
+  "neighbor_agg": false,
+  "normalize_all": true,
+  "normalize_field": null,
+  "numerical_features": [
+    "user_review_count",
+    "yelping_since",
+    "item_review_count"
+  ],
+  "preload_weight": null,
+  "relation_kg_num_interval": "[0,inf)",
+  "repeatable": false,
+  "reproducibility": true,
+  "require_pow": false,
+  "rm_dup_inter": null,
+  "save_dataloaders": false,
+  "save_dataset": false,
+  "seed": 2020,
+  "seq_len": null,
+  "seq_separator": " ",
+  "show_progress": false,
+  "shuffle": true,
+  "single_spec": true,
+  "state": "INFO",
+  "stopping_step": 5,
+  "test_neg_sample_args": {
+    "distribution": "uniform",
+    "sample_num": 100
+  },
+  "threshold": {
+    "rating": 4
+  },
+  "topk": [
+    10,
+    20
+  ],
+  "train_batch_size": 4096,
+  "train_neg_sample_args": {
+    "alpha": "none",
+    "candidate_num": 0,
+    "distribution": "none",
+    "dynamic": false,
+    "sample_num": "none"
+  },
+  "transform": null,
+  "unload_col": null,
+  "unused_col": null,
+  "use_gpu": false,
+  "user_inter_num_interval": "[10,inf)",
+  "val_interval": null,
+  "valid_metric": "AUC",
+  "valid_metric_bigger": true,
+  "valid_neg_sample_args": {
+    "distribution": "uniform",
+    "sample_num": 100
+  },
+  "weight_decay": 0.0,
+  "worker": 0
+}

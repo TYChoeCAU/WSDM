@@ -1,0 +1,123 @@
+{
+  "R0": {
+    "backbone_train_batch": 4096,
+    "prm_train_batch": 32,
+    "residual_train_batch": 256
+  },
+  "alpha": 0.05,
+  "bootstrap_policy": "Identical resampled user IDs across compared methods/protocols,2000replicates; deterministic seed8702026",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 8702026,
+  "classification": {
+    "equivalent": "Both effects90%CI entirely within [-delta,+delta]",
+    "priority": [
+      "equivalent",
+      "transfer",
+      "reverse",
+      "unresolved"
+    ],
+    "repeat_vs_user": "Report separately; no pooling uncertainty levels",
+    "reverse": "One effect95%CI strictly above +delta and the other strictly below -delta",
+    "transfer": "Both effects95%CI strictly above +delta or both strictly below -delta",
+    "unresolved": "All other cases"
+  },
+  "contrasts": [
+    "Pop-Base",
+    "NPGC-Base",
+    "PRM+PL-Base",
+    "Pop-NPGC",
+    "PRM+PL-NPGC",
+    "PRM+PL-Res(p)",
+    "Res(p)-Pop",
+    "Res(H)-NPGC"
+  ],
+  "decision_tie_policy": "Record tie sets and fractional top-set agreement; deterministic registered method order only when a single method is required, flag ties",
+  "effect_ci": 0.95,
+  "exploratory": true,
+  "method_sets": {
+    "ALL12": [
+      "base",
+      "item_degree_ranking",
+      "original_nonparamgc",
+      "prm_principled",
+      "S",
+      "P",
+      "R",
+      "PR",
+      "H",
+      "RH",
+      "PH",
+      "PRH"
+    ],
+    "REF4": [
+      "base",
+      "item_degree_ranking",
+      "original_nonparamgc",
+      "prm_principled"
+    ]
+  },
+  "no_DNR_training_or_analysis": true,
+  "numeric_validation_atol": 0.001,
+  "plan_change_before_new_stage_B_C_test_results": true,
+  "post_outcome_plan": true,
+  "primary_metric": "ndcg@20",
+  "primary_practical_delta_raw": 0.0025,
+  "primary_regime": "R0",
+  "primary_seed_policy": {
+    "after_B": [
+      2020,
+      2021,
+      2022
+    ],
+    "after_C": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "partial_C": "Keep main cohort at complete R0 first three seeds until all required main and transfer cells complete"
+  },
+  "primary_tost_family": {
+    "adjustment": "Holm",
+    "cells": 4,
+    "contrasts": [
+      "Pop-Base",
+      "PRM+PL-Res(p)"
+    ],
+    "delta": 0.0025,
+    "metric": "ndcg@20",
+    "planned_hypotheses": 16,
+    "tested_quantity": "difference in the paired method contrast across protocols",
+    "transitions": [
+      "F-U",
+      "F-W"
+    ]
+  },
+  "reason": "Additional analysis of previously viewed outcomes",
+  "registered_kst": "2026-11-17T04:08:53.552361+09:00",
+  "release_derivative": "Operational and excluded-scope fields removed; statistical rules unchanged.",
+  "scope": "S3 R0, five training seeds, NFM and MF-BPR, U/W/F, 12 methods",
+  "seed_unit": "full backbone plus reranker training repeat, fixed data and candidate RNG",
+  "sensitivity_delta_raw": [
+    0.001,
+    0.0025,
+    0.005
+  ],
+  "source_plan_sha256": "00af42380909f33c1b2650ec8af7abe10f62599be5bb2a5f54e55a1458976f8f",
+  "tost_unadjusted_ci": 0.9,
+  "training_seeds_final": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "training_seeds_initial": [
+    2020,
+    2021,
+    2022
+  ],
+  "user_pairing": "Exact user ID and relevant denominator match first; common-user intersection if needed, with coverage loss recorded",
+  "version": "w2w3-r0-no-dnr-v1"
+}

@@ -1,0 +1,221 @@
+dataset,backbone,training_seed,primary_focus,regime,method,fit_protocol,eval_protocol,analysis_family,condition,ndcg20_x100,identity_selected,result_path,evidence_csv_line
+yelp2018,MF_BPR,2020,True,R0,Res(p),W,W,matched,Res(p) W->W matched,42.46804187616027,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/W/P/result.json,199
+yelp2018,MF_BPR,2020,True,R0,Res(p),W,F,frozen,Res(p) W->F frozen,1.469017904844847,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/MF_BPR/seed_2020/W_to_F/P/result.json,823
+yelp2018,MF_BPR,2020,True,R0,Res(p),F,F,matched,Res(p) F->F matched,3.6367630108493607,True,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/F/P/result.json,211
+yelp2018,MF_BPR,2020,True,R0,Res(p),U,U,matched,Res(p) U->U matched,60.17842971442276,True,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2020/U/P/result.json,187
+yelp2018,MF_BPR,2020,True,R0,Res(p),U,F,frozen,Res(p) U->F frozen,3.6367630108493607,True,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/MF_BPR/seed_2020/U_to_F/P/result.json,814
+yelp2018,MF_BPR,2020,True,R0,Pop,none,U,fixed,Pop U,41.320766114163774,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2020/U/item_degree_ranking/result.json,183
+yelp2018,MF_BPR,2020,True,R0,Base,none,U,fixed,Base U,60.17842971442276,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2020/U/base/result.json,182
+yelp2018,MF_BPR,2020,True,R0,Pop,none,W,fixed,Pop W,13.309928713975626,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/W/item_degree_ranking/result.json,195
+yelp2018,MF_BPR,2020,True,R0,Base,none,W,fixed,Base W,40.32301759179926,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/W/base/result.json,194
+yelp2018,MF_BPR,2020,True,R0,Pop,none,F,fixed,Pop F,3.6619398119592375,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/F/item_degree_ranking/result.json,207
+yelp2018,MF_BPR,2020,True,R0,Base,none,F,fixed,Base F,3.6367630108493607,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/F/base/result.json,206
+yelp2018,MF_BPR,2021,True,R0,Res(p),W,W,matched,Res(p) W->W matched,42.05251665741155,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/W/P/result.json,235
+yelp2018,MF_BPR,2021,True,R0,Res(p),W,F,frozen,Res(p) W->F frozen,1.5455888319981297,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/MF_BPR/seed_2021/W_to_F/P/result.json,841
+yelp2018,MF_BPR,2021,True,R0,Res(p),F,F,matched,Res(p) F->F matched,3.634859141891584,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/F/P/result.json,247
+yelp2018,MF_BPR,2021,True,R0,Res(p),U,U,matched,Res(p) U->U matched,59.79297196107819,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2021/U/P/result.json,1281
+yelp2018,MF_BPR,2021,True,R0,Res(p),U,F,frozen,Res(p) U->F frozen,3.5721640253904314,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2021/U_to_F/P/result.json,1569
+yelp2018,MF_BPR,2021,True,R0,Pop,none,U,fixed,Pop U,40.963643917274986,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2021/U/item_degree_ranking/result.json,219
+yelp2018,MF_BPR,2021,True,R0,Base,none,U,fixed,Base U,59.79297196107819,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2021/U/base/result.json,218
+yelp2018,MF_BPR,2021,True,R0,Pop,none,W,fixed,Pop W,13.111799567422214,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/W/item_degree_ranking/result.json,231
+yelp2018,MF_BPR,2021,True,R0,Base,none,W,fixed,Base W,40.36936403192993,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/W/base/result.json,230
+yelp2018,MF_BPR,2021,True,R0,Pop,none,F,fixed,Pop F,3.6303352694914555,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/F/item_degree_ranking/result.json,243
+yelp2018,MF_BPR,2021,True,R0,Base,none,F,fixed,Base F,3.5721640253904314,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/F/base/result.json,242
+yelp2018,MF_BPR,2022,True,R0,Res(p),W,W,matched,Res(p) W->W matched,41.87064410203503,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/W/P/result.json,271
+yelp2018,MF_BPR,2022,True,R0,Res(p),W,F,frozen,Res(p) W->F frozen,1.6184980450628543,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/MF_BPR/seed_2022/W_to_F/P/result.json,859
+yelp2018,MF_BPR,2022,True,R0,Res(p),F,F,matched,Res(p) F->F matched,3.58173774619898,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/F/P/result.json,283
+yelp2018,MF_BPR,2022,True,R0,Res(p),U,U,matched,Res(p) U->U matched,59.65785212580572,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2022/U/P/result.json,1290
+yelp2018,MF_BPR,2022,True,R0,Res(p),U,F,frozen,Res(p) U->F frozen,3.5665479942585425,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2022/U_to_F/P/result.json,1578
+yelp2018,MF_BPR,2022,True,R0,Pop,none,U,fixed,Pop U,41.057637353103594,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2022/U/item_degree_ranking/result.json,255
+yelp2018,MF_BPR,2022,True,R0,Base,none,U,fixed,Base U,59.670983959214205,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/MF_BPR/seed_2022/U/base/result.json,254
+yelp2018,MF_BPR,2022,True,R0,Pop,none,W,fixed,Pop W,13.095577338287159,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/W/item_degree_ranking/result.json,267
+yelp2018,MF_BPR,2022,True,R0,Base,none,W,fixed,Base W,40.048160730741394,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/W/base/result.json,266
+yelp2018,MF_BPR,2022,True,R0,Pop,none,F,fixed,Pop F,3.562456653590404,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/F/item_degree_ranking/result.json,279
+yelp2018,MF_BPR,2022,True,R0,Base,none,F,fixed,Base F,3.5203745446643344,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/F/base/result.json,278
+yelp2018,MF_BPR,2023,True,R0,Res(p),W,W,matched,Res(p) W->W matched,41.454545721660395,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/W/P/result.json,1323
+yelp2018,MF_BPR,2023,True,R0,Res(p),W,F,frozen,Res(p) W->F frozen,1.4943337326599175,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2023/W_to_F/P/result.json,1596
+yelp2018,MF_BPR,2023,True,R0,Res(p),F,F,matched,Res(p) F->F matched,3.6073893470225755,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/F/P/result.json,1299
+yelp2018,MF_BPR,2023,True,R0,Res(p),U,U,matched,Res(p) U->U matched,59.327767989525825,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/U/P/result.json,1311
+yelp2018,MF_BPR,2023,True,R0,Res(p),U,F,frozen,Res(p) U->F frozen,3.5631701467482473,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2023/U_to_F/P/result.json,1587
+yelp2018,MF_BPR,2023,True,R0,Pop,none,U,fixed,Pop U,40.86964560939443,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/U/item_degree_ranking/result.json,1319
+yelp2018,MF_BPR,2023,True,R0,Base,none,U,fixed,Base U,59.327767989525825,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/U/base/result.json,1318
+yelp2018,MF_BPR,2023,True,R0,Pop,none,W,fixed,Pop W,13.018973088161239,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/W/item_degree_ranking/result.json,1331
+yelp2018,MF_BPR,2023,True,R0,Base,none,W,fixed,Base W,40.10659688692027,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/W/base/result.json,1330
+yelp2018,MF_BPR,2023,True,R0,Pop,none,F,fixed,Pop F,3.598095413183415,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/F/item_degree_ranking/result.json,1307
+yelp2018,MF_BPR,2023,True,R0,Base,none,F,fixed,Base F,3.5631701467482473,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/F/base/result.json,1306
+yelp2018,MF_BPR,2024,True,R0,Res(p),W,W,matched,Res(p) W->W matched,41.29575834270763,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/W/P/result.json,1359
+yelp2018,MF_BPR,2024,True,R0,Res(p),W,F,frozen,Res(p) W->F frozen,1.4515374008364788,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2024/W_to_F/P/result.json,1614
+yelp2018,MF_BPR,2024,True,R0,Res(p),F,F,matched,Res(p) F->F matched,3.5800840803565235,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/F/P/result.json,1335
+yelp2018,MF_BPR,2024,True,R0,Res(p),U,U,matched,Res(p) U->U matched,59.86909348127263,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/U/P/result.json,1347
+yelp2018,MF_BPR,2024,True,R0,Res(p),U,F,frozen,Res(p) U->F frozen,3.6790420051413557,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/MF_BPR/seed_2024/U_to_F/P/result.json,1605
+yelp2018,MF_BPR,2024,True,R0,Pop,none,U,fixed,Pop U,41.01251864888884,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/U/item_degree_ranking/result.json,1355
+yelp2018,MF_BPR,2024,True,R0,Base,none,U,fixed,Base U,59.81117679821361,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/U/base/result.json,1354
+yelp2018,MF_BPR,2024,True,R0,Pop,none,W,fixed,Pop W,13.105487704729942,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/W/item_degree_ranking/result.json,1367
+yelp2018,MF_BPR,2024,True,R0,Base,none,W,fixed,Base W,40.10779279404958,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/W/base/result.json,1366
+yelp2018,MF_BPR,2024,True,R0,Pop,none,F,fixed,Pop F,3.599092655299484,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/F/item_degree_ranking/result.json,1343
+yelp2018,MF_BPR,2024,True,R0,Base,none,F,fixed,Base F,3.5800840803565235,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/F/base/result.json,1342
+yelp2018,NFM,2020,False,R0,Res(p),W,W,matched,Res(p) W->W matched,7.3864748719443565,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/W/P/result.json,19
+yelp2018,NFM,2020,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,0.027703449622020752,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2020/W_to_F/P/result.json,733
+yelp2018,NFM,2020,False,R0,Res(p),F,F,matched,Res(p) F->F matched,0.028215485979996523,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/F/P/result.json,31
+yelp2018,NFM,2020,False,R0,Res(p),U,U,matched,Res(p) U->U matched,19.312061864178386,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2020/U/P/result.json,7
+yelp2018,NFM,2020,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,0.047428813588374946,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2020/U_to_F/P/result.json,724
+yelp2018,NFM,2020,False,R0,Pop,none,U,fixed,Pop U,19.305574422598877,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2020/U/item_degree_ranking/result.json,3
+yelp2018,NFM,2020,False,R0,Base,none,U,fixed,Base U,5.402442576821836,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2020/U/base/result.json,2
+yelp2018,NFM,2020,False,R0,Pop,none,W,fixed,Pop W,6.851449120509987,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/W/item_degree_ranking/result.json,15
+yelp2018,NFM,2020,False,R0,Base,none,W,fixed,Base W,6.806442362706511,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/W/base/result.json,14
+yelp2018,NFM,2020,False,R0,Pop,none,F,fixed,Pop F,0.04722619625009152,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/F/item_degree_ranking/result.json,27
+yelp2018,NFM,2020,False,R0,Base,none,F,fixed,Base F,0.027947930875680205,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2020/F/base/result.json,26
+yelp2018,NFM,2021,False,R0,Res(p),W,W,matched,Res(p) W->W matched,7.551310260195578,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/W/P/result.json,55
+yelp2018,NFM,2021,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,0.021550307268883115,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2021/W_to_F/P/result.json,751
+yelp2018,NFM,2021,False,R0,Res(p),F,F,matched,Res(p) F->F matched,0.01624207427386771,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/F/P/result.json,67
+yelp2018,NFM,2021,False,R0,Res(p),U,U,matched,Res(p) U->U matched,18.607250127602832,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2021/U/P/result.json,43
+yelp2018,NFM,2021,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,0.03433496737935874,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2021/U_to_F/P/result.json,742
+yelp2018,NFM,2021,False,R0,Pop,none,U,fixed,Pop U,18.610933105753418,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2021/U/item_degree_ranking/result.json,39
+yelp2018,NFM,2021,False,R0,Base,none,U,fixed,Base U,5.254861728720915,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2021/U/base/result.json,38
+yelp2018,NFM,2021,False,R0,Pop,none,W,fixed,Pop W,6.883349234317987,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/W/item_degree_ranking/result.json,51
+yelp2018,NFM,2021,False,R0,Base,none,W,fixed,Base W,6.983001377153903,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/W/base/result.json,50
+yelp2018,NFM,2021,False,R0,Pop,none,F,fixed,Pop F,0.03412468094941256,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/F/item_degree_ranking/result.json,63
+yelp2018,NFM,2021,False,R0,Base,none,F,fixed,Base F,0.015418950485003175,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2021/F/base/result.json,62
+yelp2018,NFM,2022,False,R0,Res(p),W,W,matched,Res(p) W->W matched,7.551595067289958,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/W/P/result.json,91
+yelp2018,NFM,2022,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,0.035676376599754436,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2022/W_to_F/P/result.json,769
+yelp2018,NFM,2022,False,R0,Res(p),F,F,matched,Res(p) F->F matched,0.020676460616511436,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/F/P/result.json,103
+yelp2018,NFM,2022,False,R0,Res(p),U,U,matched,Res(p) U->U matched,18.448854768290808,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2022/U/P/result.json,79
+yelp2018,NFM,2022,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,0.05373137915555648,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/yelp2018/NFM/seed_2022/U_to_F/P/result.json,760
+yelp2018,NFM,2022,False,R0,Pop,none,U,fixed,Pop U,18.453813320973143,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2022/U/item_degree_ranking/result.json,75
+yelp2018,NFM,2022,False,R0,Base,none,U,fixed,Base U,5.189954104912577,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/yelp2018/NFM/seed_2022/U/base/result.json,74
+yelp2018,NFM,2022,False,R0,Pop,none,W,fixed,Pop W,6.845181789488325,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/W/item_degree_ranking/result.json,87
+yelp2018,NFM,2022,False,R0,Base,none,W,fixed,Base W,6.932103880644644,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/W/base/result.json,86
+yelp2018,NFM,2022,False,R0,Pop,none,F,fixed,Pop F,0.053425275779790705,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/F/item_degree_ranking/result.json,99
+yelp2018,NFM,2022,False,R0,Base,none,F,fixed,Base F,0.01912744240190031,,artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/NFM/seed_2022/F/base/result.json,98
+yelp2018,NFM,2023,False,R0,Res(p),W,W,matched,Res(p) W->W matched,7.557943761699247,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/W/P/result.json,1395
+yelp2018,NFM,2023,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,0.1582873541350762,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/NFM/seed_2023/W_to_F/P/result.json,1632
+yelp2018,NFM,2023,False,R0,Res(p),F,F,matched,Res(p) F->F matched,0.1440455985537774,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/F/P/result.json,1371
+yelp2018,NFM,2023,False,R0,Res(p),U,U,matched,Res(p) U->U matched,18.37093991501683,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/U/P/result.json,1383
+yelp2018,NFM,2023,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,0.19262499516872866,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/NFM/seed_2023/U_to_F/P/result.json,1623
+yelp2018,NFM,2023,False,R0,Pop,none,U,fixed,Pop U,18.348997916296874,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/U/item_degree_ranking/result.json,1391
+yelp2018,NFM,2023,False,R0,Base,none,U,fixed,Base U,5.620136036077345,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/U/base/result.json,1390
+yelp2018,NFM,2023,False,R0,Pop,none,W,fixed,Pop W,6.86607921947114,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/W/item_degree_ranking/result.json,1403
+yelp2018,NFM,2023,False,R0,Base,none,W,fixed,Base W,7.023791155729464,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/W/base/result.json,1402
+yelp2018,NFM,2023,False,R0,Pop,none,F,fixed,Pop F,0.1916612961408682,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/F/item_degree_ranking/result.json,1379
+yelp2018,NFM,2023,False,R0,Base,none,F,fixed,Base F,0.14047139666696046,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2023/F/base/result.json,1378
+yelp2018,NFM,2024,False,R0,Res(p),W,W,matched,Res(p) W->W matched,7.623849217101545,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/W/P/result.json,1431
+yelp2018,NFM,2024,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,0.17851069376023593,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/NFM/seed_2024/W_to_F/P/result.json,1650
+yelp2018,NFM,2024,False,R0,Res(p),F,F,matched,Res(p) F->F matched,0.14592188752909485,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/F/P/result.json,1407
+yelp2018,NFM,2024,False,R0,Res(p),U,U,matched,Res(p) U->U matched,18.68550037064117,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/U/P/result.json,1419
+yelp2018,NFM,2024,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,0.20320701029175817,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/yelp2018/NFM/seed_2024/U_to_F/P/result.json,1641
+yelp2018,NFM,2024,False,R0,Pop,none,U,fixed,Pop U,18.69741531049554,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/U/item_degree_ranking/result.json,1427
+yelp2018,NFM,2024,False,R0,Base,none,U,fixed,Base U,5.708753083828642,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/U/base/result.json,1426
+yelp2018,NFM,2024,False,R0,Pop,none,W,fixed,Pop W,6.987356731957926,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/W/item_degree_ranking/result.json,1439
+yelp2018,NFM,2024,False,R0,Base,none,W,fixed,Base W,7.060281643660371,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/W/base/result.json,1438
+yelp2018,NFM,2024,False,R0,Pop,none,F,fixed,Pop F,0.20314862242437112,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/F/item_degree_ranking/result.json,1415
+yelp2018,NFM,2024,False,R0,Base,none,F,fixed,Base F,0.14376758584377888,,artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/NFM/seed_2024/F/base/result.json,1414
+ml-1m,MF_BPR,2020,False,R0,Res(p),W,W,matched,Res(p) W->W matched,33.023704272366324,True,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/W/P/result.json,559
+ml-1m,MF_BPR,2020,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,25.418810342123667,True,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/MF_BPR/seed_2020/W_to_F/P/result.json,1003
+ml-1m,MF_BPR,2020,False,R0,Res(p),F,F,matched,Res(p) F->F matched,25.69717714925274,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/F/P/result.json,571
+ml-1m,MF_BPR,2020,False,R0,Res(p),U,U,matched,Res(p) U->U matched,48.67905151553224,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2020/U/P/result.json,1083
+ml-1m,MF_BPR,2020,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,25.418810342123667,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2020/U_to_F/P/result.json,1443
+ml-1m,MF_BPR,2020,False,R0,Pop,none,U,fixed,Pop U,35.279580064008464,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2020/U/item_degree_ranking/result.json,543
+ml-1m,MF_BPR,2020,False,R0,Base,none,U,fixed,Base U,48.67905151553224,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2020/U/base/result.json,542
+ml-1m,MF_BPR,2020,False,R0,Pop,none,W,fixed,Pop W,20.23886388505323,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/W/item_degree_ranking/result.json,555
+ml-1m,MF_BPR,2020,False,R0,Base,none,W,fixed,Base W,33.023704272366324,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/W/base/result.json,554
+ml-1m,MF_BPR,2020,False,R0,Pop,none,F,fixed,Pop F,19.335845376156897,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/F/item_degree_ranking/result.json,567
+ml-1m,MF_BPR,2020,False,R0,Base,none,F,fixed,Base F,25.418810342123667,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/F/base/result.json,566
+ml-1m,MF_BPR,2021,False,R0,Res(p),W,W,matched,Res(p) W->W matched,32.82656997989337,True,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/W/P/result.json,595
+ml-1m,MF_BPR,2021,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,25.025175472877297,True,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/MF_BPR/seed_2021/W_to_F/P/result.json,1021
+ml-1m,MF_BPR,2021,False,R0,Res(p),F,F,matched,Res(p) F->F matched,25.423246043438493,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/F/P/result.json,607
+ml-1m,MF_BPR,2021,False,R0,Res(p),U,U,matched,Res(p) U->U matched,48.45504042824312,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2021/U/P/result.json,1092
+ml-1m,MF_BPR,2021,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,25.025175472877297,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2021/U_to_F/P/result.json,1452
+ml-1m,MF_BPR,2021,False,R0,Pop,none,U,fixed,Pop U,35.333382037839215,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2021/U/item_degree_ranking/result.json,579
+ml-1m,MF_BPR,2021,False,R0,Base,none,U,fixed,Base U,48.45504042824312,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2021/U/base/result.json,578
+ml-1m,MF_BPR,2021,False,R0,Pop,none,W,fixed,Pop W,20.38829024139877,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/W/item_degree_ranking/result.json,591
+ml-1m,MF_BPR,2021,False,R0,Base,none,W,fixed,Base W,32.82656997989337,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/W/base/result.json,590
+ml-1m,MF_BPR,2021,False,R0,Pop,none,F,fixed,Pop F,19.494949791042465,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/F/item_degree_ranking/result.json,603
+ml-1m,MF_BPR,2021,False,R0,Base,none,F,fixed,Base F,25.025175472877297,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/F/base/result.json,602
+ml-1m,MF_BPR,2022,False,R0,Res(p),W,W,matched,Res(p) W->W matched,33.14123437561686,True,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/W/P/result.json,631
+ml-1m,MF_BPR,2022,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,25.138094722612976,True,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/MF_BPR/seed_2022/W_to_F/P/result.json,1039
+ml-1m,MF_BPR,2022,False,R0,Res(p),F,F,matched,Res(p) F->F matched,25.50764115382553,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/F/P/result.json,643
+ml-1m,MF_BPR,2022,False,R0,Res(p),U,U,matched,Res(p) U->U matched,48.420922385670536,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2022/U/P/result.json,1101
+ml-1m,MF_BPR,2022,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,25.138094722612976,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2022/U_to_F/P/result.json,1461
+ml-1m,MF_BPR,2022,False,R0,Pop,none,U,fixed,Pop U,35.43696923958575,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2022/U/item_degree_ranking/result.json,615
+ml-1m,MF_BPR,2022,False,R0,Base,none,U,fixed,Base U,48.420922385670536,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/MF_BPR/seed_2022/U/base/result.json,614
+ml-1m,MF_BPR,2022,False,R0,Pop,none,W,fixed,Pop W,20.4649082113254,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/W/item_degree_ranking/result.json,627
+ml-1m,MF_BPR,2022,False,R0,Base,none,W,fixed,Base W,33.14123437561686,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/W/base/result.json,626
+ml-1m,MF_BPR,2022,False,R0,Pop,none,F,fixed,Pop F,19.611561671989673,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/F/item_degree_ranking/result.json,639
+ml-1m,MF_BPR,2022,False,R0,Base,none,F,fixed,Base F,25.138094722612976,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/F/base/result.json,638
+ml-1m,MF_BPR,2023,False,R0,Res(p),W,W,matched,Res(p) W->W matched,32.847414067016025,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/W/P/result.json,1134
+ml-1m,MF_BPR,2023,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,24.874270705334467,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2023/W_to_F/P/result.json,1479
+ml-1m,MF_BPR,2023,False,R0,Res(p),F,F,matched,Res(p) F->F matched,25.2116368487769,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/F/P/result.json,1110
+ml-1m,MF_BPR,2023,False,R0,Res(p),U,U,matched,Res(p) U->U matched,48.378540361425735,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/U/P/result.json,1122
+ml-1m,MF_BPR,2023,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,24.874270705334467,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2023/U_to_F/P/result.json,1470
+ml-1m,MF_BPR,2023,False,R0,Pop,none,U,fixed,Pop U,35.27547616938352,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/U/item_degree_ranking/result.json,1130
+ml-1m,MF_BPR,2023,False,R0,Base,none,U,fixed,Base U,48.378540361425735,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/U/base/result.json,1129
+ml-1m,MF_BPR,2023,False,R0,Pop,none,W,fixed,Pop W,20.2676724891015,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/W/item_degree_ranking/result.json,1142
+ml-1m,MF_BPR,2023,False,R0,Base,none,W,fixed,Base W,32.847414067016025,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/W/base/result.json,1141
+ml-1m,MF_BPR,2023,False,R0,Pop,none,F,fixed,Pop F,19.41870992075487,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/F/item_degree_ranking/result.json,1118
+ml-1m,MF_BPR,2023,False,R0,Base,none,F,fixed,Base F,24.874270705334467,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/F/base/result.json,1117
+ml-1m,MF_BPR,2024,False,R0,Res(p),W,W,matched,Res(p) W->W matched,32.80009670974708,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/W/P/result.json,1170
+ml-1m,MF_BPR,2024,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,24.71489536487712,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2024/W_to_F/P/result.json,1497
+ml-1m,MF_BPR,2024,False,R0,Res(p),F,F,matched,Res(p) F->F matched,25.227066857566143,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/F/P/result.json,1146
+ml-1m,MF_BPR,2024,False,R0,Res(p),U,U,matched,Res(p) U->U matched,47.9876188666212,True,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/U/P/result.json,1158
+ml-1m,MF_BPR,2024,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,24.71489536487712,True,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/MF_BPR/seed_2024/U_to_F/P/result.json,1488
+ml-1m,MF_BPR,2024,False,R0,Pop,none,U,fixed,Pop U,35.443893144994206,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/U/item_degree_ranking/result.json,1166
+ml-1m,MF_BPR,2024,False,R0,Base,none,U,fixed,Base U,47.9876188666212,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/U/base/result.json,1165
+ml-1m,MF_BPR,2024,False,R0,Pop,none,W,fixed,Pop W,20.4470159191176,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/W/item_degree_ranking/result.json,1178
+ml-1m,MF_BPR,2024,False,R0,Base,none,W,fixed,Base W,32.80009670974708,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/W/base/result.json,1177
+ml-1m,MF_BPR,2024,False,R0,Pop,none,F,fixed,Pop F,19.61480954560147,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/F/item_degree_ranking/result.json,1154
+ml-1m,MF_BPR,2024,False,R0,Base,none,F,fixed,Base F,24.71489536487712,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/F/base/result.json,1153
+ml-1m,NFM,2020,False,R0,Res(p),W,W,matched,Res(p) W->W matched,14.537844922936968,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/W/P/result.json,379
+ml-1m,NFM,2020,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,9.685887924888725,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/NFM/seed_2020/W_to_F/P/result.json,913
+ml-1m,NFM,2020,False,R0,Res(p),F,F,matched,Res(p) F->F matched,9.667766843256668,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/F/P/result.json,391
+ml-1m,NFM,2020,False,R0,Res(p),U,U,matched,Res(p) U->U matched,26.718309059446426,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2020/U/P/result.json,1182
+ml-1m,NFM,2020,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,9.682909881753579,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2020/U_to_F/P/result.json,1506
+ml-1m,NFM,2020,False,R0,Pop,none,U,fixed,Pop U,26.646279355327035,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2020/U/item_degree_ranking/result.json,363
+ml-1m,NFM,2020,False,R0,Base,none,U,fixed,Base U,14.605907809700385,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2020/U/base/result.json,362
+ml-1m,NFM,2020,False,R0,Pop,none,W,fixed,Pop W,14.262399846707405,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/W/item_degree_ranking/result.json,375
+ml-1m,NFM,2020,False,R0,Base,none,W,fixed,Base W,9.959292680789842,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/W/base/result.json,374
+ml-1m,NFM,2020,False,R0,Pop,none,F,fixed,Pop F,9.614866524609909,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/F/item_degree_ranking/result.json,387
+ml-1m,NFM,2020,False,R0,Base,none,F,fixed,Base F,4.86628484646286,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2020/F/base/result.json,386
+ml-1m,NFM,2021,False,R0,Res(p),W,W,matched,Res(p) W->W matched,14.25034997839409,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/W/P/result.json,415
+ml-1m,NFM,2021,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,9.903019490654401,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/NFM/seed_2021/W_to_F/P/result.json,931
+ml-1m,NFM,2021,False,R0,Res(p),F,F,matched,Res(p) F->F matched,9.89014029017894,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/F/P/result.json,427
+ml-1m,NFM,2021,False,R0,Res(p),U,U,matched,Res(p) U->U matched,26.43321474925094,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2021/U/P/result.json,1191
+ml-1m,NFM,2021,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,9.906214404572598,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2021/U_to_F/P/result.json,1515
+ml-1m,NFM,2021,False,R0,Pop,none,U,fixed,Pop U,26.3007884703361,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2021/U/item_degree_ranking/result.json,399
+ml-1m,NFM,2021,False,R0,Base,none,U,fixed,Base U,14.479130726756214,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2021/U/base/result.json,398
+ml-1m,NFM,2021,False,R0,Pop,none,W,fixed,Pop W,14.139066012489701,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/W/item_degree_ranking/result.json,411
+ml-1m,NFM,2021,False,R0,Base,none,W,fixed,Base W,9.704915224268868,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/W/base/result.json,410
+ml-1m,NFM,2021,False,R0,Pop,none,F,fixed,Pop F,9.93464846789227,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/F/item_degree_ranking/result.json,423
+ml-1m,NFM,2021,False,R0,Base,none,F,fixed,Base F,4.625871046847011,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2021/F/base/result.json,422
+ml-1m,NFM,2022,False,R0,Res(p),W,W,matched,Res(p) W->W matched,14.403712362605612,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/W/P/result.json,451
+ml-1m,NFM,2022,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,10.038823255184774,False,artifact:results/wsdm_integrated_revision/20261116_171956_KST/transfer/ml-1m/NFM/seed_2022/W_to_F/P/result.json,949
+ml-1m,NFM,2022,False,R0,Res(p),F,F,matched,Res(p) F->F matched,10.09604207951606,False,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/F/P/result.json,463
+ml-1m,NFM,2022,False,R0,Res(p),U,U,matched,Res(p) U->U matched,26.78265307192671,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2022/U/P/result.json,1200
+ml-1m,NFM,2022,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,10.108058373369659,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2022/U_to_F/P/result.json,1524
+ml-1m,NFM,2022,False,R0,Pop,none,U,fixed,Pop U,26.63926615158239,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2022/U/item_degree_ranking/result.json,435
+ml-1m,NFM,2022,False,R0,Base,none,U,fixed,Base U,14.670998677773408,,artifact:results/wsdm_integrated_revision/20261116_171956_KST/runs/ml-1m/NFM/seed_2022/U/base/result.json,434
+ml-1m,NFM,2022,False,R0,Pop,none,W,fixed,Pop W,14.432732907600329,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/W/item_degree_ranking/result.json,447
+ml-1m,NFM,2022,False,R0,Base,none,W,fixed,Base W,9.911334527856003,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/W/base/result.json,446
+ml-1m,NFM,2022,False,R0,Pop,none,F,fixed,Pop F,10.063602423882774,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/F/item_degree_ranking/result.json,459
+ml-1m,NFM,2022,False,R0,Base,none,F,fixed,Base F,4.82291590069643,,artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/NFM/seed_2022/F/base/result.json,458
+ml-1m,NFM,2023,False,R0,Res(p),W,W,matched,Res(p) W->W matched,13.965630195364895,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/W/P/result.json,1233
+ml-1m,NFM,2023,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,8.935132129127158,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2023/W_to_F/P/result.json,1542
+ml-1m,NFM,2023,False,R0,Res(p),F,F,matched,Res(p) F->F matched,8.956759525824161,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/F/P/result.json,1209
+ml-1m,NFM,2023,False,R0,Res(p),U,U,matched,Res(p) U->U matched,25.75510802639045,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/U/P/result.json,1221
+ml-1m,NFM,2023,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,8.980163875495174,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2023/U_to_F/P/result.json,1533
+ml-1m,NFM,2023,False,R0,Pop,none,U,fixed,Pop U,25.720001556123595,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/U/item_degree_ranking/result.json,1229
+ml-1m,NFM,2023,False,R0,Base,none,U,fixed,Base U,12.735498174801457,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/U/base/result.json,1228
+ml-1m,NFM,2023,False,R0,Pop,none,W,fixed,Pop W,13.907578581927964,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/W/item_degree_ranking/result.json,1241
+ml-1m,NFM,2023,False,R0,Base,none,W,fixed,Base W,8.896355062520417,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/W/base/result.json,1240
+ml-1m,NFM,2023,False,R0,Pop,none,F,fixed,Pop F,8.971283528946275,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/F/item_degree_ranking/result.json,1217
+ml-1m,NFM,2023,False,R0,Base,none,F,fixed,Base F,3.5222687399891366,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2023/F/base/result.json,1216
+ml-1m,NFM,2024,False,R0,Res(p),W,W,matched,Res(p) W->W matched,13.929869342676094,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/W/P/result.json,1269
+ml-1m,NFM,2024,False,R0,Res(p),W,F,frozen,Res(p) W->F frozen,9.207953942162273,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2024/W_to_F/P/result.json,1560
+ml-1m,NFM,2024,False,R0,Res(p),F,F,matched,Res(p) F->F matched,9.221631660941263,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/F/P/result.json,1245
+ml-1m,NFM,2024,False,R0,Res(p),U,U,matched,Res(p) U->U matched,25.869256993187122,False,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/U/P/result.json,1257
+ml-1m,NFM,2024,False,R0,Res(p),U,F,frozen,Res(p) U->F frozen,9.2905482445253,False,artifact:results/w2w3_priority/20261117_040624_KST/transfer/ml-1m/NFM/seed_2024/U_to_F/P/result.json,1551
+ml-1m,NFM,2024,False,R0,Pop,none,U,fixed,Pop U,25.800793732107085,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/U/item_degree_ranking/result.json,1265
+ml-1m,NFM,2024,False,R0,Base,none,U,fixed,Base U,13.327465445661618,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/U/base/result.json,1264
+ml-1m,NFM,2024,False,R0,Pop,none,W,fixed,Pop W,13.88071188991448,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/W/item_degree_ranking/result.json,1277
+ml-1m,NFM,2024,False,R0,Base,none,W,fixed,Base W,9.071085036442913,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/W/base/result.json,1276
+ml-1m,NFM,2024,False,R0,Pop,none,F,fixed,Pop F,9.288464309151015,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/F/item_degree_ranking/result.json,1253
+ml-1m,NFM,2024,False,R0,Base,none,F,fixed,Base F,4.0203344789105495,,artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/NFM/seed_2024/F/base/result.json,1252

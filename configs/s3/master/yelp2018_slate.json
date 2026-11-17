@@ -1,0 +1,23 @@
+{
+  "fixed_U_phase_digests": {
+    "test": "b4f0f55acf46a1c00977c866e4944b92b045e5b74736d298f4931d4235dad089",
+    "train": "5180ab266f385a0a6626b6de1f3b28504dc56266f0f7f29dc6a55823712378eb",
+    "valid": "a0e50ebf4123f00d6cc530098e600961b4ac66cda683b53a5efa134f7313dcc4"
+  },
+  "fixed_W_full_truth_digests": {
+    "test": "a5399a3bc7b108d073a4a8e2b77d2123f454fbb01659b6d8ee368da500948ace",
+    "train": "c569a80aeb0138ff49596df4e78cf176307e38c9935711912bb076bf2fceb356",
+    "valid": "8ed9c3f0f2f54fd05231cb562d1c66aacd701aa5649a93f9f55b2be76795e93d"
+  },
+  "fixed_W_phase_digests": {
+    "test": "292836b6f85e82026760da8c65c686abdebfdaec22d8f88a67ce29be2844e851",
+    "train": "f6886678dfec331a664a00296e740f94e2a4268cc729aa70d451620606af826c",
+    "valid": "4dfd02885c4bec4611f28d1ba84cc294c362e8def8cdb8189f677704b25f3d75"
+  },
+  "model_config": {
+    "candidate_capacity": 50,
+    "item_num": 45639,
+    "user_num": 77278
+  },
+  "targets_per_slate_cap": 89
+}

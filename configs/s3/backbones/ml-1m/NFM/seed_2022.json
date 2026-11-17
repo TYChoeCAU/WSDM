@@ -1,0 +1,73 @@
+{
+  "A_dataset_sha256": "753f2151fdcc3d321533ef8a420d5df3e41eaf75db86820ee9551152fa21e35c",
+  "W_F_checkpoint_shared": true,
+  "backbone": "NFM",
+  "candidate_seed": 2020,
+  "dataset": "ml-1m",
+  "master_signature": "5661d55ff6212e1d44162fb46049f28075b261fc6cb5e84adfc2fa0ca340746d",
+  "profile": {
+    "clip_grad_norm": null,
+    "dropout_prob": 0.5,
+    "embedding_size": 64,
+    "learning_rate": 0.001,
+    "loss": "original model.calculate_loss on A threshold binary labels, no added synthetic negatives",
+    "maximum_epochs": 300,
+    "minimum_epochs": 0,
+    "mlp_hidden_size": [
+      512,
+      512,
+      512
+    ],
+    "model": "NFM",
+    "optimizer": "adam",
+    "patience_comparison": "strictly greater than stopping_step, original Trainer budget",
+    "patience_validation_checks": 5,
+    "profile_source": {
+      "checkpoint": "historical/saved/backbone_3seed/ml-1m/NFM/seed_2020/NFM-Jul-31-2026_12-46-59.pth",
+      "sha256": "ee9bcdaacee58aa5b209cb6ef9e95fde4ec6a0ec037399e0195ae89ce0dfe386",
+      "weights_reused": false
+    },
+    "reported_backbone": "NFM",
+    "score_domain": "sigmoid(raw model logit), original predict output",
+    "seed": "training seed only",
+    "selector": "fixed validation-W NDCG@20",
+    "tie_policy": "strict improvement, earlier epoch retained",
+    "train_batch_size": 4096,
+    "validation_interval": 1,
+    "weight_decay": 0.0
+  },
+  "score_domain": "sigmoid(raw model logit)",
+  "sha256": "43602163a0e0a3534fc4b0c5bd2ff3f32e43f915de5503bc11bf0c059c4b941e",
+  "training_seed": 2022,
+  "validation_W_candidate_sha256": "29a3d27d6b7928176c910da424a817649b489a6e6c795907a7594ae7f34a39d6",
+  "validation_pool_signature": {
+    "B_slate_rule": "fixed shuffled B observations, legacy target cap, threshold-positive targets",
+    "data_seed": 2020,
+    "exclusions": {
+      "test": "A+B+validation relevant items",
+      "train": "A plus other known B observations",
+      "valid": "A+B"
+    },
+    "full_truth_digests": {
+      "test": "0d56d546922b3c79c5bde388b5295359e4c6a1fdeb79e296a02d96e5f3162ac3",
+      "train": "30f7cf0c35867a0571f22a1021fd2f34b3053d207d795580d3d30f2b5cb9ef18",
+      "valid": "19e6f0d7161c092591415e66b4861098ada8a8a07ff6d068d9e106706fbde1e4"
+    },
+    "history_source": "A only, all observed edges",
+    "master_digest": "5661d55ff6212e1d44162fb46049f28075b261fc6cb5e84adfc2fa0ca340746d",
+    "negative_per_relevant": 100,
+    "no_test_labels_in_training_candidates": true,
+    "phase_digests": {
+      "test": "f462d97637925d01f146159d073b2d332e930d519c6d577e2a529ed5e4078a89",
+      "train": "0f7873ee94cea842a516cbf4d6ef216f7280c52864cc955ed38d3d566740f3da",
+      "valid": "a7f22056c0727adbadaaed09eb9fd1697e2bd0faa4b9820408949b5083d5bf6c"
+    },
+    "score_domain": "sigmoid(raw logit), all backbones and methods",
+    "sha256": "955487705b0ecfecfc51b4fcebcb7445f865f51580bb179cc6dc00e15d87396f",
+    "target_cap_source": "historical/results/dnr_top50_matched/runs/ml-1m/NFM/seed_2020/input_cache.pt",
+    "target_slate_cap": 25,
+    "tie_rule": "score descending, mapped item ID ascending",
+    "training_seed_independent": true,
+    "weight": "1+A binary item degree"
+  }
+}

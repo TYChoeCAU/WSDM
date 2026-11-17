@@ -1,0 +1,23 @@
+{
+  "dataset": "ml-1m",
+  "item_num": 3261,
+  "mapping_digests": {
+    "item": "bb826b03277b8dc4961568d9cf3eaa1c1a02ea5f67538444dc3939527b182dc3",
+    "user": "11ab8aa027f3963159fe19bd408b98a88dc95c2a83165ea0f38d2de4d6ce229a"
+  },
+  "original_checkpoint_sha256": "ee9bcdaacee58aa5b209cb6ef9e95fde4ec6a0ec037399e0195ae89ce0dfe386",
+  "outer_split_digests": {
+    "test": "99de98736aeec17a77fbffb779dfab8512c04640ec3d7e462910c4ac9a13491b",
+    "train": "8ccaf458859ba72ed4c227a083367ed52f73bc79e6fde4976ecdcb5d0ac30100",
+    "valid": "c29be835892ab6d5702948d79a91d5e60f16173e2f2ae39c36e3c000a611375a"
+  },
+  "source_bundle_sha256": "8cdf8847f8b603298d54775b4d19ddc86d85d23c7fcf601eb0e990d43b750bc6",
+  "split_digests": {
+    "outer_train": "8ccaf458859ba72ed4c227a083367ed52f73bc79e6fde4976ecdcb5d0ac30100",
+    "refinement": "a1d80d095cb478ade767dc077777ef40bac4ecf7df3300d54389081ddbea8767",
+    "test": "99de98736aeec17a77fbffb779dfab8512c04640ec3d7e462910c4ac9a13491b",
+    "train": "56005365894e9cb25d5b166ea009e3d77b74b8dabf7eb16a27d3ad0e8b7fbe52",
+    "valid": "c29be835892ab6d5702948d79a91d5e60f16173e2f2ae39c36e3c000a611375a"
+  },
+  "user_num": 6041
+}

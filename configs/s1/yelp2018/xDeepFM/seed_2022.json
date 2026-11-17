@@ -1,0 +1,180 @@
+{
+  "study": "S1",
+  "dataset": "yelp2018",
+  "backbone": "xDeepFM",
+  "seed": 2022,
+  "backbone_config": {
+    "worker": 0,
+    "use_gpu": true,
+    "seed": 2022,
+    "state": "INFO",
+    "reproducibility": true,
+    "data_path": "${DATA_ROOT}/yelp2018-paper",
+    "show_progress": false,
+    "save_dataset": false,
+    "dataset_save_path": null,
+    "save_dataloaders": false,
+    "dataloaders_save_path": null,
+    "shuffle": true,
+    "epochs": 300,
+    "train_batch_size": 4096,
+    "learner": "adam",
+    "learning_rate": 0.0001,
+    "train_neg_sample_args": {
+      "distribution": "none",
+      "sample_num": "none",
+      "alpha": "none",
+      "dynamic": false,
+      "candidate_num": 0
+    },
+    "eval_step": 1,
+    "stopping_step": 5,
+    "clip_grad_norm": null,
+    "weight_decay": 0.0,
+    "loss_decimal_place": 4,
+    "require_pow": false,
+    "enable_amp": false,
+    "enable_scaler": false,
+    "transform": null,
+    "eval_args": {
+      "split": {
+        "RS": [
+          0.8,
+          0.1,
+          0.1
+        ]
+      },
+      "order": "RO",
+      "group_by": null,
+      "mode": {
+        "valid": "labeled",
+        "test": "labeled"
+      }
+    },
+    "repeatable": false,
+    "metrics": [
+      "AUC",
+      "LogLoss"
+    ],
+    "topk": [
+      10
+    ],
+    "valid_metric": "AUC",
+    "valid_metric_bigger": true,
+    "eval_batch_size": 4096,
+    "metric_decimal_place": 4,
+    "embedding_size": 64,
+    "mlp_hidden_size": [
+      512,
+      512,
+      512
+    ],
+    "reg_weight": 0.0005,
+    "dropout_prob": 0.1,
+    "direct": false,
+    "cin_layer_size": [
+      200,
+      200,
+      200
+    ],
+    "field_separator": "\t",
+    "seq_separator": " ",
+    "USER_ID_FIELD": "user_id",
+    "ITEM_ID_FIELD": "item_id",
+    "RATING_FIELD": "rating",
+    "TIME_FIELD": "timestamp",
+    "seq_len": null,
+    "LABEL_FIELD": "label",
+    "threshold": {
+      "rating": 4
+    },
+    "NEG_PREFIX": "neg_",
+    "numerical_features": [
+      "user_review_count",
+      "yelping_since",
+      "item_review_count"
+    ],
+    "load_col": {
+      "inter": [
+        "user_id",
+        "item_id",
+        "rating"
+      ],
+      "user": [
+        "user_id",
+        "user_review_count",
+        "yelping_since"
+      ],
+      "item": [
+        "item_id",
+        "item_review_count",
+        "categories"
+      ]
+    },
+    "unload_col": null,
+    "unused_col": null,
+    "additional_feat_suffix": null,
+    "rm_dup_inter": null,
+    "val_interval": null,
+    "filter_inter_by_user_or_item": true,
+    "user_inter_num_interval": "[10,inf)",
+    "item_inter_num_interval": "[10,inf)",
+    "alias_of_user_id": null,
+    "alias_of_item_id": null,
+    "alias_of_entity_id": null,
+    "alias_of_relation_id": null,
+    "preload_weight": null,
+    "normalize_field": null,
+    "normalize_all": true,
+    "discretization": null,
+    "ITEM_LIST_LENGTH_FIELD": "item_length",
+    "LIST_SUFFIX": "_list",
+    "MAX_ITEM_LIST_LENGTH": 50,
+    "POSITION_FIELD": "position_id",
+    "HEAD_ENTITY_ID_FIELD": "head_id",
+    "TAIL_ENTITY_ID_FIELD": "tail_id",
+    "RELATION_ID_FIELD": "relation_id",
+    "ENTITY_ID_FIELD": "entity_id",
+    "kg_reverse_r": false,
+    "entity_kg_num_interval": "[0,inf)",
+    "relation_kg_num_interval": "[0,inf)",
+    "benchmark_filename": null,
+    "MODEL_TYPE": "ModelType.CONTEXT",
+    "neighbor_agg": false,
+    "dataset": "yelp2018-paper",
+    "model": "xDeepFM",
+    "MODEL_INPUT_TYPE": "InputType.POINTWISE",
+    "eval_type": "EvaluatorType.VALUE",
+    "single_spec": true,
+    "valid_neg_sample_args": {
+      "distribution": "none",
+      "sample_num": "none"
+    },
+    "test_neg_sample_args": {
+      "distribution": "none",
+      "sample_num": "none"
+    }
+  },
+  "npgc": {
+    "alpha": 1.0,
+    "candidate_top_m": 50,
+    "controller": "uniform",
+    "cutoff_k": 20,
+    "evidence_attenuation": false,
+    "evidence_scale": 1.0,
+    "name": null,
+    "neighbor_k": 2,
+    "scorer": "nonparamgc",
+    "scorer_config": {
+      "budget": 1.0,
+      "budget_prefix": false,
+      "idf": false,
+      "nonparamgc_eq12": true,
+      "similarity_shrinkage": false,
+      "tau": 2.0
+    },
+    "support": "label_blind_base_top_50",
+    "temperature": 2.5
+  },
+  "source": "actual executed checkpoint configuration; no configuration selected using test results"
+}

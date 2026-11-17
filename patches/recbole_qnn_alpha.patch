@@ -1,0 +1,106 @@
+--- /dev/null
++++ b/recbole/model/context_aware_recommender/qnn_alpha.py
+@@ -0,0 +1,103 @@
++"""RecBole adapter for the official QNN_T26 (QNN-alpha) architecture.
++
++The quadratic layers and self-ensemble objective follow salmon1802/QNN at
++commit 08c5db81e76b1a377708ce6e6164f3d7a3a2486d.  Only the feature embedding
++and training-framework interfaces are adapted to the existing RecBole split.
++"""
++
++import torch
++from torch import nn
++
++from recbole.model.abstract_recommender import ContextRecommender
++from recbole.model.init import xavier_normal_initialization
++
++
++class QuadraticLayer(nn.Module):
++    def __init__(self, input_dim, num_fields, num_row=4, num_heads=4,
++                 batch_norm=True, net_dropout=0.1):
++        super().__init__()
++        if input_dim % num_heads or (input_dim // num_fields) % num_heads:
++            raise ValueError("QNN-alpha requires embedding/input dimensions divisible by num_heads")
++        self.linear = nn.Sequential(
++            nn.Linear(input_dim, input_dim * num_row),
++            nn.BatchNorm1d(input_dim * num_row) if batch_norm else nn.Identity(),
++            nn.ReLU(),
++        )
++        self.dropout = nn.Dropout(net_dropout) if net_dropout > 0 else nn.Identity()
++        self.num_fields, self.num_row, self.num_heads = num_fields, num_row, num_heads
++        self.embedding_dim = input_dim // num_fields
++        self.input_dim, self.head_dim = input_dim, input_dim // num_heads
++
++    def forward(self, x):
++        ego_x = x
++        fields = x.view(-1, self.num_fields, self.embedding_dim)
++        heads = torch.stack(torch.tensor_split(fields, self.num_heads, dim=-1), dim=1)
++        heads = heads.reshape(-1, self.num_heads, self.head_dim)
++        h = self.linear(ego_x).view(-1, self.num_heads, self.num_row, self.head_dim)
++        h = self.dropout(h)
++        return torch.einsum("bhd,bhrd->bhrd", heads, h).sum(dim=-2).reshape(-1, self.input_dim) + ego_x
++
++
++class QuadraticNetwork(nn.Module):
++    def __init__(self, input_dim, num_fields, num_layers=1, num_row=4,
++                 num_heads=4, batch_norm=True, net_dropout=0.1):
++        super().__init__()
++        self.layers = nn.ModuleList([
++            QuadraticLayer(input_dim, num_fields, num_row, num_heads, batch_norm, net_dropout)
++            for _ in range(num_layers)
++        ])
++        self.dropout = nn.Dropout(net_dropout) if net_dropout > 0 else nn.Identity()
++        self.fc = nn.Linear(input_dim, 1)
++
++    def forward(self, x):
++        for layer in self.layers:
++            x = self.dropout(layer(x))
++        return self.fc(x).squeeze(-1)
++
++
++class QNN_alpha(ContextRecommender):
++    """QNN_T26 final variant with the official train/eval forward distinction."""
++
++    def __init__(self, config, dataset):
++        super().__init__(config, dataset)
++        input_dim = self.num_feature_field * self.embedding_size
++        self.qnn = QuadraticNetwork(
++            input_dim, self.num_feature_field,
++            num_layers=int(config["qnn_num_layers"]),
++            num_row=int(config["qnn_num_row"]),
++            num_heads=int(config["qnn_num_heads"]),
++            batch_norm=bool(config["qnn_batch_norm"]),
++            net_dropout=float(config["qnn_dropout"]),
++        )
++        self.embedding_regularizer = float(config["qnn_embedding_regularizer"])
++        self.bce = nn.BCELoss()
++        self.apply(xavier_normal_initialization)
++
++    def _single(self, interaction):
++        embedded = self.concat_embed_input_fields(interaction).reshape(len(interaction), -1)
++        return torch.sigmoid(self.qnn(embedded))
++
++    def forward(self, interaction):
++        if self.training:
++            return self._single(interaction), self._single(interaction)
++        return self._single(interaction)
++
++    def _embedding_penalty(self):
++        values = []
++        for name, parameter in self.named_parameters():
++            if "embedding" in name and parameter.requires_grad:
++                values.append(parameter.square().mean())
++        return sum(values) if values else torch.zeros((), device=self.device)
++
++    def calculate_loss(self, interaction):
++        label = interaction[self.LABEL].float()
++        y1, y2 = self.forward(interaction)
++        ensemble = (y1 + y2) * 0.5
++        target = ensemble.detach()
++        # Official QNN_T26: supervised ensemble BCE plus two stop-gradient
++        # self-ensemble BCE terms.  Both stochastic predictions participate.
++        loss = self.bce(ensemble, label) + self.bce(y1, target) + self.bce(y2, target)
++        return loss + self.embedding_regularizer * self._embedding_penalty()
++
++    def predict(self, interaction):
++        return self._single(interaction)

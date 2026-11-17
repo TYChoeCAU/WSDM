@@ -1,0 +1,73 @@
+{
+  "A_dataset_sha256": "cfde97a3f61803802b376450079b79f577f14589e2c4e886e2b5218750d533b8",
+  "W_F_checkpoint_shared": true,
+  "backbone": "NFM",
+  "candidate_seed": 2020,
+  "dataset": "yelp2018",
+  "master_signature": "ab92f5c49ab6d668e00f491af7fd511df183b0946e47b468d3c9c37abe97bcd6",
+  "profile": {
+    "clip_grad_norm": null,
+    "dropout_prob": 0.5,
+    "embedding_size": 64,
+    "learning_rate": 0.0001,
+    "loss": "original model.calculate_loss on A threshold binary labels, no added synthetic negatives",
+    "maximum_epochs": 300,
+    "minimum_epochs": 0,
+    "mlp_hidden_size": [
+      512,
+      512,
+      512
+    ],
+    "model": "NFM",
+    "optimizer": "adam",
+    "patience_comparison": "strictly greater than stopping_step, original Trainer budget",
+    "patience_validation_checks": 5,
+    "profile_source": {
+      "checkpoint": "historical/saved/backbone_3seed/yelp2018/NFM/seed_2020/NFM-Jul-31-2026_13-25-47.pth",
+      "sha256": "d458dca3c968b5c24fc31e7efa41a1a8b51161eb3e8151b039a42c0f817f149a",
+      "weights_reused": false
+    },
+    "reported_backbone": "NFM",
+    "score_domain": "sigmoid(raw model logit), original predict output",
+    "seed": "training seed only",
+    "selector": "fixed validation-W NDCG@20",
+    "tie_policy": "strict improvement, earlier epoch retained",
+    "train_batch_size": 4096,
+    "validation_interval": 1,
+    "weight_decay": 0.0
+  },
+  "score_domain": "sigmoid(raw model logit)",
+  "sha256": "a55c6ad68fcda71eabaa65b47c553a0fb145c5ae7c4376a4a63ff6b302514cf9",
+  "training_seed": 2021,
+  "validation_W_candidate_sha256": "4227ace17275059a0eac7f88c12cca3e09f278b35221a0635f9406ee54249223",
+  "validation_pool_signature": {
+    "B_slate_rule": "fixed shuffled B observations, legacy target cap, threshold-positive targets",
+    "data_seed": 2020,
+    "exclusions": {
+      "test": "A+B+validation relevant items",
+      "train": "A plus other known B observations",
+      "valid": "A+B"
+    },
+    "full_truth_digests": {
+      "test": "a5399a3bc7b108d073a4a8e2b77d2123f454fbb01659b6d8ee368da500948ace",
+      "train": "c569a80aeb0138ff49596df4e78cf176307e38c9935711912bb076bf2fceb356",
+      "valid": "8ed9c3f0f2f54fd05231cb562d1c66aacd701aa5649a93f9f55b2be76795e93d"
+    },
+    "history_source": "A only, all observed edges",
+    "master_digest": "ab92f5c49ab6d668e00f491af7fd511df183b0946e47b468d3c9c37abe97bcd6",
+    "negative_per_relevant": 100,
+    "no_test_labels_in_training_candidates": true,
+    "phase_digests": {
+      "test": "292836b6f85e82026760da8c65c686abdebfdaec22d8f88a67ce29be2844e851",
+      "train": "f6886678dfec331a664a00296e740f94e2a4268cc729aa70d451620606af826c",
+      "valid": "4dfd02885c4bec4611f28d1ba84cc294c362e8def8cdb8189f677704b25f3d75"
+    },
+    "score_domain": "sigmoid(raw logit), all backbones and methods",
+    "sha256": "0fae414ff3fa04bab02e803132a89e6ef5cde3826555f9c7b7ae8549f44cd1da",
+    "target_cap_source": "historical/results/dnr_top50_matched/runs/yelp2018/NFM/seed_2020/input_cache.pt",
+    "target_slate_cap": 89,
+    "tie_rule": "score descending, mapped item ID ascending",
+    "training_seed_independent": true,
+    "weight": "1+A binary item degree"
+  }
+}

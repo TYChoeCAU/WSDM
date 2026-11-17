@@ -1,0 +1,35 @@
+{
+  "study": "S2",
+  "dataset": "ml-1m",
+  "backbone": "MF_BPR",
+  "seed": 2022,
+  "profile_search": {
+    "embedding_dim": 64,
+    "learning_rate": [
+      0.001,
+      0.003
+    ],
+    "optimizer": "Adam",
+    "actual_weight_decay": [
+      0.0,
+      0.0001
+    ],
+    "batch_size": 4096,
+    "max_epochs": 500,
+    "validation_every": 10,
+    "minimum_epochs": 50,
+    "patience_validation_checks": 10,
+    "selection": "full-catalog validation ndcg@20",
+    "selection_min_delta": 0.0
+  },
+  "selected_profile": {
+    "learning_rate": 0.001,
+    "weight_decay": 0.0
+  },
+  "split_source": "configs/s1/ml-1m/NFM/seed_2022.json",
+  "protocols": [
+    "U",
+    "W",
+    "F"
+  ]
+}

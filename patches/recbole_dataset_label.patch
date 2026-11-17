@@ -1,0 +1,26 @@
+diff --git a/recbole/data/dataset/dataset.py b/recbole/data/dataset/dataset.py
+index d510dc4..8c794e4 100644
+--- a/recbole/data/dataset/dataset.py
++++ b/recbole/data/dataset/dataset.py
+@@ -1664,10 +1664,17 @@ class Dataset(torch.utils.data.Dataset):
+         next_df = [self.inter_feat[index] for index in next_index]
+ 
+         if self.config['eval_type'] == EvaluatorType.RANKING and self.config['MODEL_TYPE'] == ModelType.CONTEXT:
+-            inds = next_df[-2].label == 1
+-            next_df[-2] = next_df[-2][inds]
+-            inds = next_df[-1].label == 1
+-            next_df[-1] = next_df[-1][inds]
++            # Rating datasets already carry a threshold-derived label and
++            # retain only positives for sampled-ranking evaluation.  ID-only
++            # implicit datasets have no raw label: every stored interaction is
++            # positive and the evaluation dataloader creates sampled negative
++            # labels later, so filtering here is unnecessary.
++            if self.label_field in next_df[-2]:
++                inds = next_df[-2][self.label_field] == 1
++                next_df[-2] = next_df[-2][inds]
++            if self.label_field in next_df[-1]:
++                inds = next_df[-1][self.label_field] == 1
++                next_df[-1] = next_df[-1][inds]
+ 
+         next_ds = [self.copy(_) for _ in next_df]
+         return next_ds

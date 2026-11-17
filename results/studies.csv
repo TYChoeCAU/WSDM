@@ -1,0 +1,7 @@
+field,S1,S2,S3
+Backbones,six CTR models,MF,"NFM, MF"
+Training,rating BCE,BPR,"BCE, BPR"
+Data,three datasets,"Yelp2018, ML-1M","Yelp2018, ML-1M"
+Repeats,three splits,three splits,five seeds
+Selection,validation AUC,F NDCG@20,W NDCG@20
+Re-rankers,"Pop, NPGC",Pop,"all, learned per protocol"

@@ -1,0 +1,59 @@
+{
+  "original_nonparamgc": {
+    "alpha": 1.0,
+    "candidate_top_m": 50,
+    "controller": "uniform",
+    "cutoff_k": 20,
+    "evidence_attenuation": false,
+    "evidence_scale": 1.0,
+    "name": null,
+    "neighbor_k": 2,
+    "scorer": "nonparamgc",
+    "scorer_config": {
+      "budget": 1.0,
+      "budget_prefix": false,
+      "idf": false,
+      "nonparamgc_eq12": true,
+      "similarity_shrinkage": false,
+      "tau": 2.0
+    },
+    "support": "label_blind_base_top_50",
+    "temperature": 2.5
+  },
+  "prm_principled": {
+    "attention_element_budget": 8000000,
+    "backbone": "NFM",
+    "batch_size": 32,
+    "candidate_top_m": 50,
+    "d_inner": 128,
+    "d_model": 64,
+    "dataset": "yelp2018",
+    "dropout": 0.2,
+    "embedding_dim": 16,
+    "eval_group_batch_size": 1024,
+    "gradient_clip_norm": 5.0,
+    "input_fields": [
+      "user_id",
+      "candidate_item_id",
+      "frozen_backbone_score",
+      "initial_position"
+    ],
+    "learning_rate": 0.0001,
+    "loss": "three masked probability BCE plus three rank-weighted squared consistency terms",
+    "maximum_epochs": 100,
+    "method": "prm_principled",
+    "minimum_epochs": 5,
+    "n_head": 1,
+    "patience": 8,
+    "seed": 2020,
+    "selection_metric": "validation ndcg@10",
+    "selection_min_delta": 0.0001,
+    "source_commits": {
+      "LibRerank": "7968d6d990268246ef01c8f53ea55724a48a42d1",
+      "principled_reranking": "0aba140ce7cc71fb5cc9750f3811702edaa137ce"
+    },
+    "variant": "public benchmark PRM and public full PRM_O6 port",
+    "version": "nfm-prm-pl-completion-v1",
+    "weight_decay": 0.0001
+  }
+}

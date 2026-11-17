@@ -1,0 +1,76 @@
+{
+  "original_source_sha256": "32f60b26d9a5a6cf101d1c4a75805958b14149e266faad985050a634ce4bb8aa",
+  "recorded_selection": {
+    "exact_tie_rule": "lower_learning_rate",
+    "scope": {
+      "backbone": "MF_BPR",
+      "dataset": "ml-1m",
+      "grid": [
+        0.0001,
+        0.0003
+      ],
+      "master_scope": "5661d55ff6212e1d44162fb46049f28075b261fc6cb5e84adfc2fa0ca340746d",
+      "protocol": "W",
+      "run_id": "20261116_072634_KST",
+      "selector": "validation_ndcg@20",
+      "settings": {
+        "attention_element_budget": 8000000,
+        "batch_size": 32,
+        "d_inner": 128,
+        "d_model": 64,
+        "dropout": 0.2,
+        "embedding_dim": 16,
+        "eval_group_batch_size": 1024,
+        "gradient_clip_norm": 5.0,
+        "maximum_epochs": 100,
+        "minimum_epochs": 5,
+        "n_head": 1,
+        "patience": 8,
+        "score_transform": null,
+        "selection_min_delta": 0.0001,
+        "source_commits": {
+          "LibRerank": "7968d6d990268246ef01c8f53ea55724a48a42d1",
+          "principled_reranking": "0aba140ce7cc71fb5cc9750f3811702edaa137ce"
+        },
+        "weight_decay": 0.0001
+      },
+      "version": "matched-PRM-PL-seed2020-grid-v1"
+    },
+    "scope_hash": "a6d11468d16f6a9b904f59504295911c8f0333a726b6e9b56af41d436e8af6d0",
+    "selected_learning_rate": 0.0001,
+    "selection_seed": 2020,
+    "status": "COMPLETED_VALIDATION_SELECTION",
+    "test_consulted": false,
+    "trials": [
+      {
+        "checkpoint_path": "historical/best_checkpoint.pt",
+        "checkpoint_sha256": "56546cf3c526ece9d55f4e11c3ad3a24a8966ece0479570d797a426df656d65e",
+        "learning_rate": 0.0001,
+        "model_identity_hash": "9bbfe89f2ff42361ba9d16ead5731d02192b3f4ef2a5691f6d4da02f2f00ca6c",
+        "selected_epoch": 8,
+        "validation_metrics": {
+          "ndcg@10": 0.26266276725930626,
+          "ndcg@20": 0.2967033188612313,
+          "recall@10": 0.266960176014503,
+          "recall@20": 0.38865337733892713
+        },
+        "validation_ndcg20": 0.2967033188612313
+      },
+      {
+        "checkpoint_path": "historical/best_checkpoint.pt",
+        "checkpoint_sha256": "f81c5644a0e7b555e4cb15a51047c22c6126f9192c50f1b0956990eee72a8b1b",
+        "learning_rate": 0.0003,
+        "model_identity_hash": "9bd3be285a4b23a8d8326ce7623577ce02416d0f9f22bd5dd3dc057f7515c78f",
+        "selected_epoch": 11,
+        "validation_metrics": {
+          "ndcg@10": 0.2625599418765358,
+          "ndcg@20": 0.29668349391556353,
+          "recall@10": 0.26673319066140994,
+          "recall@20": 0.3883006156107579
+        },
+        "validation_ndcg20": 0.29668349391556353
+      }
+    ]
+  },
+  "runtime_policy": "Reuse the recorded validation-only learning rate; no new grid or test selection"
+}

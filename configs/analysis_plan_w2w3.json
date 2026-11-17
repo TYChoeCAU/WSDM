@@ -1,0 +1,123 @@
+{
+  "registered_kst": "2026-11-17T04:08:53.552361+09:00",
+  "exploratory": true,
+  "reason": "Additional analysis of previously viewed outcomes",
+  "primary_metric": "ndcg@20",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 8702026,
+  "primary_practical_delta_raw": 0.0025,
+  "sensitivity_delta_raw": [
+    0.001,
+    0.0025,
+    0.005
+  ],
+  "alpha": 0.05,
+  "tost_unadjusted_ci": 0.9,
+  "effect_ci": 0.95,
+  "primary_tost_family": {
+    "contrasts": [
+      "Pop-Base",
+      "PRM+PL-Res(p)"
+    ],
+    "cells": 4,
+    "transitions": [
+      "F-U",
+      "F-W"
+    ],
+    "metric": "ndcg@20",
+    "delta": 0.0025,
+    "planned_hypotheses": 16,
+    "adjustment": "Holm",
+    "tested_quantity": "difference in the paired method contrast across protocols"
+  },
+  "training_seeds_initial": [
+    2020,
+    2021,
+    2022
+  ],
+  "training_seeds_final": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "seed_unit": "full backbone plus reranker training repeat, fixed data and candidate RNG",
+  "numeric_validation_atol": 0.001,
+  "version": "w2w3-r0-no-dnr-v1",
+  "scope": "S3 R0 only; DNR and non-R0 results excluded from this public derivative",
+  "primary_regime": "R0",
+  "R0": {
+    "backbone_train_batch": 4096,
+    "residual_train_batch": 256,
+    "prm_train_batch": 32
+  },
+  "primary_seed_policy": {
+    "after_B": [
+      2020,
+      2021,
+      2022
+    ],
+    "after_C": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "partial_C": "Keep main cohort at complete R0 first three seeds until all required main and transfer cells complete"
+  },
+  "classification": {
+    "transfer": "Both effects95%CI strictly above +delta or both strictly below -delta",
+    "reverse": "One effect95%CI strictly above +delta and the other strictly below -delta",
+    "equivalent": "Both effects90%CI entirely within [-delta,+delta]",
+    "unresolved": "All other cases",
+    "priority": [
+      "equivalent",
+      "transfer",
+      "reverse",
+      "unresolved"
+    ],
+    "repeat_vs_user": "Report separately; no pooling uncertainty levels",
+    "vanish_post_hoc": "Source 95% interval beyond margin and target 90% interval strictly inside margin; split from unresolved after the original plan"
+  },
+  "contrasts": [
+    "Pop-Base",
+    "NPGC-Base",
+    "PRM+PL-Base",
+    "Pop-NPGC",
+    "PRM+PL-NPGC",
+    "PRM+PL-Res(p)",
+    "Res(p)-Pop",
+    "Res(H)-NPGC"
+  ],
+  "method_sets": {
+    "REF4": [
+      "base",
+      "item_degree_ranking",
+      "original_nonparamgc",
+      "prm_principled"
+    ],
+    "ALL12": [
+      "base",
+      "item_degree_ranking",
+      "original_nonparamgc",
+      "prm_principled",
+      "S",
+      "P",
+      "R",
+      "PR",
+      "H",
+      "RH",
+      "PH",
+      "PRH"
+    ]
+  },
+  "user_pairing": "Exact user ID and relevant denominator match first; common-user intersection if needed, with coverage loss recorded",
+  "bootstrap_policy": "Identical resampled user IDs across compared methods/protocols,2000replicates; deterministic seed8702026",
+  "decision_tie_policy": "Record tie sets and fractional top-set agreement; deterministic registered method order only when a single method is required, flag ties",
+  "no_DNR_training_or_analysis": true,
+  "post_outcome_plan": true,
+  "plan_change_before_new_stage_B_C_test_results": true,
+  "release_derivative": "Analysis rules preserved from recorded plan; excluded execution/sensitivity branches removed for the submitted manuscript scope"
+}

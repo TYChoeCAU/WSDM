@@ -1,0 +1,23 @@
+{
+  "dataset": "yelp2018",
+  "item_num": 45639,
+  "mapping_digests": {
+    "item": "36008e74dff59b16c7771140c456c0f8f56dcf2160a009ed97f1462a043f532b",
+    "user": "27bf8abf994860ff300ffb6a89aa76643d6cb2f5eccc40dfae48c315458e968e"
+  },
+  "original_checkpoint_sha256": "d458dca3c968b5c24fc31e7efa41a1a8b51161eb3e8151b039a42c0f817f149a",
+  "outer_split_digests": {
+    "test": "50abfffdaa95b4c5a54cdd68deff46f1d480016d9da21f22edfe164ae6ba7927",
+    "train": "2c96e79e00b75bf07a4ce8bffefb24543820f6e398059345e5a21c8e9af5c688",
+    "valid": "10601e489ff2b7bd22e1e1f97de83657ec093ca2cd0ec56a9d2a8df4d80be9f2"
+  },
+  "source_bundle_sha256": "a9add49f619fc74c9cc37be3c64f247d2f43af958f934dbccf34d4afd6208ff5",
+  "split_digests": {
+    "outer_train": "2c96e79e00b75bf07a4ce8bffefb24543820f6e398059345e5a21c8e9af5c688",
+    "refinement": "98f15a1b1fa3c18df17bcfaa7426cc685444565b2c4dfbf240a0c21c70f930a3",
+    "test": "50abfffdaa95b4c5a54cdd68deff46f1d480016d9da21f22edfe164ae6ba7927",
+    "train": "1f91d6303fb5a1420894cd75faebbcecf5281b4fd85eaf1edf19b0e54e9f3150",
+    "valid": "10601e489ff2b7bd22e1e1f97de83657ec093ca2cd0ec56a9d2a8df4d80be9f2"
+  },
+  "user_num": 77278
+}
