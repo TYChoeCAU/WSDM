@@ -1,0 +1,17 @@
+# Full model reproduction, Python 3.10; quick reproduction does not need CUDA.
+-r requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1+cu121
+scikit-learn==1.7.2
+PyYAML==6.0.3
+tqdm==4.70.0
+tensorboard==2.21.0
+colorlog==4.7.2
+colorama==0.4.4
+tabulate==0.10.0
+requests==2.34.2
+psutil==7.2.2
+texttable==1.7.0
+thop==0.1.1.post2209072238
+pyarrow==22.0.0
+torch-geometric==2.8.0.post1
