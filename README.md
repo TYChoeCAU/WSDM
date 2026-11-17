@@ -1,6 +1,3 @@
-# When Do Re-ranking Conclusions Transfer across Sampled and Catalog Candidates?
-
-Anonymous review artifact for the submitted manuscript. This study tests whether re-ranking conclusions transfer across uniform (U), popularity-weighted (W), and full-catalog (F) candidates. Popularity sorting beats NPGC in all 54 benchmark Top-50 runs and all 30 runs with stored whole candidate pools. Its effect changes sign with the tested backbone training regime, across both NFM and MF. Swapping observed-rating BCE for BPR also changes negative exposure and training-row composition, so this is not an isolated causal estimate of the loss function. With separate MF-BPR retrieval and frozen classification scoring (DF), popularity gains remain. Matched comparisons show no clear NDCG@20 reversals at a 0.25-point margin, while a frozen learned reranker can fail after a protocol change. The evidence supports reporting training conditions, a popularity control, candidate coverage, and a practical margin.
 
 ## What is included
 
