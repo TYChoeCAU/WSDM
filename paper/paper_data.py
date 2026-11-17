@@ -21,7 +21,16 @@ def cell(kind,*values,dp=2,signed=False):return {'kind':kind,'values':list(value
 def metric_cell(values,dp=2,signed=False):return cell('score',*stats(values)[:2],dp=dp,signed=signed)
 def build(results):
  results=Path(results);tables={}
- tables[1]=[{'label':r['field'],'cells':[cell('text',r[x]) for x in ('S1','S2','S3')]} for r in read(results/'studies.csv')]
+ # Presentation metadata follows the submitted manuscript. Numeric evidence stays unchanged.
+ studies=[]
+ for row in read(results/'studies.csv'):
+  row=dict(row)
+  if row['field']=='Training':row['S3']=r'BCE, BPR, $2\times2$'
+  if row['field']=='Re-rankers':
+   studies.extend([{'field':'Rules','S1':'Pop, NPGC','S2':'Pop','S3':'Pop, NPGC'},
+                   {'field':'Learned','S1':'--','S2':'--','S3':r'PRM+PL, Res($\cdot$)'}])
+  else:studies.append(row)
+ tables[1]=[{'label':r['field'],'cells':[cell('text',r[x]) for x in ('S1','S2','S3')]} for r in studies]
  b=read(results/'s1/benchmark_seed_metrics.csv');cr=read(results/'s1/s1_candidate_recall.csv');rows=[]
  for bb in BACKBONES:
   cells=[]
@@ -55,13 +64,6 @@ def build(results):
  counts=load(str(results/'s3'),'ndcg@20','identity_inclusive','0.0025');_,cc,_=summarize(counts,lambda r:classify(r,.0025,.0025))
  pair_labels={'U-W':'U--W','U-F':'U--F','W-F':'W--F','U-U_to_F':r'U$\to$F','W-W_to_F':r'W$\to$F'}
  rows=[{'label':pair_labels[pair],'cells':[cell('count',fmt(cc[(pair,c)])) for c in CELLS]} for pair in PAIRS]
- frozen=read(results/'checks/C_frozen_resp_table.csv')
- for fit,ev,family in [('W','W','matched'),('W','F','frozen'),('F','F','matched'),('U','F','frozen')]:
-  cells=[]
-  for ds,bb in CELLS:
-   r=one(frozen,dataset=ds,backbone=bb,method='Res(p)',fit_protocol=fit,eval_protocol=ev,analysis_family=family)
-   cells.append(cell('score',float(r['mean_x100']),float(r['sample_sd_x100'])))
-  rows.append({'label':rf'Res($p$) {fit}$\to${ev}','cells':cells})
  tables[5]=rows
  return tables
 

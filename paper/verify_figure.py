@@ -5,7 +5,6 @@ import csv
 import json
 import math
 from pathlib import Path
-import re
 from statistics import mean, stdev
 
 from scipy.stats import t
@@ -82,14 +81,38 @@ def table4_cells(expected):
     return cells
 
 
+SERIES = {
+    'NFM-BCE': ('S3_NFM_BCE', 'NFM', 'observed_threshold_BCE'),
+    'NFM-BPR': ('E1_NFM_BPR', 'NFM', 'BPR_unobserved_negative'),
+    'MF-BCE': ('E2_MF_BCE', 'MF', 'observed_threshold_BCE'),
+    'MF-BPR': ('S3_MF_BPR', 'MF', 'BPR_unobserved_negative'),
+}
+
+
+def objective_seed_values(rows, dataset, series, protocol, method):
+    cohort, architecture, objective = SERIES[series]
+    selected = choose(rows, dataset=dataset, cohort=cohort, architecture=architecture,
+                      objective=objective, protocol=protocol, method=method, status='COMPLETE')
+    seeds = [int(row['training_seed']) for row in selected]
+    if sorted(seeds) != list(SEEDS):
+        raise ValueError(f'Expected five independent training repeats once for {dataset}/{series}/{protocol}/{method}, got {seeds}')
+    values = {int(row['training_seed']): 100 * float(row['ndcg@20']) for row in selected}
+    if not all(math.isfinite(value) for value in values.values()):
+        raise ValueError('Nonfinite objective-ablation seed metric')
+    return values
+
+
 def verify(results, expected_path):
     results = Path(results)
     expected = json.loads(Path(expected_path).read_text())
+    objective_raw = read(results/'followup/E_seed_results.csv')
+    objective_intervals = read(results/'followup/E_pop_minus_base_paired.csv')
     raw = read(results/'s3/extracted_seed_results.csv')
-    intervals = read(results/'s3/repeat_intervals.csv')
     residual_intervals = read(results/'checks/C_paired_repeat_ci.csv')
     table4 = table4_cells(expected)
     checks, points = [], []
+    figure_expectations = expected['figure1']
+    seen_expectations = set()
 
     def compare(name, observed, target, tolerance, source):
         observed, target = float(observed), float(target)
@@ -104,41 +127,59 @@ def verify(results, expected_path):
         if not all(math.isfinite(x) for x in observed) or not observed[1] <= observed[0] <= observed[2]:
             raise ValueError('Invalid plotted interval: ' + label)
         for field, value, target in zip(('mean', 'ci95_low', 'ci95_high'), observed, recomputed):
-            compare(label + ':' + field, value, target, NUMERIC_ATOL_POINTS, 'paired_seed_recomputation')
+            compare(label + ':' + field, value, target, NUMERIC_ATOL_POINTS, 'independent_paired_seed_recomputation')
         points.append(dict(panel=panel, coordinate=label, mean_points=observed[0],
                            ci95_low_points=observed[1], ci95_high_points=observed[2],
                            n_training_seeds=len(SEEDS)))
         return observed
 
+    def compare_manuscript(section, coordinate, observed, **keys):
+        # Only printed manuscript values belong here. Unprinted interval values
+        # remain independently checked against raw seeds above, never invented.
+        subset = choose(figure_expectations[section], **keys)
+        if len(subset) > 1:
+            raise ValueError('Duplicate manuscript figure expectation: ' + coordinate)
+        if not subset:
+            return
+        entry = subset[0]
+        seen_expectations.add((section, tuple(sorted((key, str(value)) for key, value in keys.items()))))
+        for field, actual in zip(('mean_points', 'ci95_low_points', 'ci95_high_points'), observed):
+            if field in entry:
+                token = entry[field]
+                compare(coordinate + ':manuscript_' + field, actual, token,
+                        rounding_tolerance(token), 'expected_values_from_the_manuscript')
+
     for panel, dataset in zip(('a', 'b'), DATASETS):
-        for backbone in BACKBONES:
+        for series, (cohort, architecture, objective) in SERIES.items():
             for protocol in PROTOCOLS:
-                key = (dataset, backbone, protocol)
-                label = '/'.join(key) + ':Pop-Base'
-                row = one(intervals, scope='main_R0', regime='R0', metric='ndcg@20',
-                          selection_policy='identity_inclusive', contrast='Pop-Base',
-                          analysis_family='matched', dataset=dataset, backbone=backbone,
-                          comparison=protocol)
+                label = '/'.join((dataset, series, protocol)) + ':Pop-Base'
+                row = one(objective_intervals, dataset=dataset, cohort=cohort,
+                          architecture=architecture, objective=objective, protocol=protocol,
+                          contrast='Pop-Base', metric='ndcg@20', status='COMPLETE')
                 if (int(row['n_training_seeds']) != 5 or int(row['df']) != 4
                         or float(row['ci_level']) != .95
                         or row['training_seeds'] != ';'.join(map(str, SEEDS))):
                     raise ValueError('Wrong plotted uncertainty cohort: ' + label)
-                base = seed_values(raw, dataset, backbone, protocol, 'base')
-                pop = seed_values(raw, dataset, backbone, protocol, 'item_degree_ranking')
+                base = objective_seed_values(objective_raw, dataset, series, protocol, 'base')
+                pop = objective_seed_values(objective_raw, dataset, series, protocol, 'item_degree_ranking')
                 values = record_point(panel, label, row,
                                       ('mean_x100', 'ci_low_x100', 'ci_high_x100'),
                                       paired_statistics(pop, base))
-                base_token, pop_token = table4[key][0], table4[key][2]
-                for method, values_by_seed, token in (('Base', base, base_token), ('Pop', pop, pop_token)):
-                    compare(label + ':Table4_' + method, mean(values_by_seed.values()), token,
-                            rounding_tolerance(token), 'manuscript_Table4')
-                compare(label + ':Table4_difference', values[0], float(pop_token) - float(base_token),
-                        rounding_tolerance(pop_token) + rounding_tolerance(base_token),
-                        'difference_of_manuscript_rounded_cells')
+                compare_manuscript('objective_pop_minus_base', label, values,
+                                   dataset=dataset, series=series, protocol=protocol)
+                # Table 4 remains unchanged and covers the two original S3 cohorts.
+                if series in ('NFM-BCE', 'MF-BPR'):
+                    backbone = 'NFM' if series == 'NFM-BCE' else 'MF_BPR'
+                    base_token, pop_token = table4[(dataset, backbone, protocol)][0:3:2]
+                    for method, seed_metrics, token in (('Base', base, base_token), ('Pop', pop, pop_token)):
+                        compare(label + ':Table4_' + method, mean(seed_metrics.values()), token,
+                                rounding_tolerance(token), 'manuscript_Table4')
+                    compare(label + ':Table4_difference', values[0], float(pop_token) - float(base_token),
+                            rounding_tolerance(pop_token) + rounding_tolerance(base_token),
+                            'difference_of_manuscript_rounded_cells')
 
     conditions = (('W', 'W', 'matched'), ('W', 'F', 'frozen'), ('F', 'F', 'matched'))
-    body = expected['body']['figure1_panel_c_residual_minus_base']
-    for offset, (fit, evaluation, family) in enumerate(conditions, 5):
+    for fit, evaluation, family in conditions:
         label = 'yelp2018/MF_BPR/' + fit + '->' + evaluation + ':Res(p)-Base'
         row = one(residual_intervals, dataset='yelp2018', backbone='MF_BPR',
                   contrast='Res(p)-Base', fit_protocol=fit, eval_protocol=evaluation,
@@ -151,29 +192,30 @@ def verify(results, expected_path):
         base = seed_values(raw, 'yelp2018', 'MF_BPR', evaluation, 'base')
         values = record_point('c', label, row, ('mean_x100', 'ci95_low_x100', 'ci95_high_x100'),
                               paired_statistics(residual, base))
-        table5 = expected['tables']['5'][offset]
-        clean_label = re.sub('[^A-Za-z]', '', table5['label'])
-        if not clean_label.endswith(fit + 'to' + evaluation) or len(table5['expected_numeric_tokens']) != 8:
-            raise ValueError('Unexpected Table 5 residual expectation: ' + table5['label'])
-        residual_token = table5['expected_numeric_tokens'][6]  # Yelp2018 MF-BPR, fourth column pair.
-        base_token = table4[('yelp2018', 'MF_BPR', evaluation)][0]
-        compare(label + ':Table5_Residual', mean(residual.values()), residual_token,
-                rounding_tolerance(residual_token), 'manuscript_Table5')
-        compare(label + ':Table5_minus_Table4', values[0], float(residual_token) - float(base_token),
-                rounding_tolerance(residual_token) + rounding_tolerance(base_token),
-                'difference_of_manuscript_rounded_cells')
-        token = body[fit + '->' + evaluation]
-        compare(label + ':manuscript_body', values[0], token, rounding_tolerance(token), 'manuscript_body')
+        compare_manuscript('residual_minus_base', label, values,
+                           fit_protocol=fit, eval_protocol=evaluation)
 
+    expected_count = sum(len(figure_expectations[key]) for key in ('objective_pop_minus_base', 'residual_minus_base'))
+    if len(seen_expectations) != expected_count:
+        raise ValueError('Some manuscript figure expectation has no plotted coordinate')
+    if len(points) != 27 or sum(point['panel'] in ('a', 'b') for point in points) != 24:
+        raise ValueError('Expected 24 objective-ablation points plus three residual points')
     failed = [check for check in checks if check['status'] != 'PASS']
     return dict(status='PASS' if not failed else 'FAIL', plotted_points=len(points),
+                objective_ablation_points=24, residual_points=3,
                 plotted_values_checked=3*len(points), total_checks=len(checks),
                 passed_checks=len(checks)-len(failed), failed_checks=len(failed),
+                manuscript_coordinate_entries=expected_count,
+                manuscript_printed_expectation_coordinates=sum(
+                    any(field in entry for field in ('mean_points', 'ci95_low_points', 'ci95_high_points'))
+                    for section in ('objective_pop_minus_base', 'residual_minus_base')
+                    for entry in figure_expectations[section]),
                 raw_numeric_tolerance_points=NUMERIC_ATOL_POINTS,
                 interval_rule='paired five-training-seed Student-t 95% CI, df=4',
+                raw_evidence='E_seed_results.csv for panels a,b; extracted_seed_results.csv for panel c',
                 manuscript_rule='half a printed unit; summed rounding bounds for differences of rounded cells',
+                unprinted_values_rule='all means and interval endpoints independently recomputed from five seed results',
                 pixel_comparison_performed=False, points=points, checks=checks)
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

@@ -1,5 +1,7 @@
 {
-  "source": "Expected values from the submitted manuscript; expected values only, not recomputed evidence",
+  "source": "Expected values transcribed from the submitted manuscript, not from observed result CSVs",
+  "manuscript_sha256": "8adccbb67c15596f93eedafff7cea35b1a3c6597699f12c79cfcd293c06aaa06",
+  "display_tolerance": "Half a unit at the last displayed decimal place for metrics, including rounded integer metrics. Integer counts and labels are exact.",
   "tables": {
     "2": [
       {
@@ -686,67 +688,2139 @@
           "2",
           "2"
         ]
-      },
-      {
-        "label": "\\Res{p} W$\\to$W",
-        "expected_numeric_tokens": [
-          "14.22",
-          "0.27",
-          "32.93",
-          "0.15",
-          "7.53",
-          "0.09",
-          "41.83",
-          "0.47"
-        ]
-      },
-      {
-        "label": "W$\\to$F",
-        "expected_numeric_tokens": [
-          "9.55",
-          "0.47",
-          "25.03",
-          "0.27",
-          "0.08",
-          "0.08",
-          "1.52",
-          "0.07"
-        ]
-      },
-      {
-        "label": "F$\\to$F",
-        "expected_numeric_tokens": [
-          "9.57",
-          "0.47",
-          "25.41",
-          "0.20",
-          "0.07",
-          "0.07",
-          "3.61",
-          "0.03"
-        ]
-      },
-      {
-        "label": "U$\\to$F",
-        "expected_numeric_tokens": [
-          "9.59",
-          "0.46",
-          "25.03",
-          "0.27",
-          "0.11",
-          "0.08",
-          "3.60",
-          "0.05"
-        ]
       }
     ]
   },
-  "body": {
-    "s1_npgc_relative_gain_max_percent": "10.9",
-    "figure1_panel_c_residual_minus_base": {
-      "W->W": "1.64",
-      "W->F": "-2.06",
-      "F->F": "0.03"
+  "body_claims": [
+    {
+      "id": "s1.coordinates",
+      "expected": 54,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        21,
+        194,
+        282,
+        339
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.pop_wins.ndcg20",
+      "expected": 54,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        21,
+        194,
+        339
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.pop_wins.recall20",
+      "expected": 54,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        21,
+        194,
+        339
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.datasets",
+      "expected": 3,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        22,
+        57,
+        59,
+        60,
+        277,
+        278,
+        282,
+        356
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.backbones",
+      "expected": 6,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        22,
+        57,
+        59,
+        60,
+        277,
+        278,
+        282
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.splits",
+      "expected": 3,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        22,
+        57,
+        59,
+        60,
+        277,
+        278,
+        282
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.pop_gain_min",
+      "expected": "7.5",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        340,
+        341,
+        344
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.pop_gain_max",
+      "expected": "14.0",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        340,
+        341,
+        344
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.npgc_gain_max",
+      "expected": "1.6",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        340,
+        341,
+        344
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.npgc_relative_min",
+      "expected": "3.7",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        340,
+        341,
+        344
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "s1.npgc_relative_max",
+      "expected": "10.9",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        340,
+        341,
+        344
+      ],
+      "evidence": "s1/benchmark_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.npgc_relative_min",
+      "expected": "3.9",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        345,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.npgc_relative_max",
+      "expected": "11.3",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        345,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.pop_npgc_min",
+      "expected": "12.3",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        345,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.pop_npgc_max",
+      "expected": "22.3",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        345,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.runs",
+      "expected": 30,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        194,
+        346,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.pop_wins",
+      "expected": 30,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        194,
+        346,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "fullpool.backbones",
+      "expected": 5,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        194,
+        346,
+        347
+      ],
+      "evidence": "followup/S1_fullpool_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "mostpop.catalog.yelp2018",
+      "expected": "1.00",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        356
+      ],
+      "evidence": "checks/D_mostpop_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "mostpop.catalog.amazon-books",
+      "expected": "0.66",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        356
+      ],
+      "evidence": "checks/D_mostpop_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "mostpop.catalog.ml-1m",
+      "expected": "12.8",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        356
+      ],
+      "evidence": "checks/D_mostpop_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.yelp_u_mean",
+      "expected": "13.7",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        351
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.amazon_w_min",
+      "expected": "0.3",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        352
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.amazon_w_max",
+      "expected": "0.4",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        352
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.yelp_amazon_f_base_max",
+      "expected": "0.07",
+      "kind": "display_metric",
+      "operator": "lt",
+      "manuscript_lines": [
+        355
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.ml_f_pop_gain",
+      "expected": "5",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        358
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "fresh.ml_f_fraction_max",
+      "expected": "0.5",
+      "kind": "display_metric",
+      "operator": "lt",
+      "manuscript_lines": [
+        357
+      ],
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.yelp2018.min",
+      "expected": "0.9",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.yelp2018.max",
+      "expected": "1.0",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.yelp2018.backbones",
+      "expected": 6,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.ml-1m.min",
+      "expected": "2.2",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.ml-1m.max",
+      "expected": "2.5",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.ml-1m.backbones",
+      "expected": 6,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        359
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s1.npgc_abs_max",
+      "expected": "0.13",
+      "kind": "display_metric",
+      "operator": "le",
+      "manuscript_lines": [
+        360
+      ],
+      "evidence": "followup/DF_s1_paired.csv",
+      "note": "Rounded upper bound at two decimal places."
+    },
+    {
+      "id": "objective.yelp2018.S3_NFM_BCE",
+      "expected": "13.2",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        371
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "objective.yelp2018.S3_MF_BPR",
+      "expected": "-18.7",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        371,
+        412
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "objective.yelp2018.E1_NFM_BPR",
+      "expected": "-21.2",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        373
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "objective.yelp2018.E2_MF_BCE",
+      "expected": "3.9",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        374
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "objective.ml-1m.E1_NFM_BPR",
+      "expected": "-13.8",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        375
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "objective.ml-1m.E2_MF_BCE",
+      "expected": "9.1",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        375
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "abstract.nfm_bce_pop",
+      "expected": "13",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        30
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "abstract.nfm_bpr_pop",
+      "expected": "-21",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        30
+      ],
+      "evidence": "followup/E_pop_minus_base_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "accuracy_rule.combinations",
+      "expected": 24,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        380
+      ],
+      "evidence": "followup/E_summary.csv;checks/D_mostpop.csv",
+      "note": ""
+    },
+    {
+      "id": "accuracy_rule.exceptions",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        382
+      ],
+      "evidence": "followup/E_summary.csv;checks/D_mostpop.csv",
+      "note": ""
+    },
+    {
+      "id": "accuracy_rule.exception_effect",
+      "expected": "0.04",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        413
+      ],
+      "evidence": "followup/E_summary.csv;checks/D_mostpop.csv",
+      "note": ""
+    },
+    {
+      "id": "accuracy_rule.exception_location",
+      "expected": "yelp2018/S3_MF_BPR/F",
+      "kind": "label",
+      "operator": "eq",
+      "manuscript_lines": [
+        382,
+        413
+      ],
+      "evidence": "followup/E_summary.csv;checks/D_mostpop.csv",
+      "note": ""
+    },
+    {
+      "id": "accuracy_rule.exception_inside_margin",
+      "expected": "0.25",
+      "kind": "display_metric",
+      "operator": "lt",
+      "manuscript_lines": [
+        25,
+        157,
+        314
+      ],
+      "evidence": "followup/E_summary.csv;checks/D_mostpop.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.matched",
+      "expected": 96,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        26,
+        322,
+        409
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.matched_reversals",
+      "expected": 0,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        26,
+        189,
+        409,
+        441,
+        479
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.frozen",
+      "expected": 40,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        326
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.comparisons",
+      "expected": 136,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        451,
+        474
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.cells",
+      "expected": 4,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        323,
+        474,
+        322
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.registered_contrasts",
+      "expected": 8,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        318,
+        389
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.frozen_contrasts",
+      "expected": 5,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        326,
+        389
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.ml_f_total",
+      "expected": 52,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        417
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.ml_f_transfer",
+      "expected": 37,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        417
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.yelp_f_vanish",
+      "expected": 28,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        418
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.yelp_uw_vanish",
+      "expected": 6,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        419
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.nofloor_f_total",
+      "expected": 78,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        425
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.nofloor_f_transfer",
+      "expected": 37,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        425
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.yelp_delta01_f_transfer",
+      "expected": 5,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        426
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.reversals",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        432
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.user_bootstrap_agreement",
+      "expected": 117,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        451
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "s3.yelp_nfm_f_coverage",
+      "expected": "0.21",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        420
+      ],
+      "evidence": "s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "s3.yelp_mf_f_headroom",
+      "expected": "12",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        424
+      ],
+      "evidence": "s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "s3.yelp_mf_f_max_capture",
+      "expected": "1",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        424
+      ],
+      "evidence": "s3/homogeneous_method_summary.csv",
+      "note": "About 1 percent, rounded to an integer percentage."
+    },
+    {
+      "id": "tost.tests",
+      "expected": 16,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        427,
+        428,
+        329
+      ],
+      "evidence": "s3/tost_holm_primary.csv",
+      "note": ""
+    },
+    {
+      "id": "tost.equivalent",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        427,
+        428
+      ],
+      "evidence": "s3/tost_holm_primary.csv",
+      "note": ""
+    },
+    {
+      "id": "tost.beyond_margin",
+      "expected": 10,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        427,
+        428
+      ],
+      "evidence": "s3/tost_holm_primary.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.pop_uf_change_min",
+      "expected": "7",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        428
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "transfer.pop_uf_change_max",
+      "expected": "19",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        429
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "recall.matched_reversals",
+      "expected": 4,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        27,
+        429,
+        26
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "recall.yelp_reversals",
+      "expected": 4,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        430
+      ],
+      "evidence": "s3/transfer_classification.csv",
+      "note": ""
+    },
+    {
+      "id": "leaders.uf_same",
+      "expected": 20,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        413,
+        414
+      ],
+      "evidence": "s3/selection_regret.csv",
+      "note": "Every four cells times five training repeats."
+    },
+    {
+      "id": "df.s3.yelp_pop_gain",
+      "expected": "1.0",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        423
+      ],
+      "evidence": "followup/DF_s3_paired.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s3.yelp_u.Pop-Base",
+      "expected": "T",
+      "kind": "label",
+      "operator": "eq",
+      "manuscript_lines": [
+        422,
+        423
+      ],
+      "evidence": "followup/DF_s3_transfer.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s3.yelp_u.Pop-NPGC",
+      "expected": "T",
+      "kind": "label",
+      "operator": "eq",
+      "manuscript_lines": [
+        422,
+        423
+      ],
+      "evidence": "followup/DF_s3_transfer.csv",
+      "note": ""
+    },
+    {
+      "id": "df.s3.yelp_u.NPGC-Base",
+      "expected": "V",
+      "kind": "label",
+      "operator": "eq",
+      "manuscript_lines": [
+        422,
+        423
+      ],
+      "evidence": "followup/DF_s3_transfer.csv",
+      "note": ""
+    },
+    {
+      "id": "allpairs.method_pairs",
+      "expected": 15,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        439,
+        440,
+        441
+      ],
+      "evidence": "followup/P0_all_pairs_reversals.csv;followup/P0_extended_counts.csv",
+      "note": ""
+    },
+    {
+      "id": "allpairs.reversals",
+      "expected": 4,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        439,
+        440,
+        441
+      ],
+      "evidence": "followup/P0_all_pairs_reversals.csv;followup/P0_extended_counts.csv",
+      "note": ""
+    },
+    {
+      "id": "allpairs.matched_reversals",
+      "expected": 0,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        439,
+        440,
+        441
+      ],
+      "evidence": "followup/P0_all_pairs_reversals.csv;followup/P0_extended_counts.csv",
+      "note": ""
+    },
+    {
+      "id": "allpairs.yelp_mf_wf_residual_reversals",
+      "expected": 4,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        439,
+        440,
+        441
+      ],
+      "evidence": "followup/P0_all_pairs_reversals.csv;followup/P0_extended_counts.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.yelp_nfm_wdf_resp",
+      "expected": "0.46",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        445
+      ],
+      "evidence": "followup/DF_frozen_learned.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_ww_base",
+      "expected": "1.6",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        435
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_wf_base",
+      "expected": "-2.1",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        435
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_ww_pop",
+      "expected": "28.7",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        438
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_wf_pop",
+      "expected": "-2.09",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        438
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_wf_pop_ci_low",
+      "expected": "-2.21",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        439
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.resp_wf_pop_ci_high",
+      "expected": "-1.98",
+      "kind": "display_metric",
+      "operator": "eq",
+      "manuscript_lines": [
+        439
+      ],
+      "evidence": "checks/C_paired_repeat_ci.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.yelp_mf_scoreonly_gap",
+      "expected": 0,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        441
+      ],
+      "evidence": "s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "frozen.yelp_mf_prm_abs_gap",
+      "expected": "0.17",
+      "kind": "display_metric",
+      "operator": "le",
+      "manuscript_lines": [
+        443
+      ],
+      "evidence": "s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "residual.mf_identity",
+      "expected": 137,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        447
+      ],
+      "evidence": "s3/extracted_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "residual.mf_fits",
+      "expected": 240,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        447
+      ],
+      "evidence": "s3/extracted_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "residual.yelp_mf_w_negative_pd",
+      "expected": 5,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        434
+      ],
+      "evidence": "checks/C_partial_dependence_repeat_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.delta01_reversals",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.delta05_reversals",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.headroom02_reversals",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.trained_only_reversals",
+      "expected": 1,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.headroom01_reversals",
+      "expected": 3,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "sensitivity.headroom01_additional_yelp_nfm",
+      "expected": 2,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        448,
+        449,
+        450
+      ],
+      "evidence": "s3/transfer_classification.csv;s3/homogeneous_method_summary.csv",
+      "note": ""
+    },
+    {
+      "id": "p4.draws",
+      "expected": 5,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        468
+      ],
+      "evidence": "followup/P4_seed_results.csv",
+      "note": ""
+    },
+    {
+      "id": "p4.decisions",
+      "expected": 8,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        468
+      ],
+      "evidence": "followup/P4_transfer.csv",
+      "note": ""
+    },
+    {
+      "id": "p4.unchanged",
+      "expected": 8,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        468
+      ],
+      "evidence": "followup/P4_transfer.csv",
+      "note": ""
+    },
+    {
+      "id": "official.audit_cells",
+      "expected": 2,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        252
+      ],
+      "evidence": "checks/A_npgc_equivalence.csv",
+      "note": ""
+    },
+    {
+      "id": "official.max_error",
+      "expected": "0.0000004",
+      "kind": "display_metric",
+      "operator": "le",
+      "manuscript_lines": [
+        252
+      ],
+      "evidence": "checks/A_npgc_equivalence.csv",
+      "note": ""
+    },
+    {
+      "id": "setting.s1_split_train_pct",
+      "expected": 80,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        282
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s1_split_valid_pct",
+      "expected": 10,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        282
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s1_split_test_pct",
+      "expected": 10,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        282
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.rating_threshold",
+      "expected": 4,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        301
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s1_negatives",
+      "expected": 100,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        284
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.top_m",
+      "expected": 50,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        21,
+        71,
+        96,
+        124,
+        233,
+        242,
+        286,
+        355,
+        194
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.metric_cutoff",
+      "expected": 20,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        25,
+        26,
+        27,
+        71,
+        96,
+        124,
+        157,
+        271,
+        290,
+        295,
+        304,
+        307,
+        339,
+        389,
+        409,
+        429,
+        479
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.npgc_k_yelp_ml",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        249
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.npgc_k_amazon",
+      "expected": 5,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        249
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s1_seed_start",
+      "expected": 2020,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        282
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s1_seed_end",
+      "expected": 2022,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        282
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s2_dimensions",
+      "expected": 64,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        288
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_dimensions",
+      "expected": 64,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        294
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_split_seed",
+      "expected": 2020,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        291
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_negatives",
+      "expected": 100,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        234
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_bpr_training_negatives",
+      "expected": 1,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        299
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_repeat_seeds",
+      "expected": 5,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        60,
+        296,
+        410,
+        434,
+        468
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_seed_start",
+      "expected": 2020,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        297
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_seed_end",
+      "expected": 2024,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        297
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.repeat_ci_pct",
+      "expected": 95,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        106,
+        157,
+        309,
+        313,
+        439
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.equivalence_ci_pct",
+      "expected": 90,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        316,
+        317
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.margin_points",
+      "expected": "0.25",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        25,
+        157,
+        314,
+        479
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.sensitivity_margin_min",
+      "expected": "0.1",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        426,
+        448
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.sensitivity_margin_max",
+      "expected": "0.5",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        448
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.residual_lr",
+      "expected": "0.001",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        270
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.residual_weight_decay",
+      "expected": "0.0001",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        270
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.residual_batch",
+      "expected": 256,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        271
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.residual_epochs",
+      "expected": 50,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        271
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_batch",
+      "expected": 32,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        274
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_epochs",
+      "expected": 100,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        274
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_grid_min",
+      "expected": "0.0001",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        273
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_grid_max",
+      "expected": "0.0003",
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        273
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_selection_seed",
+      "expected": 2020,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        274
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mask_count",
+      "expected": 8,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        266
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.feature_groups",
+      "expected": 3,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        261,
+        266
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_datasets",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        466
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.s3_backbones",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        198,
+        298,
+        372
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.protocols",
+      "expected": 3,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        295,
+        296
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mlp_dim_0",
+      "expected": 7,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        259
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mlp_dim_1",
+      "expected": 32,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        259
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mlp_dim_2",
+      "expected": 16,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        259
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mlp_dim_3",
+      "expected": 1,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        259
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.mlp_parameters",
+      "expected": 801,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        259
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.zero_output_initialization",
+      "expected": 0,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        260
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.residual_optimizer",
+      "expected": "AdamW",
+      "kind": "label",
+      "operator": "eq",
+      "manuscript_lines": [
+        270
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.reranker_partition_pct",
+      "expected": 10,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        293
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.backbone_partition_pct",
+      "expected": 90,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        292
+      ],
+      "evidence": "configs/s1;configs/s2;configs/s3;src/studies/s3;src/diagnostics/revision_evidence/common.py",
+      "note": "Read-only JSON or AST inspection. No model import, initialization, training, or inference."
+    },
+    {
+      "id": "setting.prm_selection_batch",
+      "expected": 32,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        273,
+        274
+      ],
+      "evidence": "configs/s3/prm_selection/*/*/*.json",
+      "note": "The manuscript attaches batch32 to seed2020 LR selection. Two ML-1M U grids record batch16384, confirmed from original trial configs and training histories. Formal R0 fits separately use32. Evidence is preserved."
+    },
+    {
+      "id": "s1.orderings",
+      "expected": 3,
+      "kind": "count",
+      "operator": "eq",
+      "manuscript_lines": [
+        71
+      ],
+      "evidence": "results/s1/benchmark_seed_metrics.csv",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.reference_methods",
+      "expected": 3,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        27,
+        413
+      ],
+      "evidence": "configs/s3/analysis_plan.json",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.s3_split_count",
+      "expected": 1,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        291,
+        368,
+        466
+      ],
+      "evidence": "configs/s3/backbones",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.s3_shared_checkpoint",
+      "expected": 1,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        124
+      ],
+      "evidence": "configs/s3/backbones",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.fixed_validation_pools_per_dataset",
+      "expected": 1,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        295
+      ],
+      "evidence": "configs/s3/backbones",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.metric_scale",
+      "expected": 100,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        305
+      ],
+      "evidence": "results/followup/E_pop_minus_base_paired.csv",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.objective_types",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        198,
+        298,
+        372
+      ],
+      "evidence": "results/followup/E_summary.csv",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.contrast_methods",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        312
+      ],
+      "evidence": "configs/s3/analysis_plan.json",
+      "note": "Explicit design count or setting, recomputed without executing a model."
+    },
+    {
+      "id": "setting.contrast_protocols",
+      "expected": 2,
+      "kind": "setting",
+      "operator": "eq",
+      "manuscript_lines": [
+        312
+      ],
+      "evidence": "paper/transfer_counts.py:SRC",
+      "note": "Explicit design count or setting, recomputed without executing a model."
     }
-  }
+  ],
+  "figure1": {
+    "objective_pop_minus_base": [
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "U",
+        "mean_points": "13.2"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "W"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "F"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "U",
+        "mean_points": "-21.2"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "W"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "F"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "U",
+        "mean_points": "3.9"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "W"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "F"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "U",
+        "mean_points": "-18.7"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "W"
+      },
+      {
+        "dataset": "yelp2018",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "F"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "U"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "W"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BCE",
+        "cohort": "S3_NFM_BCE",
+        "protocol": "F"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "U",
+        "mean_points": "-13.8"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "W"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "NFM-BPR",
+        "cohort": "E1_NFM_BPR",
+        "protocol": "F"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "U",
+        "mean_points": "9.1"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "W"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BCE",
+        "cohort": "E2_MF_BCE",
+        "protocol": "F"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "U"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "W"
+      },
+      {
+        "dataset": "ml-1m",
+        "series": "MF-BPR",
+        "cohort": "S3_MF_BPR",
+        "protocol": "F"
+      }
+    ],
+    "residual_minus_base": [
+      {
+        "fit_protocol": "W",
+        "eval_protocol": "W",
+        "mean_points": "1.6"
+      },
+      {
+        "fit_protocol": "W",
+        "eval_protocol": "F",
+        "mean_points": "-2.1"
+      },
+      {
+        "fit_protocol": "F",
+        "eval_protocol": "F"
+      }
+    ]
+  },
+  "external_reference_claims": [
+    {
+      "manuscript_lines": [
+        277,
+        279
+      ],
+      "numbers": [
+        "four",
+        "seven"
+      ],
+      "evidence": "citation:ouyang2025nonparamgc",
+      "status": "EXTERNAL_REFERENCE_NOT_RECALCULATED"
+    },
+    {
+      "manuscript_lines": [
+        342,
+        343,
+        344
+      ],
+      "numbers": [
+        "five",
+        "three",
+        "0.7",
+        "11.4"
+      ],
+      "evidence": "citation:ouyang2025nonparamgc",
+      "status": "EXTERNAL_REFERENCE_NOT_RECALCULATED",
+      "note": "The released result CSVs do not contain the original paper score table."
+    }
+  ],
+  "descriptive_approximations": [
+    {
+      "manuscript_lines": [
+        353
+      ],
+      "expression": "a third",
+      "evidence": "s1/fresh_seed_metrics.csv",
+      "note": "The exact W/U ratio is printed as a descriptive value, not assigned an invented pass tolerance."
+    }
+  ]
 }

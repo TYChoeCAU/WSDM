@@ -1,0 +1,17 @@
+file,field,changed_rows
+E_seed_results.csv,source_evidence,360
+E_seed_results.csv,spearman_evidence,360
+DF_s3_seed_results.csv,predictions_path,50
+DF_frozen_learned_seed_results.csv,checkpoint_path,180
+DF_frozen_learned_seed_results.csv,predictions_path,180
+DF_frozen_learned_seed_results.csv,source_result_path,180
+S1_fullpool_seed_results.csv,source,90
+P0_all_pairs_reversals.csv,source_evidence,4
+P0_all_pairs_reversals.csv,target_evidence,4
+P0_sign_flips.csv,source_evidence,110
+P0_sign_flips.csv,target_evidence,110
+P4_draw_variance.csv,source_evidence,208
+DF_checks.json,S3.coordinates.[].complete_path,10
+DF_checks.json,S3.coordinates.[].feature_cache_path,10
+DF_checks.json,S3.coordinates.[].fixed_pool_path,10
+DF_checks.json,S3.coordinates.[].mf_F_base_result,10

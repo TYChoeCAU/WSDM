@@ -9,13 +9,13 @@ def main():
  tables=build(args.results)
  for n,rows in tables.items():
   lines=[r'% Manuscript Table '+str(n)+'. Generated from saved CSV evidence.',r'% Requires booktabs and the manuscript macro \newcommand{\Score}[2]{\ensuremath{#1_{\pm #2}}}.',r'\begin{tabular}{'+COLS[n]+'}',r'\toprule',HEADERS[n],r'\midrule']
+  if n==5:lines.insert(1, '% Counts follow T/R/E/V/X: transfer/reverse/equivalent/vanish/unresolved.')
   if n==2:
    lines.insert(-1,'Backbone & '+ ' & '.join(['Base','NPGC','Pop','CR','Orc.']*3)+r' \\')
   for i,r in enumerate(rows):
-   if n==5 and i==5:lines.append(r'\midrule')
    lines.append(r['label']+' & '+' & '.join(render(c) for c in r['cells'])+r' \\')
   lines += [r'\bottomrule',r'\end{tabular}']
   (args.out/f'table{n}.tex').write_text('\n'.join(lines)+'\n')
  (args.out/'table_values.json').write_text(json.dumps(tables,indent=2)+'\n')
- print(f'Wrote Tables 1--5 to {args.out} (Table 5 includes all count cells and Res(p) fit-to-evaluation values).')
+ print(f'Wrote Tables 1--5 to {args.out} (Table 5 contains only T/R/E/V/X counts).')
 if __name__=='__main__':main()

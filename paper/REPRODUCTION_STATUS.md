@@ -1,23 +1,33 @@
 # Release reproduction status
 
-The CSV-only commands were executed in a newly created Python 3.10 virtual environment installed from `requirements.txt`. No site packages, private experiment modules, model checkpoints, or GPU were used. `pip check`, table generation, figure generation, and the supplied transfer-count command passed. The paper commands complete in seconds after installation.
+The CSV-only commands below were executed in a new Python 3.10 virtual environment installed from `requirements.txt`, without system site packages. They require no GPU, model checkpoints or private experiment modules. `pip check` passed.
+
+| README command | Result | Exit code |
+| --- | --- | --- |
+| `paper/make_tables.py` | Tables generated. Tables 2–4 remain byte-identical to the previous release outputs. | 0 |
+| `paper/make_transfer_fig.py` | Four-series figure generated from the completed CSV evidence. | 0 |
+| `paper/transfer_counts.py` | Counts generated with unresolved category `X`. | 0 |
+| `paper/paper_numbers.py` | 720/721 checks pass. One recorded manuscript-setting discrepancy remains. | 1 |
+| `paper/verify_figure.py` | 125/125 value checks pass. | 0 |
 
 ## Numerical claims
 
-`paper_numbers.py` reports **660 PASS / 0 MISMATCH**, with exit code 0. Every numeric cell in Tables 2–5 agrees at manuscript precision. Expected values from the submitted manuscript are stored in `configs/analysis_expected.json`. Raw result CSVs remain unchanged.
+Expected values from the submitted manuscript are stored in `configs/analysis_expected.json`. All checked table values and numerical performance claims pass at their displayed precision. Counts and discrete settings require exact agreement. The evidence and expected settings have not been changed to conceal the following discrepancy.
+
+The manuscript describes PRM+PL learning-rate selection with batch size 32. Two ML-1M/U selection grids, for NFM and MF-BPR, record batch size 16384 across four trials. The other ten selection grids use 32. All 60 formal R0 PRM+PL fits separately use batch size 32. This makes `setting.prm_selection_batch` fail, so `paper_numbers.py` intentionally returns exit code 1 and lists the discrepancy in its report.
+
+`configs/manuscript_numeric_inventory.json` classifies 825 numerical tokens from the abstract, main text, captions and Tables 2–5, with no unmapped tokens. It distinguishes 222 local-claim tokens, 524 table-value tokens, 51 identifiers, 17 structural descriptions, three mathematical or protocol definitions, seven external-reference tokens and one qualitative approximation. External-reference claims are not independently recalculated from the local evidence. The phrase “a third” remains a disclosed approximation, with its exact evidence ratios reported separately. Neither category is counted as a computational PASS.
 
 ## Figure values
 
-`verify_figure.py` reads the 12 Pop−Base effects and intervals in panels (a) and (b), plus the three Res(p)−Base effects and intervals in panel (c), directly from the CSVs and compares them with manuscript expectations.
-
-```bash
-python paper/verify_figure.py --results results --out outputs/figure_value_check.json
-```
+`verify_figure.py` checks all 24 Pop−Base points in panels (a) and (b), plus the three Res(p)−Base points in panel (c). It checks 81 means and interval endpoints against seed-level evidence, 36 connections to Table 4, and eight printed manuscript expectations, for 125 checks in total.
 
 Fonts and rendering environments can produce different pixels, while the figure values agree with the CSV evidence.
 
-## Full pipeline validation
+## Code validation and preservation
 
-The fixed configurations and executable imports were checked with a separate copy of the pinned official upstream commit plus the two published patches. S1 restored all 54 actual configurations. S2 enumerated six final repeats. S3 validated 720 matched method coordinates, 20 backbone settings, and its R0 batch constraints. CPU data-preparation checks compare recorded split and candidate-pool digests. Numerical functions were compared structurally against their original implementation before extraction.
+`tests/test_core_runtime.py` passed all four tests with zero skips in a separate existing runtime containing the pinned upstream implementation plus its published patches. The new follow-up entry point passed seven help checks in the new analysis environment. All 17 follow-up modules imported in the upstream-enabled runtime. Static checks found 19 selected numerical implementations structurally identical to their original functions, with all four recorded E training profiles preserved. These static and import checks do not establish end-to-end numerical reproduction of the extracted GPU pipeline.
 
-These checks do not establish that every complete GPU run has been reproduced in the extracted repository. No new model fitting, catalog model inference, or graph query was performed during release preparation. The full suite is deliberately left to the explicit training commands, separately from the tested CSV-only reproduction path.
+The 73 existing core source files and 40 existing result CSVs remain byte-identical. The 26 added evidence files preserve their numerical values. Only provenance paths are anonymized, as detailed in `results/FORMAT.md`. The original release copy and manuscript remain unchanged. The public source and generated PDF/PNG files passed identity and embedded-metadata checks.
+
+No new model fitting, catalog inference, graph query or feature-cache generation was performed during this update. Full follow-up execution requires the data, selected checkpoints and candidate artifacts described in the README and explicit local manifest. Missing historical identity records remain marked as unavailable. Import checks and CSV reproduction do not certify those missing records.

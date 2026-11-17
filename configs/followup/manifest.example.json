@@ -1,0 +1,41 @@
+{
+  "description": "Only replace example local paths. artifact: and historical/ IDs are provenance labels and cannot be loaded as files. Paths are relative to this manifest directory or absolute on your machine.",
+  "inputs": {
+    "s3_seed_results": "../../results/s3/extracted_seed_results.csv",
+    "s3_spearman": "../../results/checks/list_spearman_seed_results.csv"
+  },
+  "s1": [
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "checkpoint": "../../artifacts/s1/ml-1m/NFM/seed_2020/backbone.pth",
+      "benchmark_cache": "../../artifacts/s1/ml-1m/NFM/seed_2020/benchmark_candidates.pt",
+      "native_neighbors": "../../artifacts/s1/ml-1m/NFM/seed_2020/native_neighbors.npz"
+    }
+  ],
+  "s2": [
+    {
+      "dataset": "ml-1m",
+      "backbone": "MF_BPR",
+      "seed": 2020,
+      "split_bundle": "../../artifacts/s2/private/splits/ml-1m/seed_2020.pt",
+      "test_scores": "../../artifacts/s2/cf/ml-1m/seed_2020/selected/F_predictions.pt",
+      "selected_result": "../../artifacts/s2/cf/ml-1m/seed_2020/lr_0.001_wd_0/result.json",
+      "checkpoint_sha256": "REPLACE_WITH_ACTUAL_SHA256",
+      "test_scores_sha256": "REPLACE_WITH_ACTUAL_SHA256"
+    }
+  ],
+  "s3_backbones": [],
+  "s3_caches": [],
+  "s3_results": [],
+  "path_map": {},
+  "schema": {
+    "s1": "dataset,backbone,seed plus checkpoint, native_neighbors, benchmark_cache. Historical cache adapters may instead supply top50_cache and fullpool_cache separately.",
+    "s2": "dataset,backbone=MF_BPR,seed plus explicit local split_bundle/test_scores/selected_result. Public S2 outputs require current checkpoint_sha256/test_scores_sha256 because historic saved signatures are absent. Historical signed input may supply complete/parity/selected_profile/checkpoint.",
+    "s3_backbones": "Optional dataset,backbone,seed,result_path. Otherwise use --s3-run/backbones.",
+    "s3_caches": "Optional dataset,backbone,seed,protocol,directory,feature_cache_path,slate_cache_path,complete_path. Otherwise use --s3-run/cache.",
+    "s3_results": "Optional dataset,backbone,seed,protocol,method,family,result_path. Otherwise matched source results use --s3-run/runs.",
+    "path_map": "Explicit exact old input value to current local path, only for relocating external metadata. Never needed for fresh public S3 runs."
+  }
+}

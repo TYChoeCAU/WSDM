@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    "yelp2018",
+    "ml-1m"
+  ],
+  "seeds": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "phases": [
+    "E1",
+    "E2"
+  ],
+  "candidate_draw_seeds": [
+    8702031,
+    8702032,
+    8702033,
+    8702034,
+    8702035
+  ],
+  "training_batch": 4096,
+  "negative_per_relevant": 100
+}

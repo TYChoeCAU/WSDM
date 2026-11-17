@@ -1,0 +1,2344 @@
+{
+  "S3": {
+    "all_mandatory_checks_pass": true,
+    "completed_coordinates": 10,
+    "coordinates": [
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "22e73041608fbdad539358a57eea9ed66cdec04265590762cca20017637462e3",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2020/F/complete.json",
+        "dataset": "ml-1m",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2020/F/feature_cache.pt",
+        "feature_cache_sha256": "df4da101bc53e6569ef89e547d47c9bddcaf28abbdb991f3faeb9cc566abf8ac",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/ml-1m/fixed_W_pools.pt",
+        "fixed_pool_sha256": "df81da074ebfcc6b64fbcfe90645d446ecde81a7c9c5b78b8ceddb5b396392d6",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.23567913948853247,
+          "ndcg@20": 0.25418810342123666,
+          "recall@10": 0.20410780337507234,
+          "recall@20": 0.29807738866224864
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.23567913948853247,
+          "ndcg@20": 0.25418810342123666,
+          "recall@10": 0.20410780337507234,
+          "recall@20": 0.29807738866224864
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2020/F/base/result.json",
+        "mf_pair_score_max_error": 2.384185791015625e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.1920928955078125e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.4616094986104499,
+        "reference_oracle_ndcg20": 0.5909150370105456,
+        "retriever_checkpoint_sha256": "bb514f42bcee59129057e9da2bb253dad0c4f0cdfabb0f33a923a7c2a6927734",
+        "seed": 2020,
+        "source_scorer_checkpoint_sha256": "9e7874e34e672e007c1a969e6c89aa0dbfb9499014b6025e4afa40a1ea4c66d4"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "50812550745c13844b4a3561c6b7b5b02899903179fc20758c33175387ab8451",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 5.551115123125783e-17,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2021/F/complete.json",
+        "dataset": "ml-1m",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2021/F/feature_cache.pt",
+        "feature_cache_sha256": "3f1857b0bcf8368e3dbe76276c1fcbcf8a7df6b3b94f315c12bfbb0fa43ae51f",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/ml-1m/fixed_W_pools.pt",
+        "fixed_pool_sha256": "df81da074ebfcc6b64fbcfe90645d446ecde81a7c9c5b78b8ceddb5b396392d6",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.23176858390726737,
+          "ndcg@20": 0.250251754728773,
+          "recall@10": 0.19920597789610728,
+          "recall@20": 0.29391012855922094
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.23176858390726737,
+          "ndcg@20": 0.250251754728773,
+          "recall@10": 0.19920597789610728,
+          "recall@20": 0.29391012855922094
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2021/F/base/result.json",
+        "mf_pair_score_max_error": 1.7881393432617188e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.1920928955078125e-07,
+        "oracle_ndcg20_error": 1.1102230246251565e-16,
+        "reference_candidate_recall50": 0.4598200440506362,
+        "reference_oracle_ndcg20": 0.5890358428138366,
+        "retriever_checkpoint_sha256": "78c8bcbfdca16bb1e5fdc6e443cba294f60ab4900dcf41fe17f05555fef01071",
+        "seed": 2021,
+        "source_scorer_checkpoint_sha256": "5182cd56aa173b5829e935715aa0330eb43a60e6b3cb5edc2c4cbfb5a8cf0498"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "399a717c411c9059226270d69e818d71f0c986f36c1fe6436a2cd865792c2e28",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2022/F/complete.json",
+        "dataset": "ml-1m",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/ml-1m/MF_BPR/seed_2022/F/feature_cache.pt",
+        "feature_cache_sha256": "2066b955fe865f601f467e7774945f030696223adfb5913e0786b2b26dfceb25",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/ml-1m/fixed_W_pools.pt",
+        "fixed_pool_sha256": "df81da074ebfcc6b64fbcfe90645d446ecde81a7c9c5b78b8ceddb5b396392d6",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.2323669193722752,
+          "ndcg@20": 0.25138094722612975,
+          "recall@10": 0.20199844310014078,
+          "recall@20": 0.2972811218763659
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.2323669193722752,
+          "ndcg@20": 0.25138094722612975,
+          "recall@10": 0.20199844310014078,
+          "recall@20": 0.2972811218763659
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/ml-1m/MF_BPR/seed_2022/F/base/result.json",
+        "mf_pair_score_max_error": 1.7881393432617188e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.1920928955078125e-07,
+        "oracle_ndcg20_error": 1.1102230246251565e-16,
+        "reference_candidate_recall50": 0.45866853228000715,
+        "reference_oracle_ndcg20": 0.5882020369901025,
+        "retriever_checkpoint_sha256": "f73db0285e39681584f4e5293816727811c45ff29256959ea45c58abae369cfc",
+        "seed": 2022,
+        "source_scorer_checkpoint_sha256": "aef4076442641931e8873d20d1ffdb97427593e0037205236971bc8adab3fe39"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "d96392eacdb7dc4b59fa4d8058f0f22eff8e30321cd61200e8defc34525cd0a7",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/ml-1m/MF_BPR/seed_2023/F/complete.json",
+        "dataset": "ml-1m",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/ml-1m/MF_BPR/seed_2023/F/feature_cache.pt",
+        "feature_cache_sha256": "67da60dbaba9010bef9e42fddb32a78f9927a37c53c575f5fc1731c62531b068",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/ml-1m/fixed_W_pools.pt",
+        "fixed_pool_sha256": "df81da074ebfcc6b64fbcfe90645d446ecde81a7c9c5b78b8ceddb5b396392d6",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.22848612146669098,
+          "ndcg@20": 0.24874270705334467,
+          "recall@10": 0.19835402874037242,
+          "recall@20": 0.2965174084254482
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.22848612146669098,
+          "ndcg@20": 0.24874270705334467,
+          "recall@10": 0.19835402874037242,
+          "recall@20": 0.2965174084254482
+        },
+        "mf_F_base_result": "artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2023/F/base/result.json",
+        "mf_pair_score_max_error": 2.384185791015625e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.1920928955078125e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.46035157106789043,
+        "reference_oracle_ndcg20": 0.5890970373571961,
+        "retriever_checkpoint_sha256": "23cb1dea0cda8f1a3d1d8151142004fbabca02584b2e5edf4165ef087fb793ee",
+        "seed": 2023,
+        "source_scorer_checkpoint_sha256": "0e5141c8b8f45300b08bcf3bad0167c63286913a9b50d016d4f31b5febfbff4e"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "cbecd9611eb02c627791e9d080de43786082b8030d42d0161b194f18d1a0724a",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 5.551115123125783e-17,
+        "complete_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/ml-1m/MF_BPR/seed_2024/F/complete.json",
+        "dataset": "ml-1m",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/ml-1m/MF_BPR/seed_2024/F/feature_cache.pt",
+        "feature_cache_sha256": "c121cd5b21d1cad07ceee0a85c1ecfcbf681f0325164f091494afd494c47aa46",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/ml-1m/fixed_W_pools.pt",
+        "fixed_pool_sha256": "df81da074ebfcc6b64fbcfe90645d446ecde81a7c9c5b78b8ceddb5b396392d6",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.2281965517175926,
+          "ndcg@20": 0.24714895364877118,
+          "recall@10": 0.19978328540350604,
+          "recall@20": 0.2941570603710885
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.2281965517175926,
+          "ndcg@20": 0.24714895364877118,
+          "recall@10": 0.19978328540350604,
+          "recall@20": 0.2941570603710885
+        },
+        "mf_F_base_result": "artifact:results/w2w3_priority/20261117_040624_KST/runs/ml-1m/MF_BPR/seed_2024/F/base/result.json",
+        "mf_pair_score_max_error": 2.980232238769531e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.1920928955078125e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.45446909023416593,
+        "reference_oracle_ndcg20": 0.5830907455930381,
+        "retriever_checkpoint_sha256": "7df1c3c30c63064130fe91e523e20a67591088864f1e658b52bb25475ee920ea",
+        "seed": 2024,
+        "source_scorer_checkpoint_sha256": "08512396d2bcb7c1efc9fd7a3fbfc85591a27ad2895d7af7cc48d7015ef5c8b1"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "6d3ca77ff021f73a8ed73af9df73ab23e50c2c8fc96ea1513c60caa434352beb",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2020/F/complete.json",
+        "dataset": "yelp2018",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2020/F/feature_cache.pt",
+        "feature_cache_sha256": "58158ea29b373d20f57c1be22a80f1ded14bdfe1d9f8f7dd32aeda369c0036bf",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/yelp2018/fixed_W_pools.pt",
+        "fixed_pool_sha256": "6f5eb5c91473a56cb4ee4b07363aecbe4dd4cb662b29b7383a7335876723e3d7",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.027277868179664093,
+          "ndcg@20": 0.03636763010849361,
+          "recall@10": 0.04330140484091142,
+          "recall@20": 0.07371959036980091
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.027277868179664093,
+          "ndcg@20": 0.03636763010849361,
+          "recall@10": 0.04330140484091142,
+          "recall@20": 0.07371959036980091
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2020/F/base/result.json",
+        "mf_pair_score_max_error": 1.1920928955078125e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.7881393432617188e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.13670335984712342,
+        "reference_oracle_ndcg20": 0.16166961860350035,
+        "retriever_checkpoint_sha256": "89578ff297020095c13448beb96aed9a7d0cf24a427915664ce265f1fb21e09d",
+        "seed": 2020,
+        "source_scorer_checkpoint_sha256": "fa0e1b174a46a945325bc2c21905e35f9799a7ac2f542d92eb3ec34865d41c48"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "c5458037d0db95773dc67e9d1325cfa6c218cdd42e063f179774117467bd4ab6",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2021/F/complete.json",
+        "dataset": "yelp2018",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2021/F/feature_cache.pt",
+        "feature_cache_sha256": "1eb279bc85d3ffc0f4a6f31f2c65db81fe99f152c811f5b8ce901d59efd4207b",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/yelp2018/fixed_W_pools.pt",
+        "fixed_pool_sha256": "6f5eb5c91473a56cb4ee4b07363aecbe4dd4cb662b29b7383a7335876723e3d7",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.027121410357279527,
+          "ndcg@20": 0.03572164025390431,
+          "recall@10": 0.04384423924601197,
+          "recall@20": 0.07213777199366941
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.027121410357279527,
+          "ndcg@20": 0.03572164025390431,
+          "recall@10": 0.04384423924601197,
+          "recall@20": 0.07213777199366941
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2021/F/base/result.json",
+        "mf_pair_score_max_error": 1.1920928955078125e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.7881393432617188e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.13387895603055341,
+        "reference_oracle_ndcg20": 0.1588608781705604,
+        "retriever_checkpoint_sha256": "8a6920cb9913f12347d02d6eb54115cc61dea5bfb5f94e73806a6af944c3b359",
+        "seed": 2021,
+        "source_scorer_checkpoint_sha256": "8b52e15b328bd9e2d8a895e2be259f906e6c8e184201de7a0daadd2fe8f649c0"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "b7585554d7d38d3211c882dae1ad7b6afe62e2cb9ddf164b8ff602ae691b5390",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2022/F/complete.json",
+        "dataset": "yelp2018",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/cache/yelp2018/MF_BPR/seed_2022/F/feature_cache.pt",
+        "feature_cache_sha256": "3b20f052fbfbbb6fda5b906903590a0ab290212ed652cfd87b934cd9984321d0",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/yelp2018/fixed_W_pools.pt",
+        "fixed_pool_sha256": "6f5eb5c91473a56cb4ee4b07363aecbe4dd4cb662b29b7383a7335876723e3d7",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.02666085225857495,
+          "ndcg@20": 0.03520374544664334,
+          "recall@10": 0.0431309522809958,
+          "recall@20": 0.07135565273436671
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.02666085225857495,
+          "ndcg@20": 0.03520374544664334,
+          "recall@10": 0.0431309522809958,
+          "recall@20": 0.07135565273436671
+        },
+        "mf_F_base_result": "artifact:results/matched_cross_review/20261116_072634_KST/runs/yelp2018/MF_BPR/seed_2022/F/base/result.json",
+        "mf_pair_score_max_error": 1.1920928955078125e-07,
+        "mf_scoring_check_max_metric_error": 0.0,
+        "native_direct_parity_max_error": 1.7881393432617188e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.1329745519776108,
+        "reference_oracle_ndcg20": 0.15733640771382498,
+        "retriever_checkpoint_sha256": "587e5ea8d3da1a154d5ad6f1aaf15d375fad956328e3f2c13b50118b7b65bf50",
+        "seed": 2022,
+        "source_scorer_checkpoint_sha256": "a9311b5a84f2f4a01ca5567501d830c508ce3a678d7d4beb38a92b36cf389cda"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "7236eee1ea73d7f74eb4d62f38f3afe7bca8e0b9447c96a9c59a23456806e8fd",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/yelp2018/MF_BPR/seed_2023/F/complete.json",
+        "dataset": "yelp2018",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/yelp2018/MF_BPR/seed_2023/F/feature_cache.pt",
+        "feature_cache_sha256": "4c62e6666fd602b27731773f058406fa35ec1cc564a1246021a20ad0c6283483",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/yelp2018/fixed_W_pools.pt",
+        "fixed_pool_sha256": "6f5eb5c91473a56cb4ee4b07363aecbe4dd4cb662b29b7383a7335876723e3d7",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.026993402093847346,
+          "ndcg@20": 0.03563170146748247,
+          "recall@10": 0.04261060969512388,
+          "recall@20": 0.07101357030824691
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.026993402093847346,
+          "ndcg@20": 0.035631611961339425,
+          "recall@10": 0.04261060969512388,
+          "recall@20": 0.07101357030824691
+        },
+        "mf_F_base_result": "artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2023/F/base/result.json",
+        "mf_pair_score_max_error": 1.1920928955078125e-07,
+        "mf_scoring_check_max_metric_error": 8.95061430458699e-08,
+        "native_direct_parity_max_error": 1.7881393432617188e-07,
+        "oracle_ndcg20_error": 0.0,
+        "reference_candidate_recall50": 0.13123955451595265,
+        "reference_oracle_ndcg20": 0.15552679262903923,
+        "retriever_checkpoint_sha256": "4e4acd44f0dfa4cceac71fa528cde5e347dbdb9321f39cbb7558f749ca86d4a3",
+        "seed": 2023,
+        "source_scorer_checkpoint_sha256": "0a9d54b0768756a617d3bf507a1e90a95e93aea43ea58a5c401d335af8e66098"
+      },
+      {
+        "all_mandatory_checks_pass": true,
+        "all_methods_same_candidate_digest": "35494acc54bc9238de5eb71a6463bf73d36ffa43512accc74995d2df2c76a2fa",
+        "all_methods_same_candidate_ids": true,
+        "cached_F_signature_verified": true,
+        "candidate_label_digest_exact": true,
+        "candidate_recall50_error": 0.0,
+        "complete_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/yelp2018/MF_BPR/seed_2024/F/complete.json",
+        "dataset": "yelp2018",
+        "exclusion_violations": 0,
+        "existing_full_catalog_top20_check": true,
+        "feature_cache_path": "artifact:results/w2w3_priority/20261117_040624_KST/cache/yelp2018/MF_BPR/seed_2024/F/feature_cache.pt",
+        "feature_cache_sha256": "a2399736ef5b7516994c420bd973d5ba269d9451b085378d5e31839a7464937e",
+        "fixed_pool_path": "artifact:results/matched_cross_review/20261116_072634_KST/master/yelp2018/fixed_W_pools.pt",
+        "fixed_pool_sha256": "6f5eb5c91473a56cb4ee4b07363aecbe4dd4cb662b29b7383a7335876723e3d7",
+        "full_truth_exact": true,
+        "manuscript_eligible": true,
+        "mf_F_base_original": {
+          "ndcg@10": 0.027183430248108636,
+          "ndcg@20": 0.035800840803565236,
+          "recall@10": 0.04273273909046182,
+          "recall@20": 0.07137733599388241
+        },
+        "mf_F_base_recomputed": {
+          "ndcg@10": 0.027183430248108636,
+          "ndcg@20": 0.035800793733355964,
+          "recall@10": 0.04273273909046182,
+          "recall@20": 0.07137733599388241
+        },
+        "mf_F_base_result": "artifact:results/w2w3_priority/20261117_040624_KST/runs/yelp2018/MF_BPR/seed_2024/F/base/result.json",
+        "mf_pair_score_max_error": 1.1920928955078125e-07,
+        "mf_scoring_check_max_metric_error": 4.707020927197103e-08,
+        "native_direct_parity_max_error": 1.7881393432617188e-07,
+        "oracle_ndcg20_error": 2.7755575615628914e-17,
+        "reference_candidate_recall50": 0.1332126041450191,
+        "reference_oracle_ndcg20": 0.15800338702974764,
+        "retriever_checkpoint_sha256": "91bf06c7ed8ee4d71ab37c223c1018c49d3bb6345e5678c63e41b9b77028320e",
+        "seed": 2024,
+        "source_scorer_checkpoint_sha256": "ba81ca2d5aeff42f2be29a6c6e268643460e6443700388111a1229b111e1a1f3"
+      }
+    ],
+    "expected_coordinates": 10,
+    "final_consistency_status": "PASS",
+    "fixed_and_frozen_candidate_digests_exact": true,
+    "frozen_completed": 180,
+    "frozen_expected": 180,
+    "identifier_matching": "exact",
+    "new_training_runs": 0,
+    "original_sources_read_only": true,
+    "raw_metric_atol": 0.001,
+    "rounded_mean_reference_checks": [
+      {
+        "actual_means_raw": [
+          0.13360180530325189,
+          0.15827941682933452,
+          0.03574508430074733
+        ],
+        "dataset": "yelp2018",
+        "maximum_raw_error": 4.508430074733061e-05,
+        "pass_atol_1e3": true,
+        "task_rounded_reference_raw": [
+          0.1336,
+          0.1583,
+          0.0357
+        ]
+      },
+      {
+        "actual_means_raw": [
+          0.4589837472486299,
+          0.5880681399529438,
+          0.250342493215651
+        ],
+        "dataset": "ml-1m",
+        "maximum_raw_error": 4.249321565097386e-05,
+        "pass_atol_1e3": true,
+        "task_rounded_reference_raw": [
+          0.459,
+          0.5881,
+          0.2503
+        ]
+      }
+    ],
+    "selected_checkpoint_policy_recorded_correctly": true,
+    "status": "COMPLETE",
+    "unique_frozen_keys": 180
+  },
+  "S1": {
+    "completed_coordinates": 36,
+    "checks": [
+      {
+        "dataset": "ml-1m",
+        "backbone": "AutoInt",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "AutoInt",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "AutoInt",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "DCNV2",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 0.0,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "DCNV2",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 0.0,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "DCNV2",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 0.0,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "EulerNet",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "EulerNet",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.7881393432617188e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "EulerNet",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "NFM",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "NFM",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "NFM",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "QNN_alpha",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "QNN_alpha",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "QNN_alpha",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "xDeepFM",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57532,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57519,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5747,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "xDeepFM",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57332,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57390,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5754,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.7881393432617188e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "ml-1m",
+        "backbone": "xDeepFM",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 798833,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57463,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 57566,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 5761,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 0.0,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.7881393432617188e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "AutoInt",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "AutoInt",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "AutoInt",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "DCNV2",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "DCNV2",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "DCNV2",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "EulerNet",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 2.384185791015625e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "EulerNet",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 2.980232238769531e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "EulerNet",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 2.384185791015625e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "NFM",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 5.960464477539063e-08,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "NFM",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "NFM",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "QNN_alpha",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "QNN_alpha",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "QNN_alpha",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.1920928955078125e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "xDeepFM",
+        "seed": 2020,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139018,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139227,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 54053,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 5.7220458984375e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 2.384185791015625e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "xDeepFM",
+        "seed": 2021,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139320,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139088,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53931,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 4.76837158203125e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.7881393432617188e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      },
+      {
+        "dataset": "yelp2018",
+        "backbone": "xDeepFM",
+        "seed": 2022,
+        "split_membership": {
+          "train": {
+            "ordered_equal": true,
+            "row_multiset_equal": true,
+            "rows": 1683118,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "valid": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139286,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          },
+          "test": {
+            "ordered_equal": false,
+            "row_multiset_equal": true,
+            "rows": 139233,
+            "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+          }
+        },
+        "mapping_exact": true,
+        "full_truth_exact": true,
+        "exclusion_violations": 0,
+        "all_methods_same_candidates": true,
+        "existing_full_catalog_prefix_check": {
+          "dense_checked_users": 8,
+          "full_catalog_top20_checked_users": 53856,
+          "full_catalog_top20_equals_F_base_top20": true,
+          "max_score_abs_error": 3.814697265625e-06,
+          "status": "PASS",
+          "tolerance": {
+            "float32": {
+              "atol": 0.0001,
+              "rtol": 0.0001
+            },
+            "float64": {
+              "atol": 1e-08,
+              "rtol": 1e-08
+            },
+            "id_and_mask": "exact"
+          },
+          "top50_ids_exact": true
+        },
+        "native_parity_max_error": 1.7881393432617188e-07,
+        "manuscript_eligible": true,
+        "no_checkpoint_reselection": true
+      }
+    ]
+  },
+  "followup_validation": {
+    "status": "PASS",
+    "checked_at_kst": "2026-11-18T00:58:03.498698+09:00",
+    "numeric_atol": 0.001,
+    "coverage": {
+      "P2-1": {
+        "status": "COMPLETE",
+        "completed": 10,
+        "expected": 10,
+        "missing": [],
+        "extra": []
+      },
+      "P2-2": {
+        "status": "COMPLETE",
+        "completed": 180,
+        "expected": 180,
+        "missing": [],
+        "extra": []
+      },
+      "P2-3": {
+        "status": "COMPLETE",
+        "completed": 36,
+        "expected": 36,
+        "missing": [],
+        "extra": []
+      },
+      "P3": {
+        "status": "COMPLETE",
+        "completed": 30,
+        "expected": 30,
+        "missing": [],
+        "extra": []
+      },
+      "P4": {
+        "status": "COMPLETE",
+        "completed": 40,
+        "expected": 40,
+        "missing": [],
+        "extra": []
+      }
+    },
+    "original_files_checked": 121,
+    "original_files_changed": [],
+    "unverifiable_historical_inputs": 24,
+    "fullpool_checks": 180,
+    "s1_shared_retrieval_groups": 6,
+    "paired_p4_pool_digest_checks": 20,
+    "issues": [],
+    "new_training_runs": 0,
+    "all_original_manuscripts_preserved": true
+  }
+}

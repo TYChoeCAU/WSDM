@@ -1,0 +1,1841 @@
+{
+  "completed_coordinates": 36,
+  "checks": [
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 0.0,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 0.0,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 0.0,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.7881393432617188e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "QNN_alpha",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "QNN_alpha",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "QNN_alpha",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57532,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57519,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5747,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57332,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57390,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5754,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.7881393432617188e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 798833,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57463,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 57566,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 5761,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 0.0,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.7881393432617188e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 2.384185791015625e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 2.980232238769531e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 2.384185791015625e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 5.960464477539063e-08,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "QNN_alpha",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "QNN_alpha",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "QNN_alpha",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.1920928955078125e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139018,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139227,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 54053,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 5.7220458984375e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 2.384185791015625e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139320,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139088,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53931,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 4.76837158203125e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.7881393432617188e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "split_membership": {
+        "train": {
+          "ordered_equal": true,
+          "row_multiset_equal": true,
+          "rows": 1683118,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "valid": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139286,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        },
+        "test": {
+          "ordered_equal": false,
+          "row_multiset_equal": true,
+          "rows": 139233,
+          "loader_order_note": "held-out sampler sorts rows by user after dataset.build; train order remains exact"
+        }
+      },
+      "mapping_exact": true,
+      "full_truth_exact": true,
+      "exclusion_violations": 0,
+      "all_methods_same_candidates": true,
+      "existing_full_catalog_prefix_check": {
+        "dense_checked_users": 8,
+        "full_catalog_top20_checked_users": 53856,
+        "full_catalog_top20_equals_F_base_top20": true,
+        "max_score_abs_error": 3.814697265625e-06,
+        "status": "PASS",
+        "tolerance": {
+          "float32": {
+            "atol": 0.0001,
+            "rtol": 0.0001
+          },
+          "float64": {
+            "atol": 1e-08,
+            "rtol": 1e-08
+          },
+          "id_and_mask": "exact"
+        },
+        "top50_ids_exact": true
+      },
+      "native_parity_max_error": 1.7881393432617188e-07,
+      "manuscript_eligible": true,
+      "no_checkpoint_reselection": true
+    }
+  ]
+}
