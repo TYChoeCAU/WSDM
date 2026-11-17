@@ -1,7 +1,3 @@
-# When Do Re-ranking Conclusions Transfer across Sampled and Catalog Candidates?
-
-Anonymous review artifact for the submitted manuscript. Offline re-ranking studies often use sampled candidate pools, while a deployed re-ranker receives lists selected from a catalog. This study tests whether conclusions transfer across uniform (U), popularity-weighted (W), and full-catalog (F) candidates. Popularity sorting beats NPGC in all 54 benchmark runs. Matched retraining produces no NDCG@20 reversals at a margin of 0.25 points, although many sampled effects vanish within that margin. The popularity effect depends on the backbone. A re-ranker trained under W can also lose its advantage on F. These observations support reporting the backbone, a popularity control, candidate recall, and a practical margin.
-
 ## What is included
 
 This repository contains the small recorded evidence, the code that produced it, and portable entrypoints for new runs. It does not contain datasets, checkpoints, candidate tensors, or per-user prediction arrays. No new training was performed to prepare this release. Numerical reproduction from bundled CSVs was tested in a fresh virtual environment. Full training entrypoints were checked through imports, configuration restoration, and data preparation checks, but the complete training suite was not rerun during packaging.
