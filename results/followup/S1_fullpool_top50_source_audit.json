@@ -1,0 +1,906 @@
+{
+  "rows": [
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2020/minimal/gamma/result.json",
+      "expected_sha256": "d67a215b531088e38b705e3d0bd634a91f4106156cc20d15629f2017a0be0f1f",
+      "actual_sha256": "d67a215b531088e38b705e3d0bd634a91f4106156cc20d15629f2017a0be0f1f",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "c774dee6cf560d87768e5a655d50c07cf61b2def35a44722a48b6f84f0f6ed4b",
+      "actual_sha256": "c774dee6cf560d87768e5a655d50c07cf61b2def35a44722a48b6f84f0f6ed4b",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/NFM/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "70cb89cf00503e07b1bc7d477face5bd3c78d50da9015790402e6a242f5872a1",
+      "actual_sha256": "70cb89cf00503e07b1bc7d477face5bd3c78d50da9015790402e6a242f5872a1",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2021/minimal/gamma/result.json",
+      "expected_sha256": "697498031e0c19e15df5735e2764f73536437ca7de94138f0286930c125d7071",
+      "actual_sha256": "697498031e0c19e15df5735e2764f73536437ca7de94138f0286930c125d7071",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "aa62e7293f77b8266441518aa7ad6f977651fb80ef97bbb8c4462343f9ca1705",
+      "actual_sha256": "aa62e7293f77b8266441518aa7ad6f977651fb80ef97bbb8c4462343f9ca1705",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/NFM/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "e42d2b455db3f142a7d60d159aaa1fa8a43cfb6e9314664ec6fdff2906c3e8c5",
+      "actual_sha256": "e42d2b455db3f142a7d60d159aaa1fa8a43cfb6e9314664ec6fdff2906c3e8c5",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2022/minimal/gamma/result.json",
+      "expected_sha256": "a38162cd21cd71c9f5b40e0c1b5c69b993e0383d67ba2ac975c80125692b5803",
+      "actual_sha256": "a38162cd21cd71c9f5b40e0c1b5c69b993e0383d67ba2ac975c80125692b5803",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "eb784ff5829320ad7b2de40ccbc594e3d7500e492671f9757513b6f5aeceef43",
+      "actual_sha256": "eb784ff5829320ad7b2de40ccbc594e3d7500e492671f9757513b6f5aeceef43",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/NFM/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "84794d3fdbe3fb3a3462f0a1a0edb4df529972913466cdd83c2f904186729c23",
+      "actual_sha256": "84794d3fdbe3fb3a3462f0a1a0edb4df529972913466cdd83c2f904186729c23",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2020/minimal/gamma/result.json",
+      "expected_sha256": "9cb66149fbff72a3262c58f5b07d3687638404a505c2367c407060e359edd2e7",
+      "actual_sha256": "9cb66149fbff72a3262c58f5b07d3687638404a505c2367c407060e359edd2e7",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "18ced0ca438ac560cb9d085535adbe15e7f69ec42f0c3f5681877ed908ed09df",
+      "actual_sha256": "18ced0ca438ac560cb9d085535adbe15e7f69ec42f0c3f5681877ed908ed09df",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/xDeepFM/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "ae31b82fed215973c7cc49b6a897732f778785e544e13163b12392fefa0d2979",
+      "actual_sha256": "ae31b82fed215973c7cc49b6a897732f778785e544e13163b12392fefa0d2979",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2021/minimal/gamma/result.json",
+      "expected_sha256": "17cc488c8123739d2d4cb0e346fd89c94a279000fdb2fe77005a8edf8f8feaf3",
+      "actual_sha256": "17cc488c8123739d2d4cb0e346fd89c94a279000fdb2fe77005a8edf8f8feaf3",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "abec3b169d9ba5f36097e5a35973fbe8c6a512143d02d0c18edc3559ab50ab3b",
+      "actual_sha256": "abec3b169d9ba5f36097e5a35973fbe8c6a512143d02d0c18edc3559ab50ab3b",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/xDeepFM/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "c27627df6eca287dbe94b8024c6aac4b7c0e4956cc44041128fdfbe84a5479b5",
+      "actual_sha256": "c27627df6eca287dbe94b8024c6aac4b7c0e4956cc44041128fdfbe84a5479b5",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2022/minimal/gamma/result.json",
+      "expected_sha256": "aaa2523d57f8c2f4c5d983aa4df4310c314100ff7844c3e68dd08bf05d81ffe1",
+      "actual_sha256": "aaa2523d57f8c2f4c5d983aa4df4310c314100ff7844c3e68dd08bf05d81ffe1",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "d5e8fa53824596f64d8afed54527107a5774a275d4bb9401c073be99c1689bb4",
+      "actual_sha256": "d5e8fa53824596f64d8afed54527107a5774a275d4bb9401c073be99c1689bb4",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/xDeepFM/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "099264ac99113d1c7785e3268cdad82ecc0d26d3dda18526274496339dbf4c02",
+      "actual_sha256": "099264ac99113d1c7785e3268cdad82ecc0d26d3dda18526274496339dbf4c02",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2020/minimal/gamma/result.json",
+      "expected_sha256": "0f039d712b940bd0d8509e6335fc84fffac8492265194153748a4e9f8ca0e809",
+      "actual_sha256": "0f039d712b940bd0d8509e6335fc84fffac8492265194153748a4e9f8ca0e809",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "c7e7ac52f19ff301d79763a4add85f9b00ad668e17e3d08f9d0778f1ba948307",
+      "actual_sha256": "c7e7ac52f19ff301d79763a4add85f9b00ad668e17e3d08f9d0778f1ba948307",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/DCNV2/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "1390d173a2c0f15a6f3eaf7c55f4f378118db9a1c672c39da808c7f37a0ffe26",
+      "actual_sha256": "1390d173a2c0f15a6f3eaf7c55f4f378118db9a1c672c39da808c7f37a0ffe26",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2021/minimal/gamma/result.json",
+      "expected_sha256": "7050adc3fa14791b898b06fee0463e89ec592f61c1bbb247a8bc17f2090506ad",
+      "actual_sha256": "7050adc3fa14791b898b06fee0463e89ec592f61c1bbb247a8bc17f2090506ad",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "91d6ebe1c1c0f6b1297ccf39ce3b60b17a81514d1eb4f2b18193beb1a1c0fd62",
+      "actual_sha256": "91d6ebe1c1c0f6b1297ccf39ce3b60b17a81514d1eb4f2b18193beb1a1c0fd62",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/DCNV2/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "9eee8f8d2cd4bc916408cb43155b43daf1247b3a0fb6e4ee65b033b0fdc68011",
+      "actual_sha256": "9eee8f8d2cd4bc916408cb43155b43daf1247b3a0fb6e4ee65b033b0fdc68011",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2022/minimal/gamma/result.json",
+      "expected_sha256": "b2190bb78c96e099ef8dbc4b60c92d1a8318c259550da897df6d365bc44f00f2",
+      "actual_sha256": "b2190bb78c96e099ef8dbc4b60c92d1a8318c259550da897df6d365bc44f00f2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "a971cdbf1c0bd2aca9f8c82b88770ab8d704108bcd1d24fd1481245ff90cfa36",
+      "actual_sha256": "a971cdbf1c0bd2aca9f8c82b88770ab8d704108bcd1d24fd1481245ff90cfa36",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/DCNV2/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "77c3235e4330f1e3dc7204b96ccafee50e0b315f6e06e6a47b57e87918ed4efa",
+      "actual_sha256": "77c3235e4330f1e3dc7204b96ccafee50e0b315f6e06e6a47b57e87918ed4efa",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2020/minimal/gamma/result.json",
+      "expected_sha256": "7fa4b870ecb9344dc2b84138daab2f8b868a9e3e9a1cbda435ea7f8adc1be3cd",
+      "actual_sha256": "7fa4b870ecb9344dc2b84138daab2f8b868a9e3e9a1cbda435ea7f8adc1be3cd",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "079e8b12b0ba8b39982a9109daf78ed08598840b3c38fcd857d54f97283a9e92",
+      "actual_sha256": "079e8b12b0ba8b39982a9109daf78ed08598840b3c38fcd857d54f97283a9e92",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/AutoInt/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "6c44bcd21a49e47023f4b0b31f3529b6a4d8227fe1aed890f5fab0f51e1ee0f7",
+      "actual_sha256": "6c44bcd21a49e47023f4b0b31f3529b6a4d8227fe1aed890f5fab0f51e1ee0f7",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2021/minimal/gamma/result.json",
+      "expected_sha256": "b4af2c9009a00d105fe5339724acccce052e1165be2886318452f34981587aab",
+      "actual_sha256": "b4af2c9009a00d105fe5339724acccce052e1165be2886318452f34981587aab",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "0d9f6d84fe6825f906299ce34ff24fae568c4b8234028944f395126f8f69597e",
+      "actual_sha256": "0d9f6d84fe6825f906299ce34ff24fae568c4b8234028944f395126f8f69597e",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/AutoInt/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "b80b7741b5cfb85dd37233077d38efdcfdcb442ea880907adb5676c8cf464b04",
+      "actual_sha256": "b80b7741b5cfb85dd37233077d38efdcfdcb442ea880907adb5676c8cf464b04",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2022/minimal/gamma/result.json",
+      "expected_sha256": "e3a95b7145677e9f92dc15844779f5074e9e793138b3bdf228d223bf2bdedebd",
+      "actual_sha256": "e3a95b7145677e9f92dc15844779f5074e9e793138b3bdf228d223bf2bdedebd",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "e66e425d1c9fca0d09039730dec877eaafd1bdc249e9e24fab5eb2a5bd997986",
+      "actual_sha256": "e66e425d1c9fca0d09039730dec877eaafd1bdc249e9e24fab5eb2a5bd997986",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/AutoInt/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "ae89eabe8263f8d19a20c77d0bcc551b5a56633803f61f9714ede895fe6868b6",
+      "actual_sha256": "ae89eabe8263f8d19a20c77d0bcc551b5a56633803f61f9714ede895fe6868b6",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2020/minimal/gamma/result.json",
+      "expected_sha256": "29fa8c1204482bce964fe68e8f3888c10bdb851bde22899b394766d5e2b3fab7",
+      "actual_sha256": "29fa8c1204482bce964fe68e8f3888c10bdb851bde22899b394766d5e2b3fab7",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "097ade9a628555a4f4e57916c9fe25f7e68b210265c183ba002250c33bbdffda",
+      "actual_sha256": "097ade9a628555a4f4e57916c9fe25f7e68b210265c183ba002250c33bbdffda",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/EulerNet/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "5912e5605b2776e03eb979350138787bcf517297fbae75e9e8b21534b1af0549",
+      "actual_sha256": "5912e5605b2776e03eb979350138787bcf517297fbae75e9e8b21534b1af0549",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2021/minimal/gamma/result.json",
+      "expected_sha256": "0108f46ce9dc2248c26ca8f881b5203d33871e3f9ae8b6677384a195ea041515",
+      "actual_sha256": "0108f46ce9dc2248c26ca8f881b5203d33871e3f9ae8b6677384a195ea041515",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "b01d369c59296637751f23309ffa27e9e16e6a8f34e602e2fecec7840b375b4a",
+      "actual_sha256": "b01d369c59296637751f23309ffa27e9e16e6a8f34e602e2fecec7840b375b4a",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/EulerNet/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "6dd487a154366de3efc7458d881a01127562554f526ee7441956c1aa9f485ae6",
+      "actual_sha256": "6dd487a154366de3efc7458d881a01127562554f526ee7441956c1aa9f485ae6",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2022/minimal/gamma/result.json",
+      "expected_sha256": "1e911ddba64cc2053e51d27d484081a7c35b1beac1f2de3c57fa75929abeef0c",
+      "actual_sha256": "1e911ddba64cc2053e51d27d484081a7c35b1beac1f2de3c57fa75929abeef0c",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "e35bdec98d008dc2ba1a12363f739d39412f0d9080eb280c1ca55c2344503576",
+      "actual_sha256": "e35bdec98d008dc2ba1a12363f739d39412f0d9080eb280c1ca55c2344503576",
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/yelp2018/EulerNet/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "d7da957a6709c59e971337497f5394fe797fc981dc0657d0d78426e35d5b33ae",
+      "actual_sha256": "d7da957a6709c59e971337497f5394fe797fc981dc0657d0d78426e35d5b33ae",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "5b42a4d63e7ab63337c6bd20ab3c86386015d0003e9c71f57539653641a91452",
+      "actual_sha256": "5b42a4d63e7ab63337c6bd20ab3c86386015d0003e9c71f57539653641a91452",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/NFM/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "02d194ffb48b860d8211d34faf793a0fa20063c2984d8bdd4ec8bae5dbfcfbc9",
+      "actual_sha256": "02d194ffb48b860d8211d34faf793a0fa20063c2984d8bdd4ec8bae5dbfcfbc9",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "16586fa3aa8c8afc098b53db54063f9f9be6a3d3b91a38c36ed3d7430811f539",
+      "actual_sha256": "16586fa3aa8c8afc098b53db54063f9f9be6a3d3b91a38c36ed3d7430811f539",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/NFM/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "3fb31d6eb76ae20531d78cf9b31ec42cb0ad263faa4ea26ac14421c3419c9cfd",
+      "actual_sha256": "3fb31d6eb76ae20531d78cf9b31ec42cb0ad263faa4ea26ac14421c3419c9cfd",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "976a720a5e8b3441a31d471c6d0aa2d0c98c4d5a1f8dcacfd4ecb6a86d2283b2",
+      "actual_sha256": "976a720a5e8b3441a31d471c6d0aa2d0c98c4d5a1f8dcacfd4ecb6a86d2283b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/NFM/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "cccb65ea0ae56dcad559b11d6a1a7aea795842e70868e80cef7a73c30f106162",
+      "actual_sha256": "cccb65ea0ae56dcad559b11d6a1a7aea795842e70868e80cef7a73c30f106162",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "269060b83d6ca57e74973e67ff72ab2cc0b1379a9abd25a0e4e6a2ddee3a5a2c",
+      "actual_sha256": "269060b83d6ca57e74973e67ff72ab2cc0b1379a9abd25a0e4e6a2ddee3a5a2c",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/xDeepFM/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "caa0b939d55e8675456fe5ca783b4de33fcc80c7fee85546be019c71da3674cc",
+      "actual_sha256": "caa0b939d55e8675456fe5ca783b4de33fcc80c7fee85546be019c71da3674cc",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "7ad7eb1acd5414851fb316ebcdc3ab3ba34948b695ca0e80681735614bcd13e7",
+      "actual_sha256": "7ad7eb1acd5414851fb316ebcdc3ab3ba34948b695ca0e80681735614bcd13e7",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/xDeepFM/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "bbfc5110619991e7956297477fcee480b61009080557fa9b9d652fdd3c7a58bb",
+      "actual_sha256": "bbfc5110619991e7956297477fcee480b61009080557fa9b9d652fdd3c7a58bb",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "165dd7c08a2513cc8d59c5adbc295431b2dcf3cf1b6f30caa66db0c371fabb82",
+      "actual_sha256": "165dd7c08a2513cc8d59c5adbc295431b2dcf3cf1b6f30caa66db0c371fabb82",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/xDeepFM/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "6df3fcbb91e5d4f3f83f8d5d0fe167719ffbf67304a926da5242d378e3bd8453",
+      "actual_sha256": "6df3fcbb91e5d4f3f83f8d5d0fe167719ffbf67304a926da5242d378e3bd8453",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "f02fded620b71981903fbc1383a6659ee8a349443927db6051e3dac75db881a5",
+      "actual_sha256": "f02fded620b71981903fbc1383a6659ee8a349443927db6051e3dac75db881a5",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/DCNV2/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "7ebe18b8e66daa48c7133116a7821c76ff6acfcac5d56cc90bda33922de26c0d",
+      "actual_sha256": "7ebe18b8e66daa48c7133116a7821c76ff6acfcac5d56cc90bda33922de26c0d",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "ef159a11c903e5c556826dcf9d9258d42b8fb4f6a55a7b61f4e22fd69eec1b4c",
+      "actual_sha256": "ef159a11c903e5c556826dcf9d9258d42b8fb4f6a55a7b61f4e22fd69eec1b4c",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/DCNV2/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "a02c51fdc608abcaf1af89081611ed574fd035f37f786a6458bf51a76957f71b",
+      "actual_sha256": "a02c51fdc608abcaf1af89081611ed574fd035f37f786a6458bf51a76957f71b",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "dec7bb80396fec0baab838be91804b2aaf0409c2870eff4a78b45de4219bafbd",
+      "actual_sha256": "dec7bb80396fec0baab838be91804b2aaf0409c2870eff4a78b45de4219bafbd",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/DCNV2/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "c7a33a37fa297620a9b0bb8d97bae61532497db195ca107f933f39861f9491dd",
+      "actual_sha256": "c7a33a37fa297620a9b0bb8d97bae61532497db195ca107f933f39861f9491dd",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "eef6ec73bf088f1bebe05579d4926dc0f355fefc279f8a80c196691675cefc78",
+      "actual_sha256": "eef6ec73bf088f1bebe05579d4926dc0f355fefc279f8a80c196691675cefc78",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/AutoInt/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "a9c28d5cd656f3c5ed6588eda3f1cbff0f5f332b8c846da0e001f90d88d1620d",
+      "actual_sha256": "a9c28d5cd656f3c5ed6588eda3f1cbff0f5f332b8c846da0e001f90d88d1620d",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "2dcfbb48c425573bf55b3a1c98c34a97343750e8ebafd4bc66c0e80cebf2d965",
+      "actual_sha256": "2dcfbb48c425573bf55b3a1c98c34a97343750e8ebafd4bc66c0e80cebf2d965",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/AutoInt/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "036d3e6ad0502675d9d5f258cdb64903d40d7cec734ab09bf203dd3f3ff67bd8",
+      "actual_sha256": "036d3e6ad0502675d9d5f258cdb64903d40d7cec734ab09bf203dd3f3ff67bd8",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "38efc738b17ec7ef20022c3094dd59250392c7ae9b5c5b4205767be72ee747e0",
+      "actual_sha256": "38efc738b17ec7ef20022c3094dd59250392c7ae9b5c5b4205767be72ee747e0",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/AutoInt/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "9dcb9c251adc0f0492c804484fe057cad41322f3698dd83e90fd3e21b8ddcce0",
+      "actual_sha256": "9dcb9c251adc0f0492c804484fe057cad41322f3698dd83e90fd3e21b8ddcce0",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2020/nonparamgc/uniform/result.json",
+      "expected_sha256": "6f5e53389746979ce747355d00ef9d5baf27db8fb606b08f97f6581802fe36e3",
+      "actual_sha256": "6f5e53389746979ce747355d00ef9d5baf27db8fb606b08f97f6581802fe36e3",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/EulerNet/seed_2020/item_degree_ranking/result.json",
+      "expected_sha256": "4f25f3f63d5d24e95664f9f9327dc825aaffc7011e600f0cb2d7e619b60b06a1",
+      "actual_sha256": "4f25f3f63d5d24e95664f9f9327dc825aaffc7011e600f0cb2d7e619b60b06a1",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2021/nonparamgc/uniform/result.json",
+      "expected_sha256": "d533add9918aed5dbeae1f9e99a5af50aab9e7cd0aaa80b136f7ad9ecec20e3d",
+      "actual_sha256": "d533add9918aed5dbeae1f9e99a5af50aab9e7cd0aaa80b136f7ad9ecec20e3d",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/EulerNet/seed_2021/item_degree_ranking/result.json",
+      "expected_sha256": "be0ee21815215daf6ec6574daea866686bf9a9493123095b8cf966104167c3b6",
+      "actual_sha256": "be0ee21815215daf6ec6574daea866686bf9a9493123095b8cf966104167c3b6",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "base",
+      "source": "artifact:table2_extension_audit/existing_results/raw_csv/final_table1_six_backbone_seed_results.csv",
+      "expected_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "actual_sha256": "13f17a396c1c16b3fa140650587cf20686515de992b5ce29746acaa3f4ee65b2",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "original_nonparamgc",
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2022/nonparamgc/uniform/result.json",
+      "expected_sha256": "e5a655c614d9dad0b34b318e428d103df6b7aead28df6f99652dafdab900373f",
+      "actual_sha256": "e5a655c614d9dad0b34b318e428d103df6b7aead28df6f99652dafdab900373f",
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "method": "item_degree_ranking",
+      "source": "artifact:results/score_degree_essentials/20261108_135429_KST/runs/ml-1m/EulerNet/seed_2022/item_degree_ranking/result.json",
+      "expected_sha256": "56451597a0b432588ab8bc1ee78c3c85c84bf15a36672457a2cb8d8539839a66",
+      "actual_sha256": "56451597a0b432588ab8bc1ee78c3c85c84bf15a36672457a2cb8d8539839a66",
+      "status": "PASS"
+    }
+  ],
+  "checked": 90,
+  "failed": 0
+}

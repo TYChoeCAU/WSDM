@@ -12,7 +12,7 @@ import torch
 
 from baselines.dnr.backbone_adapter import FrozenBackboneAdapter, file_sha256
 from common.io import load_torch
-from min_path_mean.graph import GraphScorerConfig, load_or_build_tables, training_graph
+from graph_rerank.graph import GraphScorerConfig, load_or_build_tables, training_graph
 
 from .evaluate import assert_metrics_close, ranking_metrics
 

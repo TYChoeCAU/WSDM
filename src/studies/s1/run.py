@@ -23,7 +23,7 @@ def prepare_inputs(spec, checkpoint, data_root, output, device):
     from baselines.dnr.data_adapter import build_eval_batches
     from diagnostics.revision_evidence.pipeline import positive_records
     from studies.corrected.native import phase_data, tensor_digest
-    from min_path_mean.graph import training_graph
+    from graph_rerank.graph import training_graph
     target=output/spec['dataset']/spec['backbone']/f"seed_{spec['seed']}"
     target.mkdir(parents=True,exist_ok=True)
     adapter=FrozenBackboneAdapter(checkpoint,device=device,data_root=data_root,sample_num=100,predict_batch_size=262144)
@@ -57,7 +57,7 @@ def evaluate(spec,checkpoint,args):
     from baselines.dnr.data_adapter import truncate_ranked_records
     from diagnostics.revision_evidence.pipeline import top50_from_records,protocol_split,sample_unique_negatives,group_rng
     from diagnostics.revision_evidence.common import atomic_json,write_csv,ranking_metrics
-    from min_path_mean.graph import GraphScorerConfig,load_or_build_tables
+    from graph_rerank.graph import GraphScorerConfig,load_or_build_tables
     from studies.corrected.native import native_scores
     from .static import pack,_catalog_split,oracle_vectors,spearman_rows,summarize_spearman
     from .mostpop import Metrics,full_catalog,top_ids

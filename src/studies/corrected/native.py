@@ -2,8 +2,8 @@
 import hashlib, json
 import numpy as np
 import torch
-from min_path_mean.graph import NeighborTable
-from min_path_mean.reranker import GraphReranker
+from graph_rerank.graph import NeighborTable
+from graph_rerank.reranker import GraphReranker
 from baselines.dnr.backbone_adapter import file_sha256 as sha
 def deadline():
     return None

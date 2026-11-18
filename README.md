@@ -1,28 +1,56 @@
+# What Does a Re-ranking Gain on Sampled Pools Measure? A Case Study with a Popularity Control
+
+Anonymous review artifact for the submitted manuscript. See [SETTINGS.md](SETTINGS.md) for every recorded hyperparameter, seed budget, selection grid, and configuration source. [results/FORMAT.md](results/FORMAT.md) defines evidence keys, units, and repetition units.
+
+The study asks three questions:
+
+- **RQ1 — The popularity control:** does NPGC improve over a simple popularity ordering? Pop exceeds NPGC in 54/54 benchmark Top-50 runs and 30/30 runs with retained whole sampled pools.
+- **RQ2 — The role of the backbone:** how does the control depend on training? Two architectures, NFM and MF, are tested under observed-rating BCE, BCE with added unobserved negatives, and BPR. Under U, the sign follows exposure to unobserved negatives in these tested conditions. Changing BCE to BPR also changes training-row composition. This comparison does not isolate a causal loss-function effect.
+- **RQ3 — Catalog candidates:** does a sampled-pool conclusion persist under F or decoupled retrieval (DF)? Effect sizes change, coverage can limit headroom, and a frozen Res(p) can reverse its sampled lead. The released transfer classifications distinguish practical transfer, reversal, equivalence, vanish, and unresolved outcomes.
 
 ## What is included
 
-This repository contains the small recorded evidence, the code that produced it, and portable entrypoints for new runs. It does not contain datasets, checkpoints, candidate tensors, or per-user prediction arrays. No new training was performed to prepare this release. Numerical reproduction from bundled CSVs was tested in a fresh virtual environment. Full training entrypoints were checked through imports, configuration restoration, and data preparation checks, but the complete training suite was not rerun during packaging.
+The repository contains recorded scalar evidence, configurations, core implementations, and portable execution entrypoints. Datasets, checkpoints, full candidate tensors, and per-user prediction arrays are excluded. The CSV-only commands below require neither those large inputs nor a GPU. Training and inference entrypoints need prepared data, selected checkpoints, and the artifacts specified by their arguments. Release validation checks those paths through imports and core tests, without rerunning experiments. See [paper/REPRODUCTION_STATUS.md](paper/REPRODUCTION_STATUS.md) for the actual validation results.
 
-| Manuscript element | Evidence | Reproduction |
+The manuscript has **Tables 1–4**. Its Figure 1 is a TikZ pipeline inside the manuscript, so it has no data-generated repository artifact. **Figure 2** is the numerical figure generated here.
+
+| Manuscript element | Evidence files relative to `results/` | CSV-only reproduction command |
 |---|---|---|
-| Table 1: study design | `results/studies.csv` | `paper/make_tables.py` |
-| Table 2: S1 benchmark | `results/s1/benchmark_seed_metrics.csv`, `s1_candidate_recall.csv` | `paper/make_tables.py`; `scripts/run_s1.py benchmark` |
-| Table 3: S1 fresh pools/catalog, S2 frozen MF | `results/s1/fresh_seed_metrics.csv`, `results/s2/seed_metrics.csv` | `paper/make_tables.py`; S1 `fresh`, S2 `evaluate` |
-| Table 4: S3 matched methods | `results/s3/homogeneous_method_summary.csv` | `paper/make_tables.py`; `scripts/analyze_s3.py` |
-| Table 5: T/R/E/V/X transfer counts | `results/s3/transfer_classification.csv` | `paper/transfer_counts.py`, `paper/make_tables.py` |
-| Figure 1(a,b): architecture × training 2×2 | `results/followup/E_pop_minus_base_paired.csv`, `E_seed_results.csv` | `paper/make_transfer_fig.py`, `paper/verify_figure.py` |
-| Figure 1(c): frozen Res(p) | `results/checks/C_paired_repeat_ci.csv`, `C_paired_seed_differences.csv` | `paper/make_transfer_fig.py`, `paper/verify_figure.py` |
-| S1 whole-pool comparison | `results/followup/S1_fullpool_*.csv` | `paper/paper_numbers.py`; follow-up `fullpool` |
-| Decoupled retrieval: S1/S3 DF | `results/followup/DF_*.csv`, `DF_checks.json` | `paper/paper_numbers.py`; follow-up `df-s1`, `df-s3` |
-| Expanded and all-pairs transfer counts | `results/followup/P0_*.csv` | `paper/paper_numbers.py`; follow-up `p0` |
-| Candidate-draw variability | `results/followup/P4_*.csv` | `paper/paper_numbers.py`; follow-up `p4` |
-| Sections 4.1–4.3 and Discussion numerical claims | S1–S3, follow-up scalar evidence, MostPop, identity and sensitivity CSVs | `paper/paper_numbers.py` |
+| Table 1, study design (§3) | `studies.csv` | `python paper/make_tables.py --results results --out outputs/tables` |
+| Table 2, benchmark Top-50 (§4.1) | `s1/benchmark_seed_metrics.csv`, `s1/s1_candidate_recall.csv` | `python paper/make_tables.py --results results --out outputs/tables` |
+| Table 3, fresh U/W/F and DF (§4.1–4.2) | `s1/fresh_seed_metrics.csv`, `s2/seed_metrics.csv`, `followup/DF_s1_paired.csv` | `python paper/make_tables.py --results results --out outputs/tables` |
+| Table 4, matched methods and coverage (§4.3) | `s3/homogeneous_method_summary.csv`, `s3/extracted_seed_results.csv` | `python paper/make_tables.py --results results --out outputs/tables` |
+| Figure 2(a,b), six training conditions | `e3/E3_pop_minus_base_paired.csv`, `e3/E3_all_conditions_seed_results.csv` | `python paper/make_transfer_fig.py --e3 results/e3 --checks results/checks --out outputs/transfer_fig` |
+| Figure 2(c), frozen Res(p) | `checks/C_paired_repeat_ci.csv`, `checks/C_paired_seed_differences.csv` | Same figure command; `python paper/verify_figure.py --results results --out outputs/figure_value_check.json` |
+| Abstract, §1 and §4.1, popularity and whole-pool claims | `s1/benchmark_seed_metrics.csv`, `followup/S1_fullpool_*.csv`, `followup/DF_s1_*.csv`, `checks/D_mostpop*.csv` | `python paper/paper_numbers.py --results results --out outputs/PAPER_NUMBER_CHECK.md` |
+| §3 settings, §4.2 training and score diagnostics | `e3/E3_accuracy_rule_36.csv`, `e3/E3_training_3x2_table.csv`, `e3/N1_npgc_popularity_summary.csv`; recorded `configs/` | Same number-check command |
+| §4.3 coverage, transfer, frozen effects; §5 candidate sensitivity | `s3/transfer_classification.csv`, `s3/extracted_seed_results.csv`, `followup/DF_frozen_learned.csv`, `followup/P4_transfer.csv`, `checks/C_*.csv` | Same number-check command; `python paper/transfer_counts.py --run results/s3` |
+| Figure 2 caption, Table 4 caption and remaining numerical claims | Raw seed results, paired intervals, `configs/analysis_expected.json`, `configs/figure_expected.json` | Number-check command and figure-value command above |
 
-See [results/FORMAT.md](results/FORMAT.md) for keys, units, uncertainty levels, and provenance limitations. `artifact:` and `historical/` references are logical provenance identifiers, not required local paths.
+The checks compare evidence with expected values from the manuscript. A mismatch produces a nonzero exit code rather than changing evidence. Manuscript tables use a 100-point metric scale. Paired differences, relative percentages, and uncertainty units remain separate.
+
+## Results retained only in the repository
+
+These supporting results are not additional manuscript tables. A numeric-summary command reads bundled evidence. Regenerating user-level statistics requires the omitted predictions and caches.
+
+| Supporting evidence | Files relative to `results/` | Inspect or reproduce |
+|---|---|---|
+| Res(H), score-only control, all eight input subsets | `s3/extracted_seed_results.csv`, `s3/homogeneous_method_summary.csv`; masks in `src/studies/s3/cross_common.py` | Inspect the CSVs; regenerate from local predictions with `python scripts/analyze_s3.py --run runs/s3` |
+| Complete T/R/E/V/X counts, including unresolved X | `s3/transfer_classification.csv` | `python paper/transfer_counts.py --run results/s3` |
+| Primary 16-hypothesis TOST family | `s3/tost_holm_primary.csv` (`registered_primary_family=True`) | Inspect the CSV; `python paper/paper_numbers.py --results results --out outputs/PAPER_NUMBER_CHECK.md` |
+| Recall@20 | `s1/benchmark_seed_metrics.csv`, `s2/seed_metrics.csv`, `s3/extracted_seed_results.csv`, `e3/E3_summary.csv` | Inspect metric columns; `python paper/transfer_counts.py --run results/s3` prints matched Recall decisions |
+| Agreement with seed-wise user intervals | `s3/transfer_classification.csv`, `s3/user_bootstrap.csv` | `python paper/transfer_counts.py --run results/s3` |
+| Expanded 15-pair comparison (P0) | `followup/P0_extended_counts.csv`, `P0_contrast_details.csv`, `P0_all_pairs_reversals.csv`, `P0_sign_flips.csv` | Number-check command; optional scalar reaggregation: `python scripts/run_followup.py p0 --evidence-root results --out runs/followup` |
+| Initial identity-scorer selection | `checks/C_identity_selection.csv`, `s3/extracted_seed_results.csv` | Number-check command; regenerate with `python scripts/run_diagnostics.py identity --s3-run runs/s3 --out runs/checks` |
+| Candidate-draw variance (P4) | `followup/P4_seed_results.csv`, `P4_draw_variance.csv`, `P4_transfer.csv` | Number-check command; inference regeneration requires the frozen checkpoint, as documented below |
+| Margins 0.1 and 0.5 points; headroom-relative sensitivity | `s3/transfer_classification.csv`, `s3/homogeneous_method_summary.csv` | `python paper/transfer_counts.py --run results/s3` |
+| Label-free NPGC/popularity diagnostics (N1) | `e3/N1_npgc_popularity_seed.csv`, `N1_npgc_popularity_summary.csv`, `N1_coordinate_inventory.csv` | Number-check command; `n1` reads locally stored native scores without training or inference |
+
+The whole-pool analysis covers 30 measured S1 coordinates. All 18 Amazon-Books coordinates and six QNN_alpha coordinates lack retained historical pre-Top50 pool inputs. N1 has a different limitation: Top-50 candidates exist for all 54 S1 coordinates, but stored candidate-level native NPGC scores do not, so those N1 rows are unavailable. S3 N1 covers 60/60 coordinates. Its within-list correlations describe score/popularity association, not the cause of a performance gain.
 
 ## Quick reproduction without training
 
-Run from this repository's root. Python 3.10 is supported by the pinned analysis environment. No GPU or upstream code is required.
+Run from the repository root with Python 3.10. The pinned analysis environment needs neither upstream model code nor a GPU.
 
 ```bash
 python3.10 -m venv .venv
@@ -30,25 +58,17 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 export MPLCONFIGDIR="$PWD/.mplconfig"
 python paper/make_tables.py --results results --out outputs/tables
-python paper/make_transfer_fig.py --followup results/followup --checks results/checks --out outputs/transfer_fig
+python paper/make_transfer_fig.py --e3 results/e3 --checks results/checks --out outputs/transfer_fig
 python paper/transfer_counts.py --run results/s3
 python paper/paper_numbers.py --results results --out outputs/PAPER_NUMBER_CHECK.md
 python paper/verify_figure.py --results results --out outputs/figure_value_check.json
 ```
 
-The commands take seconds after installation on a typical CPU. Allow a few minutes for dependency installation. Table bodies use `booktabs` and the manuscript's `\Score` macro. The number checker writes both Markdown and JSON reports, then exits 1 if a manuscript discrepancy remains.
+These commands take seconds after dependency installation. Table bodies use `booktabs` and the manuscript's `\Score` macro. The number checker writes Markdown and JSON reports. Figure validation checks **39 effects and their intervals**: 36 Pop−Base points for NFM/MF × three training conditions × U/W/F × two datasets, plus three frozen Res(p)−Base effects. It recomputes numeric evidence rather than comparing pixels.
 
-Expected values from the manuscript are stored in `configs/analysis_expected.json`. The checker covers all numeric cells in Tables 2–5, the retained body claims, and the added follow-up claims. It reports each mismatch without changing evidence. Numeric result values remain unchanged; private provenance paths are normalized as documented in `results/FORMAT.md`. See `paper/REPRODUCTION_STATUS.md` for the recorded check counts and validation scope.
+Expected values from the manuscript are in `configs/analysis_expected.json` and `configs/figure_expected.json`. The former covers Tables 2–4 and the numerical claims. The figure checker validates all plotted values against raw seed records, with explicit manuscript values checked separately. Fonts and rendering environments can produce different pixels, while the figure values agree with the CSV evidence.
 
-One manuscript-setting discrepancy remains: the final S3 PRM+PL fits use batch 32, but the recorded learning-rate selection trials for ML-1M U with NFM and MF-BPR used batch 16384. The manuscript's batch-32 statement does not distinguish these two selection grids. `paper_numbers.py` intentionally exits 1 for this discrepancy. Neither recorded settings nor result values were changed to make the check pass.
-
-Check the 27 plotted effects and their confidence intervals directly from the CSVs:
-
-```bash
-python paper/verify_figure.py --results results --out outputs/figure_value_check.json
-```
-
-Fonts and rendering environments can produce different pixels, while the figure values agree with the CSV evidence.
+See [paper/README.md](paper/README.md) for output interpretation. Private provenance strings are normalized as recorded in `results/release_provenance.json`. `artifact:` and historical run references identify omitted evidence, not files that must be present under this repository.
 
 ## Full reproduction
 
@@ -94,31 +114,22 @@ A filtered run is a partial result, not a reproduction of the five-repeat tables
 
 **Time planning:** the CSV-only route is the verified fast route. Full reproduction is a multi-day workload on a single GPU, not a short installation test. A single small ML-1M coordinate can take minutes to hours, while Yelp/Amazon catalog scoring and some S1 backbones can dominate for many hours. Allow several days to weeks for the complete S1–S3 suite on one GPU. Recorded R0 reranker wall-time sums were approximately 1.79 hours for 60 PRM+PL fits, 0.36 hours for 480 residual fits, and 0.05 hours for 360 frozen evaluations, excluding backbone training and candidate/graph preparation. The broad full-suite range is a conservative planning estimate, not a benchmark of the extracted package. Actual time depends strongly on catalog size, CPU graph preparation, storage, and early stopping. Two GPUs can run disjoint coordinates with separate output ownership. R0 batch sizes must stay fixed for the reported experiment.
 
-## Protocol and model settings
-
-* **S1** uses six backbones: NFM, xDeepFM, DCNV2, AutoInt, EulerNet, and QNN_alpha. Final recorded configurations are under `configs/s1/` for three datasets and seeds 2020–2022. The benchmark requests 100 sampled negatives per relevant item, draws with replacement, then deduplicates. Fresh U/W comparisons match the target unique candidate count. S1 F uses the eligible catalog with the same exclusion rules as its fresh evaluation. NFM/DCNV2 F includes the completed Amazon-Books and ML-1M extension. MostPop is also evaluated as a retriever, separately from popularity sorting within another retriever's Top-50.
-* **S2** freezes the selected MF-BPR model for U/W/F. The three repeats vary the data/training seed. `configs/s2/` records the six final settings. Its catalog-validation selection is distinct from S1's classification/AUC selection.
-* **S3** uses NFM and MF-BPR on Yelp2018 and ML-1M. Seeds 2020–2024 are training repeats on one fixed split and fixed candidate draw. U/W request 100 unique negatives per relevant item. F scores eligible catalog items. Candidate IDs, labels, validity masks, and full positive-count denominators are preserved for aligned evaluation. Top-50 ties use item ID. R0 training batches are 4096 for backbones, 256 for residual modules, and 32 for PRM+PL. The 20 backbone settings and 60 protocol-specific applied bundles are under `configs/s3/`. Completed follow-ups add NFM-BPR and MF-BCE to form the architecture × training 2×2, using the recorded original optimizers and selectors.
-* **NPGC** uses k=2, except k=5 on Amazon-Books. The native co-occurrence normalization and self-neighbor treatment differ from residual graph features and are not substituted for each other. `results/checks/A_npgc_equivalence.csv` records the two actual local-versus-official checks with tolerance 1e-3. Those two checks do not certify every possible coordinate.
-* **Residuals** use inputs `[s, log1p_item_degree, log1p_q, n_eff, h, h_minus_s, variance]`, a 7→32→16→1 MLP, and a zero-initialized output layer. The prediction is `s + t * f(z)`. Training-set mean/std define `z`. The eight S/P/R/PR/H/RH/PH/PRH masks zero inactive coordinates after standardization. The scale `t` is the training candidate score standard deviation with the recorded floor. AdamW uses lr=1e-3, weight_decay=1e-4, clip norm 5, at most 50 epochs, minimum 5 epochs, patience 8, and min_delta=1e-4. The group-averaged score-scaled pairwise loss is preserved. Identity-inclusive and trained-only checkpoint policies remain separate. Frozen evaluation retains the source model, scaler, and scale.
-* **PRM+PL** uses the recorded selected learning rates from the original `{1e-4, 3e-4}` validation comparison. Full runs inherit the coordinate's final configuration rather than perform a new test-informed search. Batch size is 32 and the maximum is 100 epochs. S3 selection uses validation NDCG@20. Backbone and reranker selection are separate.
-
-The actual JSON settings and executable paths take precedence over these summaries. No new split, feature definition, loss, or hyperparameter budget was introduced for this release.
-
 ## Follow-up execution paths
 
 `scripts/run_followup.py` exposes the code that generated the additional evidence. This release preparation checked imports and command help only. It did not rerun these training or inference stages. The bundled CSVs are sufficient for the quick paper commands, but are not substitutes for data, selected checkpoints, full candidate IDs, features, or predictions.
 
 | Task | Execution | Required inputs |
 |---|---|---|
-| `e1`, `e2` | Train NFM-BPR or MF-BCE, evaluate frozen Base/Pop/NPGC, or aggregate completed runs | Prepared data, S3 fixed split/pools, recorded settings in `configs/followup/declaration.json` |
+| `e1`, `e2` | Train NFM-BPR or MF-BCE, evaluate Base/Pop/NPGC, or aggregate | Prepared data, S3 fixed split/pools, `configs/followup/declaration.json` |
+| `e3` | Train BCE with one added unobserved negative per positive, evaluate Base/Pop/NPGC, or aggregate all six conditions | Prepared data, S3 fixed split/pools, original backbone profiles, `configs/e3/fixed_settings.json`; three training seeds |
+| `n1` | Read stored Top-50 scores to measure NPGC/popularity association | Explicit candidate caches and native-score predictions in a local manifest; no checkpoint loading, new inference, or labels |
 | `df-s3` | MF-BPR retrieval with NFM scoring, then optional frozen source rerankers | S3 selected backbone checkpoints, MF F candidates, U/W reranker checkpoints, source scaler and scale |
 | `df-s1` | Six S1 scorers on same-split S2 MF candidates | Explicit S1/S2 checkpoint, split, candidate, neighbor and lineage entries in a local manifest |
 | `fullpool` | Score stored pre-Top50 pools with Base, NPGC, Pop | Real historical or newly retained full pool IDs and scores, labels, full truth, selected backbone and native neighbor table |
 | `p0` | Expanded and all-pairs transfer aggregation | Per-repeat S3 numeric result CSVs |
 | `p4` | Five candidate RNG draws with a frozen seed-2020 checkpoint | S3 fixed split, selected checkpoint, original sampler inputs; no new model fitting |
 
-`--help` lists stages and coordinate filters. `--stage aggregate` reads completed outputs. `e1` and `e2` with `--stage train` or `all` perform training, while DF, full-pool, and candidate-draw tasks perform inference. Run those commands only when the required large inputs have been prepared.
+`--help` lists stages and coordinate filters. `--stage aggregate` reads completed outputs. `e1`, `e2`, and `e3` with `--stage train` or `all` perform training, while DF, full-pool, and candidate-draw tasks perform inference. `n1` performs only CPU diagnostics on stored scores. Run those commands only when the required large inputs have been prepared.
 
 For example, check imports without executing experiments, then explicitly run one prepared DF coordinate:
 
@@ -136,6 +147,21 @@ python scripts/run_followup.py e1 --stage all --dataset ml-1m --seed 2020 --data
 
 These examples run one coordinate. The reported S3 follow-up cohort requires both datasets and training seeds 2020–2024. S1 uses split seeds 2020–2022. Candidate-draw tasks fix training seed 2020 and vary draw seeds 8702031–8702035. Partial cohorts must retain their actual repeat counts. The separately recorded E1/E2 training batches come from their declaration and are not inferred from the original S3 backbone batch summary above.
 
+For the added exposure condition and stored-score diagnostic:
+
+```bash
+# This E3 command trains one coordinate, then evaluates it. Large inputs are required.
+python scripts/run_followup.py e3 --stage all --architecture MF --dataset ml-1m --seed 2020 --data-root "$DATA_ROOT" --s3-run runs/s3 --out runs/followup --device cuda:0
+# After all intended coordinates exist, aggregate their saved metrics.
+python scripts/run_followup.py e3 --stage aggregate --s3-run runs/s3 --manifest local_followup_manifest.json --out runs/followup
+# This command reads only paths supplied in a completed local manifest.
+python scripts/run_followup.py n1 --manifest local_followup_manifest.json --s3-run runs/s3 --out runs/followup
+```
+
+For E3 aggregation, `manifest.inputs.mostpop` and `manifest.inputs.objective_seed_results` must refer to the MostPop and earlier objective-condition evidence from the same regenerated S3 master. Bundled historical CSVs cannot stand in for a new run with a different master digest; the lineage check intentionally rejects that mismatch.
+
+E3 uses architectures `MF` or `NFM`, both datasets, and seeds 2020–2022. Its summary retains five repeats for the pre-existing BCE/BPR conditions and three for BCE+neg. It does not pool those observations as equal-sized uncertainty samples. N1 accepts explicit stored-score/cache mappings from the manifest and marks unavailable inputs instead of reconstructing or inferring missing scores. The supplied manifest is an input template, not a bundle of working checkpoints.
+
 ## Statistics and interpretation
 
 The primary margin is **0.25 NDCG@20 points**, equivalent to 0.0025 on the 0–1 metric scale. Paired training-repeat contrasts use Student-t 95% effect intervals and 90% equivalence intervals. A transfer requires both 95% intervals to be beyond the margin with the same sign. A reversal requires the 95% intervals to have opposite signs beyond the margin. Equivalence requires both 90% intervals to lie inside the margin. Other comparisons are unresolved. The displayed **vanish** category requires a source 95% interval beyond the margin and a target 90% interval inside the margin. It subdivides unresolved outcomes after inspecting outcomes and is not a preregistered independent test.
@@ -144,6 +170,6 @@ The 16 primary TOST hypotheses test protocol changes in two method contrasts, Po
 
 ## Scope, limitations, and licensing
 
-DNR model code, DNR results, and R1 large-batch results are excluded. The historical directory name `baselines/dnr` contains only shared data/backbone adapters required for candidate generation, not the DNR method. Completed S1 E4 catalog evidence and the requested follow-up results are included. S3 does not establish uncertainty over alternative data splits. Five fresh candidate draws provide a separate sensitivity check conditional on the seed-2020 checkpoint, not additional training repeats. Some historical S1 candidate IDs were not retained: all 18 Amazon-Books and six QNN_alpha Yelp2018/ML-1M full-pool coordinates remain UNVERIFIABLE_INPUT. Their candidate IDs and user observations are not inferred from aggregate tables. Learned rerankers trained under DF remain outside the evaluated scope.
+DNR model code, DNR results, and R1 large-batch results are excluded. The historical directory name `baselines/dnr` contains only shared data/backbone adapters required for candidate generation, not the DNR method. Completed S1 E4 catalog evidence and the requested follow-up results are included. S3 does not establish uncertainty over alternative data splits. BCE+neg. has three training repeats, while the earlier BCE/BPR conditions have five. Five fresh candidate draws provide a separate sensitivity check conditional on the seed-2020 checkpoint, not additional training repeats. Some historical S1 candidate IDs were not retained: all 18 Amazon-Books and six QNN_alpha Yelp2018/ML-1M full-pool coordinates remain UNVERIFIABLE_INPUT. Their candidate IDs and user observations are not inferred from aggregate tables. Learned rerankers trained under DF remain outside the evaluated scope.
 
 Project-owned code is MIT-licensed. Third-party code and references retain their separate terms and attribution. See [LICENSE](LICENSE), [THIRD_PARTY.md](THIRD_PARTY.md), and `licenses/`. No author identity, private server path, or pre-existing Git history is needed to run the package.

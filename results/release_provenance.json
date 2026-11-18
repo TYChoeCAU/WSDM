@@ -1,0 +1,119 @@
+{
+  "normalization": "Only private path text changes. Numeric CSV cells remain byte-for-byte identical as parsed strings. Historical identity gaps remain unavailable.",
+  "e3_import": [
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_seed_results.csv",
+      "destination": "results/e3/E3_seed_results.csv",
+      "rows": 108,
+      "numeric_cells_preserved": 2052,
+      "sanitized_cells": [],
+      "source_sha256": "c4ed7f7a4f15a856c7faa26dcc84873af3a37799cac39608a2f5f94c0733266a",
+      "release_sha256": "c4ed7f7a4f15a856c7faa26dcc84873af3a37799cac39608a2f5f94c0733266a"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_all_conditions_seed_results.csv",
+      "destination": "results/e3/E3_all_conditions_seed_results.csv",
+      "rows": 468,
+      "numeric_cells_preserved": 5832,
+      "sanitized_cells": [],
+      "source_sha256": "0cbb1ebd84b3d0ba8ca3560ae14268cb6406e3017e222f4dd31f0108df535506",
+      "release_sha256": "0cbb1ebd84b3d0ba8ca3560ae14268cb6406e3017e222f4dd31f0108df535506"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_summary.csv",
+      "destination": "results/e3/E3_summary.csv",
+      "rows": 108,
+      "numeric_cells_preserved": 3132,
+      "sanitized_cells": [],
+      "source_sha256": "7fa49cceae3c8d046b5a48c442acd1c25efc1e82eeec3e66b05eca39c6b08af1",
+      "release_sha256": "7fa49cceae3c8d046b5a48c442acd1c25efc1e82eeec3e66b05eca39c6b08af1"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_pop_minus_base_paired.csv",
+      "destination": "results/e3/E3_pop_minus_base_paired.csv",
+      "rows": 144,
+      "numeric_cells_preserved": 1584,
+      "sanitized_cells": [],
+      "source_sha256": "7c4adb23b08da619e7b8ccbc1e64cc2b4f507ce1d0d2a3a6efa3589ff53f4bae",
+      "release_sha256": "7c4adb23b08da619e7b8ccbc1e64cc2b4f507ce1d0d2a3a6efa3589ff53f4bae"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_training_3x2_table.csv",
+      "destination": "results/e3/E3_training_3x2_table.csv",
+      "rows": 36,
+      "numeric_cells_preserved": 180,
+      "sanitized_cells": [],
+      "source_sha256": "c37a5546d88480ba5cc00b0e5b65fc51e3b571593f019103a72f7cd76774cec2",
+      "release_sha256": "c37a5546d88480ba5cc00b0e5b65fc51e3b571593f019103a72f7cd76774cec2"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_accuracy_rule_36.csv",
+      "destination": "results/e3/E3_accuracy_rule_36.csv",
+      "rows": 36,
+      "numeric_cells_preserved": 288,
+      "sanitized_cells": [],
+      "source_sha256": "3b9194612bc9a71a8d602e97fc0594ede2ad5da926e81bb035bb821be8cf95ed",
+      "release_sha256": "3b9194612bc9a71a8d602e97fc0594ede2ad5da926e81bb035bb821be8cf95ed"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/E3_run_inventory.csv",
+      "destination": "results/e3/E3_run_inventory.csv",
+      "rows": 20,
+      "numeric_cells_preserved": 76,
+      "sanitized_cells": [],
+      "source_sha256": "1a0649af1b2d17cc23fe7430a071c21c0990e15bc2ab1c6ed120614b148a4635",
+      "release_sha256": "1a0649af1b2d17cc23fe7430a071c21c0990e15bc2ab1c6ed120614b148a4635"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/N1_npgc_popularity_seed.csv",
+      "destination": "results/e3/N1_npgc_popularity_seed.csv",
+      "rows": 114,
+      "numeric_cells_preserved": 1494,
+      "sanitized_cells": [],
+      "source_sha256": "b0a8a980dd5fd98f603ba055febb5b87ce684a57e0faa732a1955bdb87c0b16d",
+      "release_sha256": "b0a8a980dd5fd98f603ba055febb5b87ce684a57e0faa732a1955bdb87c0b16d"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/N1_npgc_popularity_summary.csv",
+      "destination": "results/e3/N1_npgc_popularity_summary.csv",
+      "rows": 30,
+      "numeric_cells_preserved": 276,
+      "sanitized_cells": [],
+      "source_sha256": "b7d4f602dbecdd672ca7a5680572fbbb78e3bb6f478c8a41b62abd16a89ffa4c",
+      "release_sha256": "b7d4f602dbecdd672ca7a5680572fbbb78e3bb6f478c8a41b62abd16a89ffa4c"
+    },
+    {
+      "source": "results/review_e3/20261118_095641_KST/N1_coordinate_inventory.csv",
+      "destination": "results/e3/N1_coordinate_inventory.csv",
+      "rows": 114,
+      "numeric_cells_preserved": 696,
+      "sanitized_cells": [],
+      "source_sha256": "acdabaa92493f2f43d1eaf42431d36973627511138c78be1aa2ff5c4a09007ba",
+      "release_sha256": "acdabaa92493f2f43d1eaf42431d36973627511138c78be1aa2ff5c4a09007ba"
+    }
+  ],
+  "followup_inventory": {
+    "followup_requested_files": 44,
+    "existing_kept": 26,
+    "newly_copied": [
+      "DF_s1_comparison_seed_results.csv",
+      "DF_s1_comparison_summary.csv",
+      "DF_s1_runtime.csv",
+      "E_completion_inventory.csv",
+      "P0_contrast_details.csv",
+      "P4_input_inventory.csv",
+      "P4_run_inventory.csv",
+      "P4_runtime.csv",
+      "S1_fullpool_execution_update.json",
+      "S1_fullpool_final_audit.json",
+      "S1_fullpool_helper_allocation.json",
+      "S1_fullpool_input_audit.csv",
+      "S1_fullpool_inventory.csv",
+      "S1_fullpool_native_settings_audit.json",
+      "S1_fullpool_runtime.csv",
+      "S1_fullpool_status.json",
+      "S1_fullpool_top50_comparison.csv",
+      "S1_fullpool_top50_source_audit.json"
+    ]
+  }
+}

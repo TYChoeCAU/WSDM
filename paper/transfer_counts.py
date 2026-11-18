@@ -1,4 +1,4 @@
-"""Recompute the S3 transfer outcomes reported in the paper (Table 5 and Sec. 4.3).
+"""Recompute the S3 transfer outcomes stored as repository-only supporting evidence.
 
 Usage:
   python transfer_counts.py --run <w2w3_run_dir>
@@ -38,7 +38,7 @@ def classify(r, ds, dt, split_vanish=True):
         return 'R'
     if split_vanish and a and t_in:
         return 'V'
-    return 'U'
+    return 'X'
 
 
 def load(run, metric, policy, delta):
@@ -67,8 +67,27 @@ def summarize(rows, ds_fn):
     return tot, cell, ftarget
 
 
+def headroom_classifications(run, rows, fraction):
+    """Apply the unchanged classifier with source/target oracle-headroom margins."""
+    h = headroom(run)
+    classified = []
+    for r in rows:
+        source, target = SRC[r['comparison']]
+        ds = fraction * h(r['dataset'], r['backbone'], source)
+        dt = fraction * h(r['dataset'], r['backbone'], target)
+        classified.append(dict(r, headroom_source_margin=ds, headroom_target_margin=dt,
+                               headroom_classification=classify(r, ds, dt)))
+    return classified
+
+
+def headroom_summary(run, rows, fraction):
+    """Return total, comparison/cell, and F-target/dataset outcome counts."""
+    return summarize(headroom_classifications(run, rows, fraction),
+                     lambda r: r['headroom_classification'])
+
+
 def fmt(c):
-    return '/'.join(str(c[x]) for x in 'TREVU')
+    return '/'.join(str(c[x]) for x in 'TREVX')
 
 
 def main():
@@ -78,7 +97,7 @@ def main():
     d = 0.0025
     rows = load(args.run, 'ndcg@20', 'identity_inclusive', '0.0025')
     tot, cell, ft = summarize(rows, lambda r: classify(r, d, d))
-    print('Table 5 (T/R/E/V/U), columns:', CELLS)
+    print('Repository transfer counts (T/R/E/V/X), columns:', CELLS)
     for p in PAIRS:
         print(f'  {p:10s}', *[fmt(cell[(p, c)]) for c in CELLS])
     print('All comparisons:', len(rows), dict(tot))
@@ -96,13 +115,10 @@ def main():
     rc = load(args.run, 'recall@20', 'identity_inclusive', '0.0025')
     print('recall@20 matched:', dict(collections.Counter(classify(r, d, d) for r in rc if r['analysis_family'] == 'matched')))
     print('user-bootstrap agreement (all five repeats):', sum(r['user_seed_agrees_with_D1'] == '5' for r in rows), 'of', len(rows))
-    h = headroom(args.run)
     for frac in (0.01, 0.02):
-        c = collections.Counter()
-        for r in rows:
-            s, t = SRC[r['comparison']]
-            c[classify(r, frac * h(r['dataset'], r['backbone'], s), frac * h(r['dataset'], r['backbone'], t))] += 1
-        print(f'headroom margin {frac:.0%}:', dict(c))
+        c, _, ftarget = headroom_summary(args.run, rows, frac)
+        print(f'headroom margin {frac:.0%}:', dict(c),
+              'F-target per dataset:', {k: fmt(v) for k, v in ftarget.items()})
 
 
 if __name__ == '__main__':

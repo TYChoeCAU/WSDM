@@ -1,0 +1,20 @@
+{
+  "datasets": [
+    "yelp2018",
+    "ml-1m"
+  ],
+  "architectures": [
+    "MF",
+    "NFM"
+  ],
+  "seeds": [
+    2020,
+    2021,
+    2022
+  ],
+  "phase": "E3",
+  "negative_per_A_positive": 1,
+  "train_negative_label": 0,
+  "negative_exclusion": "all observed A+B pairs, without held-out labels",
+  "training_tuning": false
+}

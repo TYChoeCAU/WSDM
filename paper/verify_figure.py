@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify all Figure 1 means and intervals against seed evidence and manuscript values."""
+"""Verify all Figure 2 means and intervals against seed evidence and manuscript values."""
 import argparse
 import csv
 import json
@@ -48,9 +48,12 @@ def seed_values(rows, dataset, backbone, protocol, method, family='matched'):
 
 
 def paired_statistics(left, right):
-    differences = [left[seed] - right[seed] for seed in SEEDS]
+    if set(left) != set(right):
+        raise ValueError('Mismatched paired seed identities')
+    seeds = sorted(left)
+    differences = [left[seed] - right[seed] for seed in seeds]
     center = mean(differences)
-    half = float(t.ppf(.975, len(SEEDS) - 1)) * stdev(differences) / math.sqrt(len(SEEDS))
+    half = float(t.ppf(.975, len(seeds) - 1)) * stdev(differences) / math.sqrt(len(seeds))
     return (center, center - half, center + half)
 
 
@@ -73,7 +76,7 @@ def table4_cells(expected):
         d = {'Yelp2018': 'yelp2018', 'ML-1M': 'ml-1m'}[dataset]
         b = {'NFM': 'NFM', 'MF-BPR': 'MF_BPR'}[backbone]
         key = (d, b, fields[2])
-        if key in cells or len(row['expected_numeric_tokens']) != 16:
+        if key in cells or len(row['expected_numeric_tokens']) != 14:
             raise ValueError('Duplicate or malformed Table 4 expectation: ' + str(key))
         cells[key] = row['expected_numeric_tokens']
     if set(cells) != {(d, b, p) for d in DATASETS for b in BACKBONES for p in PROTOCOLS}:
@@ -86,6 +89,8 @@ SERIES = {
     'NFM-BPR': ('E1_NFM_BPR', 'NFM', 'BPR_unobserved_negative'),
     'MF-BCE': ('E2_MF_BCE', 'MF', 'observed_threshold_BCE'),
     'MF-BPR': ('S3_MF_BPR', 'MF', 'BPR_unobserved_negative'),
+    'NFM-BCE+neg.': ('E3_NFM_BCE_augmented', 'NFM', 'observed_BCE_plus_uniform_unobserved_negatives'),
+    'MF-BCE+neg.': ('E3_MF_BCE_augmented', 'MF', 'observed_BCE_plus_uniform_unobserved_negatives'),
 }
 
 
@@ -94,8 +99,9 @@ def objective_seed_values(rows, dataset, series, protocol, method):
     selected = choose(rows, dataset=dataset, cohort=cohort, architecture=architecture,
                       objective=objective, protocol=protocol, method=method, status='COMPLETE')
     seeds = [int(row['training_seed']) for row in selected]
-    if sorted(seeds) != list(SEEDS):
-        raise ValueError(f'Expected five independent training repeats once for {dataset}/{series}/{protocol}/{method}, got {seeds}')
+    required = list(range(2020, 2023 if cohort.startswith('E3_') else 2025))
+    if sorted(seeds) != required:
+        raise ValueError(f'Wrong training repeats for {dataset}/{series}/{protocol}/{method}: {seeds}')
     values = {int(row['training_seed']): 100 * float(row['ndcg@20']) for row in selected}
     if not all(math.isfinite(value) for value in values.values()):
         raise ValueError('Nonfinite objective-ablation seed metric')
@@ -105,13 +111,13 @@ def objective_seed_values(rows, dataset, series, protocol, method):
 def verify(results, expected_path):
     results = Path(results)
     expected = json.loads(Path(expected_path).read_text())
-    objective_raw = read(results/'followup/E_seed_results.csv')
-    objective_intervals = read(results/'followup/E_pop_minus_base_paired.csv')
+    objective_raw = read(results/'e3/E3_all_conditions_seed_results.csv')
+    objective_intervals = read(results/'e3/E3_pop_minus_base_paired.csv')
     raw = read(results/'s3/extracted_seed_results.csv')
     residual_intervals = read(results/'checks/C_paired_repeat_ci.csv')
     table4 = table4_cells(expected)
     checks, points = [], []
-    figure_expectations = expected['figure1']
+    figure_expectations = json.loads((Path(expected_path).parent/'figure_expected.json').read_text())
     seen_expectations = set()
 
     def compare(name, observed, target, tolerance, source):
@@ -122,7 +128,7 @@ def verify(results, expected_path):
                            absolute_difference=difference, tolerance=tolerance,
                            status='PASS' if passed else 'FAIL'))
 
-    def record_point(panel, label, row, fields, recomputed):
+    def record_point(panel, label, row, fields, recomputed, n_seeds):
         observed = tuple(float(row[field]) for field in fields)
         if not all(math.isfinite(x) for x in observed) or not observed[1] <= observed[0] <= observed[2]:
             raise ValueError('Invalid plotted interval: ' + label)
@@ -130,7 +136,7 @@ def verify(results, expected_path):
             compare(label + ':' + field, value, target, NUMERIC_ATOL_POINTS, 'independent_paired_seed_recomputation')
         points.append(dict(panel=panel, coordinate=label, mean_points=observed[0],
                            ci95_low_points=observed[1], ci95_high_points=observed[2],
-                           n_training_seeds=len(SEEDS)))
+                           n_training_seeds=n_seeds))
         return observed
 
     def compare_manuscript(section, coordinate, observed, **keys):
@@ -154,17 +160,19 @@ def verify(results, expected_path):
             for protocol in PROTOCOLS:
                 label = '/'.join((dataset, series, protocol)) + ':Pop-Base'
                 row = one(objective_intervals, dataset=dataset, cohort=cohort,
-                          architecture=architecture, objective=objective, protocol=protocol,
-                          contrast='Pop-Base', metric='ndcg@20', status='COMPLETE')
-                if (int(row['n_training_seeds']) != 5 or int(row['df']) != 4
+                          architecture=architecture, protocol=protocol,
+                          contrast='Pop-Base', metric='ndcg@20')
+                required = tuple(range(2020, 2023 if cohort.startswith('E3_') else 2025))
+                if (int(row['n_training_seeds']) != len(required) or int(row['df']) != len(required)-1
                         or float(row['ci_level']) != .95
-                        or row['training_seeds'] != ';'.join(map(str, SEEDS))):
+                        or row['training_seeds'] != ';'.join(map(str, required))
+                        or row['status'] != f'COMPLETE(n={len(required)})'):
                     raise ValueError('Wrong plotted uncertainty cohort: ' + label)
                 base = objective_seed_values(objective_raw, dataset, series, protocol, 'base')
                 pop = objective_seed_values(objective_raw, dataset, series, protocol, 'item_degree_ranking')
                 values = record_point(panel, label, row,
-                                      ('mean_x100', 'ci_low_x100', 'ci_high_x100'),
-                                      paired_statistics(pop, base))
+                                      ('mean_x100', 'ci95_low_x100', 'ci95_high_x100'),
+                                      paired_statistics(pop, base), len(required))
                 compare_manuscript('objective_pop_minus_base', label, values,
                                    dataset=dataset, series=series, protocol=protocol)
                 # Table 4 remains unchanged and covers the two original S3 cohorts.
@@ -191,18 +199,25 @@ def verify(results, expected_path):
         residual = seed_values(raw, 'yelp2018', 'MF_BPR', protocol, 'P', family)
         base = seed_values(raw, 'yelp2018', 'MF_BPR', evaluation, 'base')
         values = record_point('c', label, row, ('mean_x100', 'ci95_low_x100', 'ci95_high_x100'),
-                              paired_statistics(residual, base))
+                              paired_statistics(residual, base), len(SEEDS))
         compare_manuscript('residual_minus_base', label, values,
                            fit_protocol=fit, eval_protocol=evaluation)
 
     expected_count = sum(len(figure_expectations[key]) for key in ('objective_pop_minus_base', 'residual_minus_base'))
     if len(seen_expectations) != expected_count:
         raise ValueError('Some manuscript figure expectation has no plotted coordinate')
-    if len(points) != 27 or sum(point['panel'] in ('a', 'b') for point in points) != 24:
-        raise ValueError('Expected 24 objective-ablation points plus three residual points')
+    if len(points) != 39 or sum(point['panel'] in ('a', 'b') for point in points) != 36:
+        raise ValueError('Expected 36 objective-ablation points plus three residual points')
+    half_width = max(max(p['mean_points']-p['ci95_low_points'],
+                         p['ci95_high_points']-p['mean_points'])
+                     for p in points if p['panel'] in ('a', 'b'))
+    limit = float(figure_expectations['panel_ab_max_half_width_points'])
+    checks.append(dict(name='panel_ab_max_half_width', observed=half_width,
+                       expected_upper_bound=limit, source='manuscript_Figure2_caption',
+                       status='PASS' if half_width <= limit else 'FAIL'))
     failed = [check for check in checks if check['status'] != 'PASS']
     return dict(status='PASS' if not failed else 'FAIL', plotted_points=len(points),
-                objective_ablation_points=24, residual_points=3,
+                objective_ablation_points=36, residual_points=3,
                 plotted_values_checked=3*len(points), total_checks=len(checks),
                 passed_checks=len(checks)-len(failed), failed_checks=len(failed),
                 manuscript_coordinate_entries=expected_count,
@@ -211,10 +226,10 @@ def verify(results, expected_path):
                     for section in ('objective_pop_minus_base', 'residual_minus_base')
                     for entry in figure_expectations[section]),
                 raw_numeric_tolerance_points=NUMERIC_ATOL_POINTS,
-                interval_rule='paired five-training-seed Student-t 95% CI, df=4',
-                raw_evidence='E_seed_results.csv for panels a,b; extracted_seed_results.csv for panel c',
+                interval_rule='paired Student-t 95% CI: three E3 training seeds (df=2), five existing training seeds (df=4)',
+                raw_evidence='E3_all_conditions_seed_results.csv for panels a,b; extracted_seed_results.csv for panel c',
                 manuscript_rule='half a printed unit; summed rounding bounds for differences of rounded cells',
-                unprinted_values_rule='all means and interval endpoints independently recomputed from five seed results',
+                unprinted_values_rule='all means and interval endpoints independently recomputed from the prespecified three or five seed results',
                 pixel_comparison_performed=False, points=points, checks=checks)
 
 def main():

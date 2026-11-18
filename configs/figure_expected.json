@@ -1,0 +1,91 @@
+{
+  "source": "expected values from the manuscript text and supplied Figure 2",
+  "objective_pop_minus_base": [
+    {
+      "dataset": "yelp2018",
+      "series": "NFM-BCE",
+      "protocol": "U",
+      "mean_points": "13.2"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "NFM-BCE+neg.",
+      "protocol": "U",
+      "mean_points": "-9.3"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "NFM-BPR",
+      "protocol": "U",
+      "mean_points": "-21.2"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "MF-BCE",
+      "protocol": "U",
+      "mean_points": "3.9"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "MF-BCE+neg.",
+      "protocol": "U",
+      "mean_points": "-1.1"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "MF-BPR",
+      "protocol": "U",
+      "mean_points": "-18.7"
+    },
+    {
+      "dataset": "ml-1m",
+      "series": "NFM-BCE+neg.",
+      "protocol": "U",
+      "mean_points": "-4.0"
+    },
+    {
+      "dataset": "ml-1m",
+      "series": "MF-BCE+neg.",
+      "protocol": "U",
+      "mean_points": "-2.4"
+    },
+    {
+      "dataset": "ml-1m",
+      "series": "NFM-BPR",
+      "protocol": "U",
+      "mean_points": "-13.8"
+    },
+    {
+      "dataset": "ml-1m",
+      "series": "MF-BCE",
+      "protocol": "U",
+      "mean_points": "9.1"
+    },
+    {
+      "dataset": "yelp2018",
+      "series": "MF-BCE",
+      "protocol": "W",
+      "mean_points": "-8.2"
+    }
+  ],
+  "residual_minus_base": [
+    {
+      "fit_protocol": "W",
+      "eval_protocol": "W",
+      "mean_points": "1.64"
+    },
+    {
+      "fit_protocol": "W",
+      "eval_protocol": "F",
+      "mean_points": "-2.06",
+      "ci95_low_points": "-2.19",
+      "ci95_high_points": "-1.93"
+    },
+    {
+      "fit_protocol": "F",
+      "eval_protocol": "F",
+      "mean_points": "0.03"
+    }
+  ],
+  "panel_ab_max_half_width_points": "2.2"
+}

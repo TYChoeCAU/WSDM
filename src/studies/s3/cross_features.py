@@ -22,7 +22,7 @@ from .cross_common import RUN, ROOT, CONFIG, FEATURES, coord, identity, sha, loa
 import numpy as np
 import torch
 from diagnostics.graph_fusion.feature_cache import _compute_records
-from min_path_mean.graph import training_graph, graph_fingerprint, GraphScorerConfig, load_or_build_tables
+from graph_rerank.graph import training_graph, graph_fingerprint, GraphScorerConfig, load_or_build_tables
 
 from studies.corrected import native as _old
 native_scores = _old.native_scores
@@ -248,8 +248,8 @@ def prepare_features(adapter,dataset,backbone,seed,candidates):
     graph,fingerprint,user_degree,item_degree=_A_graph(master,adapter)
     tables,table_meta,table_seconds=_neighbors(dataset,graph,fingerprint)
     settings=external_applied(dataset,backbone,seed,'W',method='original_nonparamgc');alpha=float(settings['alpha'])
-    sources=[Path(__file__),ROOT/'src/diagnostics/graph_fusion/feature_cache.py',ROOT/'src/min_path_mean/graph.py',
-             ROOT/'src/min_path_mean/reranker.py',ROOT/'src/studies/corrected/native.py']
+    sources=[Path(__file__),ROOT/'src/diagnostics/graph_fusion/feature_cache.py',ROOT/'src/graph_rerank/graph.py',
+             ROOT/'src/graph_rerank/reranker.py',ROOT/'src/studies/corrected/native.py']
     common=dict(version='matched-A-only-joint7-features-v1',dataset=dataset,backbone=backbone,training_seed=int(seed),
         master_digest=master['signature']['sha256'],master_bundle_sha256=sha(master_path),
         split_digests=master['split_digests'],checkpoint_sha256=adapter.checkpoint_sha256,

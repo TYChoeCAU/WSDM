@@ -13,7 +13,7 @@ from common.runtime import bootstrap,restore_config
 class CoreRuntimeTests(unittest.TestCase):
     def test_import_closure(self):
         bootstrap(True)
-        names=['min_path_mean','baselines.dnr.data_adapter','baselines.dnr.backbone_adapter',
+        names=['graph_rerank','baselines.dnr.data_adapter','baselines.dnr.backbone_adapter',
                'baselines.prm.trainer','diagnostics.graph_fusion.feature_cache','diagnostics.graph_fusion.train',
                'diagnostics.revision_evidence.pipeline','studies.corrected.native','studies.corrected.external',
                'studies.corrected.corrected_sampling','studies.s1.run','studies.s1.mostpop','studies.s2.cf_experiment',
@@ -22,9 +22,9 @@ class CoreRuntimeTests(unittest.TestCase):
             with self.subTest(module=name):
                 module=importlib.import_module(name)
                 self.assertTrue(Path(module.__file__).resolve().is_relative_to(REPO/'src'))
-        from min_path_mean import GenericPathReranker, GraphReranker
+        from graph_rerank import GenericPathReranker, GraphReranker
         self.assertTrue(issubclass(GenericPathReranker, GraphReranker))
-        self.assertIn('GenericPathReranker', importlib.import_module('min_path_mean').__all__)
+        self.assertIn('GenericPathReranker', importlib.import_module('graph_rerank').__all__)
         self.assertNotIn('baselines.dnr.model',sys.modules)
         self.assertNotIn('baselines.dnr.trainer',sys.modules)
 

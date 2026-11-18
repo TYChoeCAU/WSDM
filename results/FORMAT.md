@@ -15,13 +15,13 @@ Numerical results are CSV, with structured verification records in JSON. Metrics
 | `s3/extracted_seed_results.csv` | R0 only, training seeds 2020–2024; matched/frozen; native or identity-inclusive/trained-only policy | Raw S3 per-repeat evidence |
 | `s3/homogeneous_method_summary.csv` | `scope=main_R0`; method, protocol, metric, selection policy | Table 4 and headroom sensitivity |
 | `s3/repeat_intervals.csv` | Paired Student-t repeat intervals, not user-bootstrap intervals | Original S3 protocol changes |
-| `s3/transfer_classification.csv` | `main_R0`; 3 margins; separate D1 training-repeat and D2 user-bootstrap decisions | Table 5, transfer sensitivity |
+| `s3/transfer_classification.csv` | `main_R0`; 3 margins; separate D1 training-repeat and D2 user-bootstrap decisions | Repository-only transfer counts and sensitivity |
 | `s3/tost_holm_primary.csv` | Registered 16-hypothesis family marked by `registered_primary_family=True`; other rows are sensitivity/exploratory | Exact-size equivalence |
 | `s3/selection_regret.csv`, `s3/regret_repeat_summary.csv` | Per-seed and repeat-summary source-selection regret; `REF4` and `ALL12` are separate | Section 4.3 |
 | `s3/rank_agreement.csv`, `s3/rank_repeat_summary.csv`, `s3/clear_reversal.csv` | Rank and reversal scalar statistics | Supporting diagnostics |
 | `s3/user_bootstrap.csv` | Summary intervals from paired user-cluster bootstrap; no user-level rows | Conditional sensitivity |
 | `checks/A_npgc_equivalence.csv` | Two saved official-versus-local numerical audits | NPGC implementation check |
-| `checks/C_*.csv` | Res(p) fit/evaluation scalar metrics, per-seed contrasts, paired repeat CIs, identity and partial-dependence summaries | Figure 1(c) and supporting diagnostics |
+| `checks/C_*.csv` | Res(p) fit/evaluation scalar metrics, per-seed contrasts, paired repeat CIs, identity and partial-dependence summaries | Figure 2(c) and supporting diagnostics |
 | `checks/D_mostpop*.csv` | MostPop retrieval per coordinate and dataset summaries | Section 4.1 |
 | `checks/list_spearman*.csv` | Saved mean within-list score/popularity Spearman, plus defined/undefined-user counts | Section 4.2 |
 
@@ -29,7 +29,7 @@ S3 R0 uses backbone batch 4096, residual batch 256, and PRM+PL batch 32. All R1,
 
 Fixed rules appear under `selection_policy=native` in method summaries, while learned methods use `identity_inclusive` or `trained_only`. Transfer tables use identity-inclusive comparisons and omit the duplicated frozen fixed-rule contrasts (`Pop-Base`, `NPGC-Base`, `Pop-NPGC`), giving 96 matched plus 40 frozen comparisons. V is a post hoc subdivision of unresolved outcomes; the stored original D1/D2 bootstrap agreement retains its original class definition.
 
-S1/S2 vary the split and training seed together (2020–2022). S3 has five training repeats (2020–2024) on one fixed split and candidate draw. Student-t intervals use paired per-repeat differences with df=2 or df=4 respectively. The separate candidate-draw analysis holds the training checkpoint at seed 2020 and varies five candidate RNG seeds. Neither a bootstrap draw nor a candidate draw is counted as an additional training repeat.
+S1/S2 vary the split and training seed together (2020–2022). S3 has five training repeats (2020–2024) on one fixed split and candidate draw. E3 BCE+neg. has three training repeats (2020–2022) on the same fixed split; its six-condition combined tables retain the older five-repeat BCE/BPR cohorts. Student-t intervals use paired per-repeat differences with df=2 or df=4 respectively. The separate candidate-draw analysis holds the training checkpoint at seed 2020 and varies five candidate RNG seeds. Neither a bootstrap draw nor a candidate draw is counted as an additional training repeat.
 
 Historical identity limits are retained in the CSVs. In particular, some S1 historical caches lack original pre-pool candidate IDs; Yelp2018 S1 F reports current reconstruction without certifying historical candidate identity. No missing historical candidate IDs, metrics, or user-level observations were inferred for this release.
 
@@ -42,7 +42,7 @@ All files below are under `followup/`. S3 and the two added training conditions 
 | Files | Keys and units | Repetition and interpretation |
 |---|---|---|
 | `E_seed_results.csv`, `E_summary.csv` | cohort, dataset, protocol, method, training_seed for raw rows. Raw NDCG/Recall/CR/oracle are 0–1. Summary `_x100` columns are points. Spearman retains its correlation scale. | Four cohorts: S3_NFM_BCE, E1_NFM_BPR, E2_MF_BCE, S3_MF_BPR. Five training seeds each. BCE versus BPR also changes negative exposure and training-row composition. |
-| `E_pop_minus_base_paired.csv`, `E_transfer.csv` | cohort, dataset, protocol or transition, contrast, metric. `_raw` is 0–1, `_x100` is points. | Three paired contrasts, 95% effect intervals, 90% equivalence intervals. The paired file includes all three contrasts despite its historical name. Figure 1(a,b) selects NDCG@20 Pop−Base. |
+| `E_pop_minus_base_paired.csv`, `E_transfer.csv` | cohort, dataset, protocol or transition, contrast, metric. `_raw` is 0–1, `_x100` is points. | Three paired contrasts, 95% effect intervals, 90% equivalence intervals. The paired file includes all three contrasts despite its historical name. These are the earlier four-condition summaries. Figure 2(a,b) instead uses the six-condition E3 file described below. |
 | `DF_s3_seed_results.csv`, `DF_s3_summary.csv`, `DF_s3_paired.csv`, `DF_s3_transfer.csv` | dataset, training_seed, method, DF; source_protocol and contrast for transfer. Raw metrics 0–1; `_x100` points. | MF-BPR retrieval plus frozen NFM scoring, five training seeds. All five methods/reference rows share candidates, CR@50, and oracle. |
 | `DF_frozen_learned_seed_results.csv`, `DF_frozen_learned_summary.csv`, `DF_frozen_learned.csv` | dataset, training_seed, source_protocol, method. The last file contains paired transfer comparisons, not raw scores. | U/W-selected residual masks and PRM+PL applied without fitting to DF. Source scaler, scale, and checkpoint selection are retained. Five training seeds. |
 | `DF_s1_seed_results.csv`, `DF_s1_summary.csv`, `DF_s1_paired.csv` | dataset, backbone, seed, method. Summary adds metric; paired adds contrast. Raw metrics 0–1; summary/paired `_x100` points. | Six backbones, two datasets, three split/training seeds. Retriever candidates are shared across scorers for the same split. |
@@ -54,9 +54,50 @@ All files below are under `followup/`. S3 and the two added training conditions 
 
 Full-pool methods can choose different top-50 subsets. Their additional CR@50 and oracle values are method-specific. DF methods reorder one fixed candidate set, so their coverage and oracle are shared. The unavailable full-pool inputs are all 18 Amazon-Books coordinates and six QNN_alpha Yelp2018/ML-1M coordinates. Missing historical candidates were not reconstructed.
 
+## Additional follow-up audit and inventory files
+
+These compact records supplement the metrics above. Runtime columns are seconds; file sizes are bytes; counts and booleans are not multiplied by 100. Every path is provenance rather than a bundled large artifact.
+
+| Files under `followup/` | Keys and units | Meaning |
+|---|---|---|
+| `E_completion_inventory.csv` | Phase, dataset, seed; status/counts | Completion of the earlier E1/E2 conditions |
+| `DF_s1_comparison_seed_results.csv`, `DF_s1_comparison_summary.csv` | Dataset, backbone, seed, protocol, method; summary adds metric | U/W/F/DF comparison evidence; raw seed metrics 0–1, summary mean/SD ×100 |
+| `DF_s1_runtime.csv` | Dataset, backbone, seed | Measured preparation/check/inference/metric time in seconds; fit counts and device metadata |
+| `P0_contrast_details.csv` | Contrast set, dataset, backbone, analysis family, transition, contrast, metric | Full 8/10/15-pair scopes, paired effects/intervals, classifications; `_raw` is 0–1, `_x100` is points |
+| `P4_input_inventory.csv`, `P4_run_inventory.csv`, `P4_runtime.csv` | Dataset, backbone, fixed training seed; run/runtime add candidate draw and protocol | Input identities, completion, and measured sampling/scoring/native-inference seconds |
+| `S1_fullpool_inventory.csv`, `S1_fullpool_input_audit.csv` | Dataset, backbone, split seed | Availability of historical pool inputs; candidate dtype, order, full truth, checkpoint/graph lineage |
+| `S1_fullpool_top50_comparison.csv` | Dataset, backbone, split seed, condition | Raw Base/NPGC/Pop NDCG20, relative percent gain, and Pop−NPGC points |
+| `S1_fullpool_runtime.csv` | Dataset, backbone, split seed | Wall/native time, candidate/user counts, candidates per second, execution allocation |
+| `S1_fullpool_status.json`, `S1_fullpool_final_audit.json` | Named completion/check fields | Final measured coverage and consistency checks |
+| `S1_fullpool_native_settings_audit.json`, `S1_fullpool_top50_source_audit.json` | Named coordinate/source/check fields | Native k/alpha and source Top-50 identity checks |
+| `S1_fullpool_execution_update.json`, `S1_fullpool_helper_allocation.json` | Named run/allocation fields | Historical execution provenance only; these are not runnable queues |
+
+## Six training conditions and label-free diagnostics
+
+All files below are under `e3/`. Architecture is NFM or MF. Protocol is U, W, or F. Base/Pop/NPGC are the only methods in the added training condition. The **12 E3 fits** are two architectures × two datasets × three training seeds. The earlier four BCE/BPR cohorts retain five training seeds. `n_training_seeds`, `training_seeds`, `repetition_unit`, and `df` describe each effect's actual uncertainty unit.
+
+| File | Primary keys | Units and scope |
+|---|---|---|
+| `E3_seed_results.csv` | Architecture, dataset, training_seed, protocol, method | Newly completed BCE+neg. only. Raw `ndcg@*`, `recall@*`, `candidate_recall50`, `oracle_ndcg20` are 0–1; corresponding `_pct` columns are ×100. Spearman is a correlation, never ×100. |
+| `E3_all_conditions_seed_results.csv` | Cohort, architecture, dataset, training_seed, protocol, method | New E3 and existing BCE/BPR rows. `existing_or_new` preserves their origin. Five versus three repeats are not pooled as a common repeated unit. |
+| `E3_summary.csv` | Cohort, dataset, protocol, method | Metric `*_mean_x100`, `*_sample_sd_x100`, and interval endpoints are points. Spearman summaries stay on the correlation scale. |
+| `E3_pop_minus_base_paired.csv` | Cohort, dataset, protocol, contrast, metric | Paired per-seed differences, mean, sample SD, 95% Student-t interval. `_raw` is 0–1, `_x100` is points. Figure 2(a,b) selects `contrast=Pop-Base`, `metric=ndcg@20`, yielding 36 effects. |
+| `E3_training_3x2_table.csv` | Cohort, architecture, training_condition, dataset, protocol | Compact 36-effect Pop−Base NDCG@20 table, mean/SD/interval endpoints ×100. Repetition counts remain explicit. |
+| `E3_accuracy_rule_36.csv` | Cohort, architecture, training_condition, dataset, protocol | Base, Top-50 Pop, and same-pool MostPop scores in points. Booleans compare `Base < pool MostPop` with `Pop−Base > 0`. The 33/36 agreement and three exceptions describe these measured cells, not a universal rule. |
+| `E3_run_inventory.csv` | Architecture, dataset, training_seed | 12 completed fit coordinates, selected epoch, max epochs, checkpoint hash, protocol completion count, and training seconds. No model weights are included. |
+| `N1_npgc_popularity_seed.csv` | Study, dataset, backbone, seed, protocol | 60 measured S3 rows plus 54 explicit unavailable S1 rows. Each defined value is a mean over users of that coordinate, with defined/undefined counts. Correlations are dimensionless; popularity differences are in `log(1+d)` units. |
+| `N1_npgc_popularity_summary.csv` | Study, dataset, backbone, protocol | Equal-weight mean of coordinate user-means over seeds; sample seed SD (`ddof=1`). Twelve S3 cells have five seeds each. Eighteen S1 cells remain unavailable with no invented metrics. |
+| `N1_coordinate_inventory.csv` | Study, dataset, backbone, seed, protocol | Actual candidate/score availability, hashes and used-array checks. `top50_available=True` with `native_candidate_scores_available=False` explains the 54 S1 unavailable coordinates. |
+
+N1 uses saved native NPGC scores and frozen backbone scores on the same stored Top-50 list. Popularity is `log(1+d_i)` from the binary observed-training graph. For each user it computes Spearman between (i) NPGC minus backbone score and popularity, and (ii) rank improvement and popularity. Rank improvement means Base rank minus NPGC rank; positive means the item moves upward. Ties in the Spearman inputs use average ranks; recommendation ties use item ID. Constant-input correlations are undefined and excluded with explicit counts.
+
+The Top-20 exchange statistic is mean popularity of entering items minus mean popularity of leaving items. Its primary user mean includes only users whose Top-20 changed. The separately named `zero_nochange` version assigns zero to unchanged users. These are not interchangeable. No labels, checkpoint loading, or new inference were used for N1. All 12 S3 cells have positive mean score-adjustment/popularity correlation (0.09–0.31), which does not imply every rank-based or exchange statistic is positive and does not establish a causal explanation of ranking quality.
+
+S1 N1's missing native candidate scores are different from the historical whole-pool missing IDs. S1 Top-50 candidates do exist. The release neither substitutes minimal graph features for native NPGC scores nor invents candidate score arrays from scalar metrics.
+
 ## Provenance normalization
 
-Only private absolute location prefixes were replaced with `artifact:`. Numeric CSV strings, empty cells, row order, keys, hashes, and JSON numeric values were preserved. The exact changed fields and row/value counts are listed below and in `followup/provenance_changes.csv`. JSON `[]` denotes entries of an array. A changed-row count is per field, so the counts are not a count of distinct experiments.
+Only private absolute location prefixes were replaced with `artifact:`. Numeric CSV strings, empty cells, row order, keys, hashes, and JSON numeric values were preserved. For the original 26-file follow-up import, the exact changed fields and row/value counts are listed below and in `followup/provenance_changes.csv`. The added files and E3 imports are recorded separately in `release_provenance.json`. JSON `[]` denotes entries of an array. A changed-row count is per field, so the counts are not a count of distinct experiments.
 
 | File | Changed field | Rows / string values |
 |---|---|---:|
@@ -77,4 +118,4 @@ Only private absolute location prefixes were replaced with `artifact:`. Numeric 
 | DF_checks.json | S3.coordinates.[].fixed_pool_path | 10 |
 | DF_checks.json | S3.coordinates.[].mf_F_base_result | 10 |
 
-There are 1,876 changed path strings across 16 fields. Other imported follow-up fields are unchanged. Logical provenance references identify excluded historical artifacts and are not executable local paths. Runtime commands take explicit data and run-directory arguments instead.
+That original 26-file import changed 1,876 path strings across 16 fields. This count is not the total for the later expanded 44-file follow-up inventory or the ten E3 CSVs. `release_provenance.json` records the expanded inventory, E3 changed cells, and numeric-preservation checks. Logical provenance references identify excluded historical artifacts and are not executable local paths. Runtime commands take explicit data and run-directory arguments instead.

@@ -11,6 +11,6 @@ The root MIT license applies to project-owned code. External projects retain the
 
 The external patch files under `patches/` change only the pinned checkout: the dataset patch preserves an explicitly supplied label field, and the QNN_alpha patch adds the adapter used by the S1 experiment. `scripts/setup_third_party.py` applies them after checking the pinned revision. Existing dirty checkouts are not silently reset. The patches do not change the reported data split or reranking equations.
 
-Local graph/reranking code under `src/min_path_mean`, feature/fusion code under `src/diagnostics`, and study orchestration under `src/studies` were extracted from the actual experiment paths. Shared candidate adapters under `src/baselines/dnr` are included solely because S1/S3 depend on them. No DNR model or DNR training/result bundle is included.
+Local graph/reranking code under `src/graph_rerank`, feature/fusion code under `src/diagnostics`, and study orchestration under `src/studies` were extracted from the actual experiment paths. Shared candidate adapters under `src/baselines/dnr` are included solely because S1/S3 depend on them. No DNR model or DNR training/result bundle is included.
 
 Dataset ownership and terms remain with the providers. Obtain the processed Yelp2018/Amazon-Books archives through the official NPGC data links and MovieLens-1M through GroupLens. Python dependencies retain their respective licenses. Public attribution in this document and the retained license notices identifies third parties, not the anonymous study authors.

@@ -2,7 +2,7 @@
 Only output allocation/stacking differ from the 50-column native scorer.
 """
 import numpy as np,torch
-from min_path_mean.reranker import GraphReranker
+from graph_rerank.reranker import GraphReranker
 from studies.s3.cross_common import deadline
 @torch.inference_mode()
 def native_scores(adapter,neighbors,records,alpha):

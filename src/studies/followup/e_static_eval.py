@@ -4,7 +4,7 @@ import json,time
 from pathlib import Path
 import numpy as np,torch
 from .e_worker import ROOT,OUT,MATCHED,PRIOR,load,sha,write,save,write_csv,emit,identity
-from min_path_mean.graph import NeighborTable,training_graph,graph_fingerprint
+from graph_rerank.graph import NeighborTable,training_graph,graph_fingerprint
 from diagnostics.graph_fusion.evaluate import ranking_metrics
 from diagnostics.score_degree_essentials.full_catalog_eval import merge_top50
 from studies.corrected.corrected_sampling import rank_record

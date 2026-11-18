@@ -11,7 +11,7 @@ from .fullpool_native import native_scores
 from .metric_helpers import metric_vectors
 from studies.s3.cross_common import atomic_json,write_csv,sha
 from diagnostics.revision_evidence.pipeline import positive_records,train_degrees
-from min_path_mean.graph import training_graph,graph_fingerprint
+from graph_rerank.graph import training_graph,graph_fingerprint
 def evaluate(records,scores,degree=None):
  acc={};users=[];topsha=hashlib.sha256()
  for first in range(0,len(records),128):

@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-18T00:57:13.908927+09:00",
+  "coordinates": {
+    "COMPLETE": 30,
+    "UNVERIFIABLE_INPUT": 24
+  },
+  "expected_completed_coordinates": 30,
+  "seed_metric_rows": 162,
+  "completed_seed_metric_rows": 90,
+  "checks_passed": 180,
+  "checks_failed": 0,
+  "macro_completed_seeds": {
+    "yelp2018:Base": 3,
+    "yelp2018:NPGC": 3,
+    "yelp2018:Pop": 3,
+    "ml-1m:Base": 3,
+    "ml-1m:NPGC": 3,
+    "ml-1m:Pop": 3
+  },
+  "distinct_inference_coordinates": 30,
+  "inference_invocations": 30,
+  "duplicate_inference_coordinates": 0,
+  "physical_gpu_coordinate_counts": {
+    "1": 29,
+    "0": 1
+  },
+  "maximum_numeric_check_error": 2.0802944647180244e-06,
+  "top50_source_reference_sha_checks_passed": 90,
+  "native_setting_checks_passed": 30,
+  "pop_ndcg20_exceeds_np_gc_coordinates": 30,
+  "source_fullpool_stat_checks": [
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/AutoInt/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/AutoInt/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/AutoInt/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/NFM/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/NFM/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/NFM/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/xDeepFM/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/xDeepFM/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/xDeepFM/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/EulerNet/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/EulerNet/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/EulerNet/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/DCNV2/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/DCNV2/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/ml-1m/DCNV2/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/AutoInt/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/AutoInt/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/AutoInt/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/NFM/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/NFM/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/NFM/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/xDeepFM/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/xDeepFM/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/xDeepFM/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/EulerNet/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/EulerNet/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/EulerNet/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/DCNV2/seed_2020/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/DCNV2/seed_2022/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    },
+    {
+      "path": "artifact:results/dnr_matched/runs/yelp2018/DCNV2/seed_2021/input_cache.pt",
+      "size_and_mtime_unchanged": true
+    }
+  ],
+  "original_file_check_scope": "Source pool size/mtime remained unchanged. Existing historical checkpoint, degree and selected-ID digests were verified per coordinate. Newly computed full-pool candidate digests are not retroactive historical evidence.",
+  "no_training": true,
+  "no_pool_reconstruction": true,
+  "no_manuscript_edit": true
+}

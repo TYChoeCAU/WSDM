@@ -9,7 +9,7 @@ from studies.s3.cross_common import load,sha,atomic_json,read_csv,write_csv
 from diagnostics.revision_evidence.pipeline import train_degrees
 from diagnostics.graph_fusion.evaluate import ranking_metrics
 from studies.s1.static import oracle_vectors,metric_vectors
-from min_path_mean.graph import training_graph,graph_fingerprint
+from graph_rerank.graph import training_graph,graph_fingerprint
 SEEDS=(2020,2021,2022)
 METRICS=('ndcg@20','recall@20','candidate_recall50','oracle_ndcg20')
 def read(path):return json.loads(Path(path).read_text())

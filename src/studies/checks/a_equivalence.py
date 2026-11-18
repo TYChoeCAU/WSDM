@@ -8,7 +8,7 @@ from baselines.dnr.backbone_adapter import FrozenBackboneAdapter,load_checkpoint
 from recbole.utils import get_model
 from recbole.data.interaction import Interaction
 from diagnostics.graph_fusion.evaluate import ranking_metrics
-from min_path_mean.graph import training_graph,graph_fingerprint
+from graph_rerank.graph import training_graph,graph_fingerprint
 import recbole_tag as upstream
 OUT = S1 = S3 = DATA = None
 

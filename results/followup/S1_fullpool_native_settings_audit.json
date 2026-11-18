@@ -1,0 +1,875 @@
+{
+  "all30_native_settings_equal": true,
+  "rows": [
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "c774dee6cf560d87768e5a655d50c07cf61b2def35a44722a48b6f84f0f6ed4b",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "aa62e7293f77b8266441518aa7ad6f977651fb80ef97bbb8c4462343f9ca1705",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "NFM",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/yelp2018/NFM/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "eb784ff5829320ad7b2de40ccbc594e3d7500e492671f9757513b6f5aeceef43",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "18ced0ca438ac560cb9d085535adbe15e7f69ec42f0c3f5681877ed908ed09df",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "abec3b169d9ba5f36097e5a35973fbe8c6a512143d02d0c18edc3559ab50ab3b",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/yelp2018/xDeepFM/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "d5e8fa53824596f64d8afed54527107a5774a275d4bb9401c073be99c1689bb4",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "c7e7ac52f19ff301d79763a4add85f9b00ad668e17e3d08f9d0778f1ba948307",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "91d6ebe1c1c0f6b1297ccf39ce3b60b17a81514d1eb4f2b18193beb1a1c0fd62",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/yelp2018/DCNV2/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "a971cdbf1c0bd2aca9f8c82b88770ab8d704108bcd1d24fd1481245ff90cfa36",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "079e8b12b0ba8b39982a9109daf78ed08598840b3c38fcd857d54f97283a9e92",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "0d9f6d84fe6825f906299ce34ff24fae568c4b8234028944f395126f8f69597e",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/yelp2018/AutoInt/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "e66e425d1c9fca0d09039730dec877eaafd1bdc249e9e24fab5eb2a5bd997986",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "097ade9a628555a4f4e57916c9fe25f7e68b210265c183ba002250c33bbdffda",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "b01d369c59296637751f23309ffa27e9e16e6a8f34e602e2fecec7840b375b4a",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "yelp2018",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/yelp2018/EulerNet/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "e35bdec98d008dc2ba1a12363f739d39412f0d9080eb280c1ca55c2344503576",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "5b42a4d63e7ab63337c6bd20ab3c86386015d0003e9c71f57539653641a91452",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "16586fa3aa8c8afc098b53db54063f9f9be6a3d3b91a38c36ed3d7430811f539",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "NFM",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/ml-1m/NFM/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "976a720a5e8b3441a31d471c6d0aa2d0c98c4d5a1f8dcacfd4ecb6a86d2283b2",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "269060b83d6ca57e74973e67ff72ab2cc0b1379a9abd25a0e4e6a2ddee3a5a2c",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "7ad7eb1acd5414851fb316ebcdc3ab3ba34948b695ca0e80681735614bcd13e7",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "xDeepFM",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/ml-1m/xDeepFM/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "165dd7c08a2513cc8d59c5adbc295431b2dcf3cf1b6f30caa66db0c371fabb82",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "f02fded620b71981903fbc1383a6659ee8a349443927db6051e3dac75db881a5",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "ef159a11c903e5c556826dcf9d9258d42b8fb4f6a55a7b61f4e22fd69eec1b4c",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "DCNV2",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/ml-1m/DCNV2/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "dec7bb80396fec0baab838be91804b2aaf0409c2870eff4a78b45de4219bafbd",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "eef6ec73bf088f1bebe05579d4926dc0f355fefc279f8a80c196691675cefc78",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "2dcfbb48c425573bf55b3a1c98c34a97343750e8ebafd4bc66c0e80cebf2d965",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "AutoInt",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/ml-1m/AutoInt/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "38efc738b17ec7ef20022c3094dd59250392c7ae9b5c5b4205767be72ee747e0",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2020,
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2020/nonparamgc/uniform/result.json",
+      "sha256": "6f5e53389746979ce747355d00ef9d5baf27db8fb606b08f97f6581802fe36e3",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2021,
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2021/nonparamgc/uniform/result.json",
+      "sha256": "d533add9918aed5dbeae1f9e99a5af50aab9e7cd0aaa80b136f7ad9ecec20e3d",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "ml-1m",
+      "backbone": "EulerNet",
+      "seed": 2022,
+      "source": "artifact:results/top50_graph_grid/ml-1m/EulerNet/seed_2022/nonparamgc/uniform/result.json",
+      "sha256": "e5a655c614d9dad0b34b318e428d103df6b7aead28df6f99652dafdab900373f",
+      "native_method": {
+        "alpha": 1.0,
+        "candidate_top_m": 50,
+        "controller": "uniform",
+        "cutoff_k": 20,
+        "evidence_attenuation": false,
+        "evidence_scale": 1.0,
+        "name": null,
+        "neighbor_k": 2,
+        "scorer": "nonparamgc",
+        "scorer_config": {
+          "budget": 1.0,
+          "budget_prefix": false,
+          "idf": false,
+          "nonparamgc_eq12": true,
+          "similarity_shrinkage": false,
+          "tau": 2.0
+        },
+        "support": "label_blind_base_top_50",
+        "temperature": 2.5
+      },
+      "status": "PASS"
+    }
+  ]
+}

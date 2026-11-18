@@ -1,0 +1,15 @@
+{
+  "coordinate_counts": {
+    "COMPLETE": 30,
+    "UNVERIFIABLE_INPUT": 24
+  },
+  "expected_evaluable_coordinates": 30,
+  "expected_unverifiable_coordinates": 24,
+  "status": "COMPLETE",
+  "units": "raw seed metrics, comparisons percentage points where explicitly named",
+  "sources": {
+    "native": "artifact:results/corrected_reranking/20261116_055943_KST/source/prepare_corrected.py",
+    "evaluator": "artifact:results/wsdm_integrated_revision/20261116_171956_KST/source/p0_extract.py",
+    "MostPop": "artifact:results/review_checks/20261117_152341_KST/D_mostpop.csv"
+  }
+}

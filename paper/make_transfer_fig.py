@@ -1,27 +1,26 @@
-"""Figure 1: Pop-Base per protocol for the S3 backbone-training 2x2, and Res(p)-Base on Yelp2018 MF-BPR."""
+"""Figure 2: Pop-Base per protocol for two architectures under three training setups, and Res(p)-Base on Yelp2018 MF-BPR."""
 import argparse, csv, matplotlib
-from pathlib import Path
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
-ap=argparse.ArgumentParser(description='Figure 1 of the paper from saved S3 results.')
-ap.add_argument('--followup', required=True, help='follow-up directory with E_pop_minus_base_paired.csv')
+ap=argparse.ArgumentParser(description='Figure 2 of the submitted manuscript from saved results.')
+ap.add_argument('--e3', required=True, help='directory with E3_pop_minus_base_paired.csv (six training cohorts)')
 ap.add_argument('--checks', required=True, help='review-check directory with C_paired_repeat_ci.csv')
 ap.add_argument('--out', default='transfer_fig')
 args=ap.parse_args()
-E=args.followup.rstrip('/')+'/'; R=args.checks.rstrip('/')+'/'
+E=args.e3.rstrip('/')+'/'; R=args.checks.rstrip('/')+'/'
 d={}
-for x in csv.DictReader(open(E+'E_pop_minus_base_paired.csv')):
+for x in csv.DictReader(open(E+'E3_pop_minus_base_paired.csv')):
     if x['contrast']=='Pop-Base' and x['metric']=='ndcg@20':
-        d[(x['dataset'],x['cohort'],x['protocol'])]=(float(x['mean_x100']),float(x['ci_low_x100']),float(x['ci_high_x100']))
+        d[(x['dataset'],x['cohort'],x['protocol'])]=(float(x['mean_x100']),float(x['ci95_low_x100']),float(x['ci95_high_x100']))
 fr=[x for x in csv.DictReader(open(R+'C_paired_repeat_ci.csv')) if x['dataset']=='yelp2018' and x['backbone']=='MF_BPR' and x['contrast']=='Res(p)-Base']
 f={(x['fit_protocol'],x['eval_protocol']):(float(x['mean_x100']),float(x['ci95_low_x100']),float(x['ci95_high_x100'])) for x in fr}
 plt.rcParams.update({'font.family':'serif','font.size':7,'axes.linewidth':0.6,'xtick.major.width':0.6,'ytick.major.width':0.6,'axes.edgecolor':'#52514e','xtick.color':'#52514e','ytick.color':'#52514e','axes.labelcolor':'#0b0b0b','pdf.fonttype':42})
 NFM='#2a78d6'; MF='#eb6834'
-SER=[('S3_NFM_BCE',NFM,'o','-','NFM, BCE'),('E1_NFM_BPR',NFM,'s','--','NFM, BPR'),
-     ('E2_MF_BCE',MF,'o','-','MF, BCE'),('S3_MF_BPR',MF,'s','--','MF, BPR')]
+SER=[('S3_NFM_BCE',NFM,'o','-','NFM, BCE'),('E3_NFM_BCE_augmented',NFM,'^',':','NFM, BCE+neg.'),('E1_NFM_BPR',NFM,'s','--','NFM, BPR'),
+     ('E2_MF_BCE',MF,'o','-','MF, BCE'),('E3_MF_BCE_augmented',MF,'^',':','MF, BCE+neg.'),('S3_MF_BPR',MF,'s','--','MF, BPR')]
 P=['U','W','F']
-fig,axes=plt.subplots(1,3,figsize=(7.0,1.62),gridspec_kw={'width_ratios':[1,1,1.12]})
+fig,axes=plt.subplots(1,3,figsize=(7.0,1.5),gridspec_kw={'width_ratios':[1,1,1.12]})
 for ax,ds,title in [(axes[0],'yelp2018','(a) Yelp2018: Pop $-$ Base'),(axes[1],'ml-1m','(b) ML-1M: Pop $-$ Base')]:
     ax.axhline(0,color='#9b9a95',lw=0.6,zorder=1)
     lo_all=[];hi_all=[]
@@ -32,13 +31,13 @@ for ax,ds,title in [(axes[0],'yelp2018','(a) Yelp2018: Pop $-$ Base'),(axes[1],'
         ax.errorbar(range(3),m,yerr=[lo,hi],color=c,marker=mk,ms=3.2,lw=1.3,ls=ls,capsize=1.8,elinewidth=0.7,label=lab,zorder=3,
                     mfc=c if ls=='-' else '#fcfcfb',mec=c,mew=0.9)
     ax.set_xticks(range(3)); ax.set_xticklabels(P); ax.set_xlim(-0.3,2.3)
-    span=max(hi_all)-min(lo_all); ax.set_ylim(min(lo_all)-0.08*span, max(hi_all)+(0.40 if ds=='yelp2018' else 0.12)*span)
+    span=max(hi_all)-min(lo_all); ax.set_ylim(min(lo_all)-0.08*span, max(hi_all)+(0.55 if ds=='yelp2018' else 0.12)*span)
     ax.set_title(title,fontsize=7.5,loc='left',color='#0b0b0b')
     ax.grid(axis='y',color='#eceae5',lw=0.5,zorder=0); ax.spines[['top','right']].set_visible(False)
 axes[0].set_ylabel('NDCG@20 difference (points)')
 h=[Line2D([0],[0],color=c,ls=ls,marker=mk,ms=3.2,lw=1.3,mfc=c if ls=='-' else '#fcfcfb',mec=c,mew=0.9) for k,c,mk,ls,lab in SER]
 for ax in axes[:1]:
-    ax.legend(h,[s[4] for s in SER],ncol=2,fontsize=5.8,frameon=False,loc='upper right',handlelength=2.0,columnspacing=0.8,handletextpad=0.4,borderaxespad=0.1,labelspacing=0.25)
+    ax.legend(h,[s[4] for s in SER],ncol=2,fontsize=5.8,frameon=False,loc='upper right',handlelength=2.0,columnspacing=0.8,handletextpad=0.4,borderaxespad=0.1,labelspacing=0.2)
 ax=axes[2]
 keys=[('W','W'),('W','F'),('F','F')]; names=['W$\\to$W','W$\\to$F','F$\\to$F']
 m=[f[k][0] for k in keys]; lo=[f[k][0]-f[k][1] for k in keys]; hi=[f[k][2]-f[k][0] for k in keys]
@@ -52,6 +51,7 @@ ax.set_xticks(range(3)); ax.set_xticklabels(names); ax.set_ylim(-3.0,2.8)
 ax.set_title('(c) Yelp2018 MF-BPR: Res($p$) $-$ Base',fontsize=7.5,loc='left',color='#0b0b0b')
 ax.grid(axis='y',color='#eceae5',lw=0.5,zorder=0); ax.spines[['top','right']].set_visible(False)
 fig.tight_layout(pad=0.3,w_pad=1.2)
-Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+import os
+os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
 fig.savefig(args.out+'.pdf',metadata={'CreationDate':None,'ModDate':None,'Creator':None,'Producer':None})
 fig.savefig(args.out+'.png',dpi=220,metadata={'Software':None})

@@ -1,0 +1,59 @@
+{
+  "dataset": "yelp2018",
+  "architecture": "NFM",
+  "profile": {
+    "clip_grad_norm": null,
+    "dropout_prob": 0.5,
+    "embedding_size": 64,
+    "learning_rate": 0.0001,
+    "loss": "native BCEWithLogitsLoss on all observed A labels plus one uniform unobserved negative per positive A row",
+    "maximum_epochs": 300,
+    "minimum_epochs": 0,
+    "mlp_hidden_size": [
+      512,
+      512,
+      512
+    ],
+    "model": "NFM",
+    "optimizer": "adam",
+    "patience_comparison": "strictly greater than stopping_step, original Trainer budget",
+    "patience_validation_checks": 5,
+    "profile_source": {
+      "checkpoint": "artifact:configuration/recorded-baseline/yelp2018/NFM/checkpoint",
+      "sha256": "d458dca3c968b5c24fc31e7efa41a1a8b51161eb3e8151b039a42c0f817f149a",
+      "weights_reused": false
+    },
+    "reported_backbone": "NFM_BCE_augmented",
+    "score_domain": "sigmoid(raw logit)",
+    "seed": "training seed only",
+    "selector": "fixed validation-W NDCG@20",
+    "tie_policy": "strict improvement, earlier epoch retained",
+    "train_batch_size": 4096,
+    "validation_interval": 1,
+    "weight_decay": 0.0,
+    "version": "E3-observed-plus-unobserved-BCE-v1",
+    "phase": "E3",
+    "architecture": "NFM",
+    "native_epoch": "recbole.trainer.Trainer._train_epoch",
+    "negative_exclusion": "all observed A+B pairs, without heldout labels",
+    "training_rows": "original A observed rows with original multiplicity and labels retained; appended synthetic rows label=0",
+    "sampler": "torch rejection sampling over item IDs [1,item_num), one per A positive, refreshed each epoch",
+    "sampler_rng": "dedicated torch.Generator on assigned device, seed=training_seed*10000+epoch; positive randperm, 4096-row rejection chunks",
+    "sampler_relationship_E1": "same eligible distribution, epoch seed formula, permutation and rejection algorithm; independent RNG excludes E1 interleaved model dropout, so realized draws are not claimed identical",
+    "training_data_shuffle": "existing TrainDataLoader shuffle and generator on combined observed+synthetic rows",
+    "graph": "unchanged original A binary observed graph; synthetic negatives never enter graph",
+    "source_baseline": "artifact:configuration/recorded-baseline/yelp2018/NFM",
+    "source_baseline_sha256": "ed7282a10c62e240330c26c958cd6e8b966c3b6832739eb9d34d381dc4da385f",
+    "baseline_phase": "S3 observed BCE",
+    "training_seed_budget": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "source": "Recorded executed E3 fixed settings, with source paths relocated only",
+  "execution_seeds_source": "configs/followup/e3_declaration.json",
+  "recorded_optional_seed_budget_note": "The recorded budget included optional seeds. The public entry point uses only completed seeds 2020, 2021, 2022."
+}

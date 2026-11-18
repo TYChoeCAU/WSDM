@@ -11,7 +11,7 @@ import math
 import sys
 
 from paper_data import read, choose, one, build
-from transfer_counts import load, classify, summarize, headroom, SRC
+from transfer_counts import load, classify, summarize, headroom, headroom_summary, SRC
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -40,6 +40,7 @@ def collect_settings():
     vals['setting.s1_seed_end']=max(x['seed'] for x in s1)
     s2=[json.loads(p.read_text()) for p in (REPO/'configs/s2').glob('*/seed_*.json')]
     uniform('s2_dimensions',(x['profile_search']['embedding_dim'] for x in s2))
+    vals['setting.s2_split_count']=len({x['seed'] for x in s2})
     s3=[json.loads(p.read_text()) for p in (REPO/'configs/s3/backbones').glob('*/*/seed_*.json')]
     uniform('s3_dimensions',(x['profile']['embedding_size'] for x in s3))
     uniform('s3_split_seed',(x['validation_pool_signature']['data_seed'] for x in s3))
@@ -52,20 +53,25 @@ def collect_settings():
     for name,value in [('repeat_seeds',len(plan['training_seeds_final'])),('seed_start',min(plan['training_seeds_final'])),('seed_end',max(plan['training_seeds_final']))]:vals['setting.s3_'+name]=value
     vals['setting.repeat_ci_pct']=100*plan['effect_ci']
     vals['setting.equivalence_ci_pct']=100*plan['tost_unadjusted_ci']
+    vals['setting.equivalence_alpha_pct']=100*(1-plan['tost_unadjusted_ci'])/2
     vals['setting.margin_points']=100*plan['primary_practical_delta_raw']
     vals['setting.sensitivity_margin_min']=100*min(plan['sensitivity_delta_raw'])
     vals['setting.sensitivity_margin_max']=100*max(plan['sensitivity_delta_raw'])
     vals['setting.reference_methods']=len(plan['method_sets']['REF4'])-1
     uniform('contrast_methods',(len(c.split('-')) for c in plan['contrasts']))
     uniform('contrast_protocols',(len(c) for c in SRC.values()))
+    vals['setting.protocol_pairs']=len(set(SRC.values()))
+    analysis_tree=ast.parse((REPO/'paper/transfer_counts.py').read_text())
+    fractions=next(ast.literal_eval(n.iter) for n in ast.walk(analysis_tree) if isinstance(n,ast.For) and isinstance(n.target,ast.Name) and n.target.id=='frac')
+    vals['setting.headroom_margin_pct']=100*max(fractions)
     applied=[json.loads(p.read_text()) for p in (REPO/'configs/s3/applied').glob('*/*/seed_*/*.json')]
     residual=[v for x in applied for k,v in x.items() if k in ('S','P','R','PR','H','RH','PH','PRH')]
     for key,field in [('residual_lr','learning_rate'),('residual_weight_decay','weight_decay'),('residual_batch','batch_size'),('residual_epochs','maximum_epochs')]:
         uniform(key,(x[field] for x in residual))
     prm=[x['recorded_selection'] for x in (json.loads(p.read_text()) for p in (REPO/'configs/s3/prm_selection').glob('*/*/*.json'))]
     uniform('prm_batch',(x['prm_principled']['batch_size'] for x in applied))
-    uniform('prm_selection_batch',(x['scope']['settings']['batch_size'] for x in prm))
-    uniform('prm_epochs',(x['scope']['settings']['maximum_epochs'] for x in prm))
+    uniform('prm_selection_batch',(x['prm_principled']['batch_size'] for x in applied))
+    uniform('prm_epochs',(x['prm_principled']['maximum_epochs'] for x in applied))
     uniform('prm_grid_min',(min(x['scope']['grid']) for x in prm))
     uniform('prm_grid_max',(max(x['scope']['grid']) for x in prm))
     uniform('prm_selection_seed',(x['selection_seed'] for x in prm))
@@ -73,6 +79,7 @@ def collect_settings():
     literals={node.targets[0].id:ast.literal_eval(node.value) for node in common.body if isinstance(node,ast.Assign) and isinstance(node.targets[0],ast.Name) and node.targets[0].id in ('MASKS','FEATURES','DATASETS','BACKBONES','PROTOCOLS')}
     vals['setting.mask_count']=len(literals['MASKS'])
     vals['setting.feature_groups']=len({'P','R','H'} & set(literals['MASKS']))
+    vals['setting.graph_feature_groups']=len({'R','H'} & set(literals['MASKS']))
     vals['setting.s3_datasets']=len(literals['DATASETS'])
     vals['setting.s3_backbones']=len(literals['BACKBONES'])
     vals['setting.protocols']=len(literals['PROTOCOLS'])
@@ -82,6 +89,7 @@ def collect_settings():
     dims=[linear[0][0]]+[pair[1] for pair in linear]
     for i,value in enumerate(dims):vals[f'setting.mlp_dim_{i}']=value
     vals['setting.mlp_parameters']=sum(i*o+o for i,o in linear)
+    vals['setting.mlp_layers']=len(linear)
     vals['setting.zero_output_initialization']=0 if sum(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='zeros_' for n in ast.walk(model))==2 else -1
     trainer=ast.parse((REPO/'src/studies/s3/uniform_models.py').read_text())
     vals['setting.residual_optimizer']='AdamW' if any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='AdamW' for n in ast.walk(trainer)) else 'NOT_FOUND'
@@ -92,41 +100,78 @@ def collect_settings():
     divisor=ast.literal_eval(nb.right)
     vals['setting.reranker_partition_pct']=100/divisor
     vals['setting.backbone_partition_pct']=100-100/divisor
+    e3=read(REPO/'results/e3/E3_seed_results.csv')
+    vals['setting.e3_repeat_seeds']=len({int(x['training_seed']) for x in e3})
+    vals['setting.training_setups']=len({x['cohort'] for x in read(REPO/'results/e3/E3_all_conditions_seed_results.csv') if x['architecture']=='NFM'})
+    vals['setting.e3_training_negatives']=1 if 'one uniform unobserved item per A positive per epoch' in json.loads((REPO/'configs/e3/fixed_settings.json').read_text()).get('fixed_rules',{}).get('added_negatives','') else -1
     return vals
 
 
 def mostpop_accuracy_rule(results):
-    """Compare all 24 architecture/training/dataset/protocol means to the same pool.
+    """Recalculate the 36-cell rule from paired raw repeats and fixed-pool MostPop.
 
-    The MostPop pool is independent of the backbone objective. Match its original
-    S3 architecture and its fixed candidate-seed record rather than Top-50 Pop.
+    Existing conditions use five training seeds. Added-negative BCE uses three.
+    Whole-pool MostPop is one fixed candidate draw, not Top-50 Pop or a repeat.
     """
-    summaries = read(results / 'followup/E_summary.csv')
-    popular = read(results / 'checks/D_mostpop.csv')
-    rows = []
-    for base in choose(summaries, method='base'):
-        key = {k: base[k] for k in ('cohort', 'dataset', 'protocol')}
-        pop = one(summaries, **key, method='item_degree_ranking')
-        bb = 'MF_BPR' if base['architecture'] == 'MF' else base['architecture']
-        pool = choose(popular, study='S3', dataset=base['dataset'], backbone=bb, protocol=base['protocol'])
-        if len(pool) != 1 or int(pool[0]['seed']) != 2020:
-            raise ValueError(f'Expected one fixed candidate-seed2020 S3 MostPop record for {key}')
-        if any(x['status'] != 'PASS' for x in pool):
-            raise ValueError(f'MostPop source audit did not pass for {key}')
-        b = float(base['ndcg@20_mean_x100'])
-        p = float(pop['ndcg@20_mean_x100'])
-        m = 100 * mean(float(x['ndcg20']) for x in pool)
-        rows.append(dict(**key, architecture=base['architecture'], n_training_seeds=5,
-                         mostpop_candidate_seed=2020,mostpop_pool_repeats=1,
-                         base_points=b, same_pool_mostpop_points=m,
-                         top50_pop_points=p, pop_minus_base_points=p-b,
-                         base_below_mostpop=b < m, pop_helps=p > b,
-                         rule_agrees=(b < m) == (p > b),
-                         mostpop_source='checks/D_mostpop.csv',
-                         metric_source='followup/E_summary.csv'))
-    if len({(r['cohort'], r['dataset'], r['protocol']) for r in rows}) != len(rows):
-        raise ValueError('Duplicate objective comparison coordinate')
+    raw=read(results/'e3/E3_all_conditions_seed_results.csv')
+    popular=read(results/'checks/D_mostpop.csv');groups=defaultdict(list)
+    for x in raw:
+        if x['method'] in ('base','item_degree_ranking'):
+            groups[x['cohort'],x['dataset'],x['protocol']].append(x)
+    rows=[]
+    for (cohort,ds,protocol),rr in sorted(groups.items()):
+        seeds=sorted({int(x['training_seed']) for x in rr})
+        expected=list(range(2020,2023 if cohort.startswith('E3_') else 2025))
+        if seeds!=expected:raise ValueError('Incomplete declared training seeds '+cohort)
+        architecture=rr[0]['architecture'];bb='MF_BPR' if architecture=='MF' else architecture
+        pool=one(popular,study='S3',dataset=ds,backbone=bb,protocol=protocol,seed=2020)
+        if pool['status']!='PASS':raise ValueError('MostPop source check did not pass')
+        base=[100*float(one(rr,training_seed=seed,method='base')['ndcg@20']) for seed in seeds]
+        pop=[100*float(one(rr,training_seed=seed,method='item_degree_ranking')['ndcg@20']) for seed in seeds]
+        b,p,m=mean(base),mean(pop),100*float(pool['ndcg20'])
+        rows.append(dict(cohort=cohort,dataset=ds,protocol=protocol,architecture=architecture,
+            n_training_seeds=len(seeds),mostpop_candidate_seed=2020,mostpop_pool_repeats=1,
+            base_points=b,same_pool_mostpop_points=m,top50_pop_points=p,pop_minus_base_points=p-b,
+            base_below_mostpop=b<m,pop_helps=p>b,rule_agrees=(b<m)==(p>b),
+            mostpop_source='checks/D_mostpop.csv',metric_source='e3/E3_all_conditions_seed_results.csv'))
     return rows
+
+
+def matched_seed_records(results):
+    """Use the formal main-regime values, retaining the original selection policy."""
+    rows=[x for x in read(results/'s3/extracted_seed_results.csv')
+          if x['regime']=='R0' and x['analysis_family']=='matched'
+          and x['selection_policy'] in ('native','identity_inclusive')]
+    indexed={}
+    for x in rows:
+        key=(x['dataset'],x['backbone'],x['protocol'],x['method'],int(x['training_seed']))
+        if key in indexed:raise ValueError('Duplicate matched seed coordinate '+str(key))
+        indexed[key]=x
+    return indexed
+
+
+def headroom_capture_ratios(results):
+    """Mean of paired per-seed (Pop - Base) / (Oracle - Base), in percent.
+
+    This is deliberately not the ratio of two already-averaged effects.
+    Oracle, Base and Pop refer to the identical backbone candidate list.
+    """
+    rows=matched_seed_records(results);out=[]
+    coords=sorted({key[:3] for key in rows})
+    for dataset,backbone,protocol in coords:
+        ratios=[]
+        for seed in range(2020,2025):
+            base=rows[dataset,backbone,protocol,'base',seed]
+            pop=rows[dataset,backbone,protocol,'item_degree_ranking',seed]
+            denominator=float(base['oracle_ndcg20'])-float(base['ndcg@20'])
+            if denominator<=0:raise ValueError('Nonpositive oracle headroom')
+            if abs(float(base['oracle_ndcg20'])-float(pop['oracle_ndcg20']))>1e-12:
+                raise ValueError('Pop and Base oracle values differ')
+            ratios.append(100*(float(pop['ndcg@20'])-float(base['ndcg@20']))/denominator)
+        out.append(dict(dataset=dataset,backbone=backbone,protocol=protocol,
+                        mean_per_seed_ratio_percent=mean(ratios),n_training_seeds=len(ratios),
+                        ratios_by_seed_percent=dict(zip(range(2020,2025),ratios))))
+    return out
 
 
 def collect_claims(results):
@@ -201,32 +246,39 @@ def collect_claims(results):
         put('df.s1.'+ds+'.max', max(float(x['mean_x100']) for x in xx))
         put('df.s1.'+ds+'.backbones',len({x['backbone'] for x in xx}))
     put('df.s1.npgc_abs_max', max(abs(float(x['mean_x100'])) for x in choose(dsp, contrast='NPGC-Base', metric='ndcg@20')))
-    ep=read(r/'followup/E_pop_minus_base_paired.csv')
+    ep=read(r/'e3/E3_pop_minus_base_paired.csv')
     put('setting.metric_scale',max(float(x['mean_x100'])/float(x['mean_raw']) for x in ep if float(x['mean_raw'])!=0))
     put('setting.objective_types',len({x['objective'] for x in read(r/'followup/E_summary.csv')}))
     for x in choose(ep, contrast='Pop-Base', metric='ndcg@20', protocol='U'):
         put('objective.'+x['dataset']+'.'+x['cohort'], float(x['mean_x100']))
     put('abstract.nfm_bce_pop', values['objective.yelp2018.S3_NFM_BCE'])
-    put('abstract.nfm_bpr_pop', values['objective.yelp2018.E1_NFM_BPR'])
+    put('abstract.nfm_bce_negative_pop', values['objective.yelp2018.E3_NFM_BCE_augmented'])
     rule=mostpop_accuracy_rule(r); exceptions=[x for x in rule if not x['rule_agrees']]
     put('accuracy_rule.combinations',len(rule));put('accuracy_rule.exceptions',len(exceptions))
-    if len(exceptions)==1:
-        x=exceptions[0];put('accuracy_rule.exception_effect',x['pop_minus_base_points'])
-        put('accuracy_rule.exception_location','/'.join(x[k] for k in ('dataset','cohort','protocol')))
-        put('accuracy_rule.exception_inside_margin',abs(x['pop_minus_base_points']))
-    else:
-        put('accuracy_rule.exception_effect',float('nan'));put('accuracy_rule.exception_location','NONUNIQUE')
-        put('accuracy_rule.exception_inside_margin',float('nan'))
+    put('accuracy_rule.agreements',sum(x['rule_agrees'] for x in rule))
+    y=one(rule,dataset='yelp2018',cohort='E2_MF_BCE',protocol='W')
+    for key,field in [('effect','pop_minus_base_points'),('base','base_points'),('mostpop','same_pool_mostpop_points')]:
+        put('objective.yelp_mf_bce_w.'+key,y[field])
+    put('accuracy_rule.exceptions_inside_margin',sum(abs(x['pop_minus_base_points'])<.25 for x in exceptions))
+    put('accuracy_rule.exceptions_outside_margin',sum(abs(x['pop_minus_base_points'])>=.25 for x in exceptions))
+    put('accuracy_rule.exceptions_yelp_f',sum(x['dataset']=='yelp2018' and x['protocol']=='F' for x in exceptions))
+    outside=[x['pop_minus_base_points'] for x in exceptions if abs(x['pop_minus_base_points'])>=.25]
+    put('accuracy_rule.exception_outside_effect',outside[0] if len(outside)==1 else float('nan'))
 
     run=str(r/'s3');rows=load(run,'ndcg@20','identity_inclusive','0.0025')
     cls=lambda x:classify(x,.0025,.0025)
     put('transfer.matched',sum(x['analysis_family']=='matched' for x in rows))
     put('transfer.frozen',sum(x['analysis_family']=='frozen' for x in rows))
     put('transfer.matched_reversals',sum(x['analysis_family']=='matched' and cls(x)=='R' for x in rows))
+    put('transfer.matched_transfers',sum(x['analysis_family']=='matched' and cls(x)=='T' for x in rows))
     put('transfer.comparisons',len(rows));put('transfer.cells',len({(x['dataset'],x['backbone']) for x in rows}))
     put('transfer.registered_contrasts',len({x['contrast'] for x in rows}))
     put('transfer.frozen_contrasts',len({x['contrast'] for x in rows if x['analysis_family']=='frozen'}))
     ft=[x for x in rows if x['comparison']!='U-W']
+    put('transfer.f_total',len(ft))
+    put('transfer.f_transfers',sum(cls(x)=='T' for x in ft))
+    put('transfer.yelp_nfm_f_total',sum((x['dataset'],x['backbone'])==('yelp2018','NFM') for x in ft))
+    put('transfer.yelp_mf_f_vanish',sum((x['dataset'],x['backbone'])==('yelp2018','MF_BPR') and cls(x)=='V' for x in ft))
     put('transfer.ml_f_total',sum(x['dataset']=='ml-1m' for x in ft))
     put('transfer.ml_f_transfer',sum(x['dataset']=='ml-1m' and cls(x)=='T' for x in ft))
     put('transfer.yelp_f_vanish',sum(x['dataset']=='yelp2018' and cls(x)=='V' for x in ft))
@@ -235,6 +287,11 @@ def collect_claims(results):
     put('transfer.nofloor_f_total',len(nf));put('transfer.nofloor_f_transfer',sum(cls(x)=='T' for x in nf))
     put('transfer.reversals',sum(cls(x)=='R' for x in rows))
     put('transfer.user_bootstrap_agreement',sum(x['user_seed_agrees_with_D1']=='5' for x in rows))
+    disagreement=[x for x in rows if x['user_seed_agrees_with_D1']!='5']
+    put('transfer.user_disagreements',len(disagreement))
+    for label in ('E','X'):
+        put('transfer.user_disagreements_'+label,sum(cls(x)==label for x in disagreement))
+    put('transfer.user_disagreements_other',sum(cls(x) not in ('E','X') for x in disagreement))
     xx=load(run,'ndcg@20','identity_inclusive','0.001')
     put('transfer.yelp_delta01_f_transfer',sum(x['dataset']=='yelp2018' and x['comparison']!='U-W' and classify(x,.001,.001)=='T' for x in xx))
     put('sensitivity.delta01_reversals',sum(classify(x,.001,.001)=='R' for x in xx))
@@ -243,6 +300,8 @@ def collect_claims(results):
     xx=load(run,'ndcg@20','trained_only','0.0025')
     put('sensitivity.trained_only_reversals',sum(classify(x,.0025,.0025)=='R' for x in xx))
     h=headroom(run)
+    _,_,hft=headroom_summary(run,rows,.02)
+    for ds in ('ml-1m','yelp2018'):put('headroom02.'+ds+'.f_transfer',hft[ds]['T'])
     for fraction,name in [(.01,'01'),(.02,'02')]:
         rr=[x for x in rows if classify(x,fraction*h(x['dataset'],x['backbone'],SRC[x['comparison']][0]),fraction*h(x['dataset'],x['backbone'],SRC[x['comparison']][1]))=='R']
         put('sensitivity.headroom'+name+'_reversals',len(rr))
@@ -250,17 +309,31 @@ def collect_claims(results):
     rc=load(run,'recall@20','identity_inclusive','0.0025')
     rr=[x for x in rc if x['analysis_family']=='matched' and cls(x)=='R']
     put('recall.matched_reversals',len(rr));put('recall.yelp_reversals',sum(x['dataset']=='yelp2018' for x in rr))
+    put('recall.yelp_pop_reversals',sum(x['dataset']=='yelp2018' and 'Pop' in x['contrast'].split('-') for x in rr))
     changes=[100*abs(float(x['target_effect_mean_raw'])-float(x['source_effect_mean_raw'])) for x in rows if x['comparison']=='U-F' and x['contrast']=='Pop-Base']
     put('transfer.pop_uf_change_min',min(changes));put('transfer.pop_uf_change_max',max(changes))
     tost=choose(read(r/'s3/tost_holm_primary.csv'),registered_primary_family='True')
     put('tost.tests',len(tost));put('tost.equivalent',sum(x['equivalent_holm']=='True' for x in tost))
     put('tost.beyond_margin',sum(float(x['ci95_low_raw'])>.0025 or float(x['ci95_high_raw'])<-.0025 for x in tost))
-    leader=choose(read(r/'s3/selection_regret.csv'),scope='main_R0',regime='R0',selection_policy='identity_inclusive',metric='ndcg@20',analysis_family='matched',comparison='U-F',method_set='REF4')
-    put('leaders.uf_same',sum(float(x['top1_exact_match'])==1 for x in leader))
 
     summ=[x for x in read(r/'s3/homogeneous_method_summary.csv') if x['scope']=='main_R0' and x['selection_policy'] in ('native','identity_inclusive')]
     def sm(ds,bb,protocol,method,metric='ndcg@20',family='matched'):
         return float(one(summ,dataset=ds,backbone=bb,protocol=protocol,method=method,metric=metric,analysis_family=family)['mean_x100'])
+    reference_methods=('base','item_degree_ranking','original_nonparamgc','prm_principled')
+    leader_agreement=[]
+    for ds in ('yelp2018','ml-1m'):
+        for bb in ('NFM','MF_BPR'):
+            leaders=[max(reference_methods,key=lambda m:sm(ds,bb,protocol,m)) for protocol in ('U','F')]
+            leader_agreement.append(leaders[0]==leaders[1])
+    put('leaders.uf_same_cells',sum(leader_agreement))
+    capture=headroom_capture_ratios(r)
+    for x in capture:put('headroom_ratio.'+'.'.join(x[k] for k in ('dataset','backbone','protocol')),x['mean_per_seed_ratio_percent'])
+    descriptive['headroom_capture_ratios']=capture
+    matched=matched_seed_records(r)
+    near_ties=[abs(float(matched['yelp2018','NFM','U','P',seed]['ndcg@20'])-float(matched['yelp2018','NFM','U','item_degree_ranking',seed]['ndcg@20'])) for seed in range(2020,2025)]
+    put('caption.yelp_nfm_u_resp_pop_max_abs_raw',max(near_ties))
+    put('caption.yelp_nfm_u_resp_pop_seeds',len(near_ties))
+    descriptive['caption_near_tie']=[dict(training_seed=seed,absolute_ndcg20_difference_raw=value,absolute_ndcg20_difference_points=100*value) for seed,value in zip(range(2020,2025),near_ties)]
     put('s3.yelp_nfm_f_coverage',sm('yelp2018','NFM','F','base','candidate_recall50'))
     base=sm('yelp2018','MF_BPR','F','base');gap=sm('yelp2018','MF_BPR','F','base','oracle_ndcg20')-base
     put('s3.yelp_mf_f_headroom',gap)
@@ -282,6 +355,12 @@ def collect_claims(results):
     put('allpairs.yelp_mf_wf_residual_reversals',sum(x['dataset']=='yelp2018' and x['backbone']=='MF_BPR' and x['analysis_family']=='frozen' and x['comparison']=='W-W_to_F' and 'Res(p)' in x['contrast'] for x in rev))
     x=one(read(r/'followup/DF_frozen_learned.csv'),dataset='yelp2018',backbone='NFM',source_protocol='W',contrast='P-Base')
     put('frozen.yelp_nfm_wdf_resp',float(x['target_effect_mean_x100']))
+    x=one(read(r/'followup/DF_frozen_learned.csv'),dataset='yelp2018',backbone='NFM',source_protocol='W',contrast='Res(p)-Pop')
+    for name,field in [('source','source_effect_mean_x100'),('target','target_effect_mean_x100'),('low','target_ci95_low_x100'),('high','target_ci95_high_x100')]:
+        put('frozen.yelp_nfm_wdf_resp_pop.'+name,float(x[field]))
+    put('frozen.yelp_nfm_wdf_resp_pop.classification',x['classification'])
+    x=one(read(r/'followup/DF_frozen_learned.csv'),dataset='yelp2018',backbone='NFM',source_protocol='U',contrast='Res(p)-Pop')
+    put('frozen.yelp_nfm_udf_resp_pop',float(x['target_effect_mean_x100']))
     paired=read(r/'checks/C_paired_repeat_ci.csv')
     for key,con,fit,ev,field in [('resp_ww_base','Res(p)-Base','W','W','mean_x100'),('resp_wf_base','Res(p)-Base','W','F','mean_x100'),('resp_ww_pop','Res(p)-Pop','W','W','mean_x100'),('resp_wf_pop','Res(p)-Pop','W','F','mean_x100'),('resp_wf_pop_ci_low','Res(p)-Pop','W','F','ci95_low_x100'),('resp_wf_pop_ci_high','Res(p)-Pop','W','F','ci95_high_x100')]:
         put('frozen.'+key,float(one(paired,dataset='yelp2018',backbone='MF_BPR',contrast=con,fit_protocol=fit,eval_protocol=ev)[field]))
@@ -295,6 +374,39 @@ def collect_claims(results):
     put('p4.unchanged',sum(x['classification']==x['training_repeat_classification'] and x['classification_changed']=='False' for x in dt))
     eq=read(r/'checks/A_npgc_equivalence.csv');put('official.audit_cells',len(eq))
     put('official.max_error',max(float(x['max_abs_score_diff']) for x in eq))
+    # Fresh-pool contrasts use means of three paired split differences.
+    fresh_effects=defaultdict(list)
+    for ds in ('yelp2018','amazon-books','ml-1m'):
+        for bb in ('NFM','DCNV2'):
+            for protocol in ('U','W'):
+                rr=choose(fresh,dataset=ds,backbone=bb,protocol=protocol)
+                fresh_effects[protocol].append(mean(100*(float(one(rr,seed=seed,method='original_nonparamgc')['ndcg@20'])-float(one(rr,seed=seed,method='base')['ndcg@20'])) for seed in (2020,2021,2022)))
+    for protocol in ('U','W'):
+        put('fresh.npgc_'+protocol.lower()+'_min',min(fresh_effects[protocol]));put('fresh.npgc_'+protocol.lower()+'_max',max(fresh_effects[protocol]))
+    put('fresh.ml_w_min',min(fd['ml-1m',bb,'W'] for bb in ('NFM','DCNV2')))
+    put('fresh.ml_w_max',max(fd['ml-1m',bb,'W'] for bb in ('NFM','DCNV2')))
+    put('fresh.yelp_w_abs_max',max(abs(fd['yelp2018',bb,'W']) for bb in ('NFM','DCNV2')))
+    put('s3.yelp_nfm_f_headroom',sm('yelp2018','NFM','F','base','oracle_ndcg20')-sm('yelp2018','NFM','F','base'))
+    put('s3.yelp_mf_f_coverage',sm('yelp2018','MF_BPR','F','base','candidate_recall50'))
+    put('s3.mf_npgc_below_base_cells',sum(sm(ds,'MF_BPR',protocol,'original_nonparamgc')<sm(ds,'MF_BPR',protocol,'base') for ds in ('yelp2018','ml-1m') for protocol in ('U','W','F')))
+    put('transfer.f_matched',sum(x['analysis_family']=='matched' for x in ft))
+    put('transfer.f_frozen',sum(x['analysis_family']=='frozen' for x in ft))
+    put('transfer.yelp_f_transfer',sum(x['dataset']=='yelp2018' and cls(x)=='T' for x in ft))
+    dfraw=choose(read(r/'followup/DF_s3_seed_results.csv'),dataset='yelp2018',backbone='NFM')
+    base_df=mean(float(x['ndcg@20']) for x in choose(dfraw,method='base'))
+    put('df.s3.yelp_npgc_abs_gap',100*abs(mean(float(x['ndcg@20']) for x in choose(dfraw,method='original_nonparamgc'))-base_df))
+    put('df.s3.yelp_base_below_retriever',100*(mean(float(x['ndcg@20']) for x in choose(dfraw,method='retriever'))-base_df))
+    for name,field in [('resp_wf_base_ci_low','ci95_low_x100'),('resp_wf_base_ci_high','ci95_high_x100')]:
+        put('frozen.'+name,float(one(paired,dataset='yelp2018',backbone='MF_BPR',contrast='Res(p)-Base',fit_protocol='W',eval_protocol='F')[field]))
+    put('frozen.resp_ff_base',sm('yelp2018','MF_BPR','F','P')-base)
+    n1=choose(read(r/'e3/N1_npgc_popularity_summary.csv'),study='S3',status='COMPLETE')
+    rho=[float(x['rho_delta_score_popularity_mean']) for x in n1]
+    put('n1.s3_cells',len(n1));put('n1.positive_adjustment_popularity_cells',sum(x>0 for x in rho))
+    put('n1.rho_min',min(rho));put('n1.rho_max',max(rho))
+    put('figure2.max_objective_ci_halfwidth',max((float(x['ci95_high_x100'])-float(x['ci95_low_x100']))/2 for x in choose(ep,contrast='Pop-Base',metric='ndcg@20')))
+    e3u=[x for x in choose(ep,contrast='Pop-Base',metric='ndcg@20',protocol='U') if x['cohort'].startswith('E3_')]
+    put('e3.u_negative_mean_cells',sum(float(x['mean_raw'])<0 for x in e3u))
+    put('e3.u_negative_ci_cells',sum(float(x['ci95_high_raw'])<0 for x in e3u))
     return values,rule,descriptive
 
 
@@ -320,7 +432,7 @@ def numeric_coverage(expected, checks, out):
     indexed={x['item']:x for x in checks};rows=[]
     for token in inventory['entries']:
         category=token['category'];ids=token['claim_ids']
-        if category in ('CHECKED_LOCAL_CLAIM','CHECKED_TABLE_VALUE'):
+        if category in ('CHECKED_LOCAL_CLAIM','CHECKED_TABLE_VALUE','CHECKED_TABLE_TEXT'):
             if not ids or any(i not in indexed for i in ids):
                 raise ValueError('Missing computation for numeric token '+token['token_id'])
             status='PASS' if all(indexed[i]['status']=='PASS' for i in ids) else 'MISMATCH'
@@ -339,7 +451,7 @@ def numeric_coverage(expected, checks, out):
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     summary=dict(token_count=len(rows),category_counts=counts,status_counts=dict(Counter(x['status'] for x in rows)),
                  unmapped_tokens=0,manuscript_text_included=False,
-                 scope='Abstract, main text, captions and Tables2–5. Bibliography, citation keys, TeX layout lengths, URLs and CCS metadata excluded.',
+                 scope=inventory['scope'],
                  external_reference_claims=expected['external_reference_claims'],
                  qualitative_approximations=expected['descriptive_approximations'])
     (out/'MANUSCRIPT_NUMERIC_COVERAGE.json').write_text(json.dumps(summary,indent=2)+'\n')
@@ -365,25 +477,32 @@ def main():
     for n,tab in expected['tables'].items():
         observed=tables[int(n)];check(f'Table {n} rows',len(observed),len(tab),'count')
         for i,(er,ar) in enumerate(zip(tab,observed),1):
+            if 'expected_text_cells' in er:
+                check(f'Table {n} row {i} label',ar['label'],er['label'],'label',source=f'table:{n}/row:{i}')
+                check(f'Table {n} row {i} text cells',len(ar['cells']),len(er['expected_text_cells']),'count')
+                for j,(ac,ec) in enumerate(zip(ar['cells'],er['expected_text_cells']),1):
+                    check(f'Table {n} row {i} text {j}',ac['values'][0],ec,'label',source=f'table:{n}/row:{i}')
             vals=[]
             for cell in ar['cells']:
                 vals.extend(map(int,cell['values'][0].split('/')) if cell['kind']=='count' else cell['values'] if cell['kind']!='text' else [])
             ee=er['expected_numeric_tokens'];check(f'Table {n} row {i} numeric cells',len(vals),len(ee),'count')
             for j,(av,ev) in enumerate(zip(vals,ee),1):
-                check(f'Table {n} row {i} value {j}',av,ev,'count' if int(n)==5 else 'display_metric',source=f'table:{n}/row:{i}')
+                check(f'Table {n} row {i} value {j}',av,ev,'display_metric',source=f'table:{n}/row:{i}')
     bad=[x for x in checks if x['status']!='PASS']
     args.out.parent.mkdir(parents=True,exist_ok=True)
     coverage=numeric_coverage(expected,checks,args.out.parent)
     args.out.with_suffix('.json').write_text(json.dumps(checks,indent=2)+'\n')
+    (args.out.parent/'NUMERICAL_SUPPORTING_DETAILS.json').write_text(json.dumps(descriptive,indent=2)+'\n')
     rule_path=args.out.parent/'MOSTPOP_ACCURACY_RULE.csv'
     with rule_path.open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rule[0]));writer.writeheader();writer.writerows(rule)
     lines=['# Submitted manuscript number check','',f'{len(checks)-len(bad)}/{len(checks)} computational checks passed, with {len(bad)} mismatches.','',
            'Only released scalar evidence and existing settings are read. No training, inference, model selection, or evidence alteration is performed. Displayed metric values use half a unit at the final displayed decimal place. Integer counts and category labels are exact.','',
-           'Expectations were transcribed from the submitted manuscript. All numeric cells in Tables 2–5 are checked. The 24-cell accuracy rule compares Base to MostPop over the same pre-Top-50 pool, separately from the popularity reorder of the backbone Top-50.','',
+           'Expectations were transcribed from the submitted manuscript. All numeric cells in Tables 1–4 are checked. The 36-cell accuracy rule uses five training seeds for the four historical conditions and three for the two added-negative BCE conditions. It compares Base to MostPop over the same pre-Top-50 pool, separately from the popularity reorder of the backbone Top-50.','',
            '## Explicitly separate verification limits','',
-           'Externally cited original-paper values are catalogued as EXTERNAL_REFERENCE_NOT_RECALCULATED. They are not counted as computational PASS results. The phrase “a third” is a descriptive approximation, with no invented acceptance tolerance.','',
+           'Externally cited original-paper values are catalogued as EXTERNAL_REFERENCE_NOT_RECALCULATED. They are not counted as computational PASS results. Qualitative and structural statements are not counted as numerical PASS results.','',
            'Exact ML-1M W/U popularity-gain ratios: '+json.dumps(descriptive['ml_w_over_u_gain_ratio'])+'.','',
+           'The Table 4 caption diagnostic compares all five paired seed metrics. Its threshold is 0.0003 raw NDCG@20, equivalent to 0.03 points on the 100-point scale. Near-equal scalar metrics do not establish identical item ordering. Candidate-level ordering equality is not checked. Individual seed differences and the per-seed headroom ratios are saved in NUMERICAL_SUPPORTING_DETAILS.json.','',
            'The submitted manuscript itself is intentionally not included. The numerical-token inventory records locations, categories, and evidence links without copying the manuscript.','']
     lines += [f"Numeric inventory: {coverage['token_count']} tokens, zero unmapped. Categories: "+json.dumps(coverage['category_counts'])+'.',
               'Coverage is not a second set of independent statistical tests. Identifiers, structural statements, mathematical definitions, cited external numbers and qualitative approximations are labelled separately. See MANUSCRIPT_NUMERIC_COVERAGE.csv and .json.','']

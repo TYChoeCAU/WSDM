@@ -2,7 +2,10 @@
   "description": "Only replace example local paths. artifact: and historical/ IDs are provenance labels and cannot be loaded as files. Paths are relative to this manifest directory or absolute on your machine.",
   "inputs": {
     "s3_seed_results": "../../results/s3/extracted_seed_results.csv",
-    "s3_spearman": "../../results/checks/list_spearman_seed_results.csv"
+    "s3_spearman": "../../results/checks/list_spearman_seed_results.csv",
+    "objective_seed_results": "../../results/followup/E_seed_results.csv",
+    "mostpop": "../../results/checks/D_mostpop.csv",
+    "s1_seed_metrics": "../../results/s1/benchmark_seed_metrics.csv"
   },
   "s1": [
     {
@@ -31,11 +34,13 @@
   "s3_results": [],
   "path_map": {},
   "schema": {
-    "s1": "dataset,backbone,seed plus checkpoint, native_neighbors, benchmark_cache. Historical cache adapters may instead supply top50_cache and fullpool_cache separately.",
+    "s1": "dataset,backbone,seed plus checkpoint, native_neighbors, benchmark_cache. Historical cache adapters may instead supply top50_cache and fullpool_cache separately. N1 may optionally inspect n1_top50_cache in the original feature-cache test-part layout. S1 scalar metrics alone do not permit this diagnostic.",
     "s2": "dataset,backbone=MF_BPR,seed plus explicit local split_bundle/test_scores/selected_result. Public S2 outputs require current checkpoint_sha256/test_scores_sha256 because historic saved signatures are absent. Historical signed input may supply complete/parity/selected_profile/checkpoint.",
     "s3_backbones": "Optional dataset,backbone,seed,result_path. Otherwise use --s3-run/backbones.",
     "s3_caches": "Optional dataset,backbone,seed,protocol,directory,feature_cache_path,slate_cache_path,complete_path. Otherwise use --s3-run/cache.",
     "s3_results": "Optional dataset,backbone,seed,protocol,method,family,result_path. Otherwise matched source results use --s3-run/runs.",
-    "path_map": "Explicit exact old input value to current local path, only for relocating external metadata. Never needed for fresh public S3 runs."
+    "path_map": "Explicit exact old input value to current local path, only for relocating external metadata. Never needed for fresh public S3 runs.",
+    "n1": "N1 expects all 60 S3 native result files, stored native predictions and original feature caches. Optional inputs.n1_evidence_index overrides generated coordinates. s3_results or path_map may relocate files; no missing scores are regenerated.",
+    "e3": "E3 uses --s3-run/master/<dataset>/{manifest.json,bundle.pt,dataset.pt,fixed_U_pools.pt,fixed_W_pools.pt,neighbors/nonparamgc_k2.npz}. Evaluate also requires --out/e3/<architecture>/<dataset>/seed_<seed>/best_checkpoint.pt and backbone_result.json."
   }
 }

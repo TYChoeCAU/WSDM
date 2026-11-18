@@ -25,10 +25,11 @@ def build(results):
  studies=[]
  for row in read(results/'studies.csv'):
   row=dict(row)
-  if row['field']=='Training':row['S3']=r'BCE, BPR, $2\times2$'
+  if row['field']=='Training':row['S3']='BCE, BCE+neg., BPR'
+  if row['field']=='Repeats':row['S3']='five training seeds'
   if row['field']=='Re-rankers':
    studies.extend([{'field':'Rules','S1':'Pop, NPGC','S2':'Pop','S3':'Pop, NPGC'},
-                   {'field':'Learned','S1':'--','S2':'--','S3':r'PRM+PL, Res($\cdot$)'}])
+                   {'field':'Learned','S1':'--','S2':'--','S3':r'PRM+PL, Res($p$)'}])
   else:studies.append(row)
  tables[1]=[{'label':r['field'],'cells':[cell('text',r[x]) for x in ('S1','S2','S3')]} for r in studies]
  b=read(results/'s1/benchmark_seed_metrics.csv');cr=read(results/'s1/s1_candidate_recall.csv');rows=[]
@@ -42,6 +43,7 @@ def build(results):
   rows.append({'label':DISPLAY.get(bb,bb),'cells':cells})
  tables[2]=rows
  raw=read(results/'s1/fresh_seed_metrics.csv')+read(results/'s2/seed_metrics.csv');rows=[]
+ df=read(results/'followup/DF_s1_paired.csv')
  for study,ds,bb in [('S1',d,b) for d in DATASETS for b in ('NFM','DCNV2')]+[('S2',d,'MF_BPR') for d in ('yelp2018','ml-1m')]:
   diffs={};base={}
   for p in ('U','W','F'):
@@ -50,21 +52,21 @@ def build(results):
    pop=[100*float(one(rr,seed=s,method='item_degree_ranking')['ndcg@20']) for s in (2020,2021,2022)]
    diffs[p]=stats(x-y for x,y in zip(pop,base[p]))
   cells=[cell('score',*diffs['U'][:2],dp=3,signed=True),cell('score',*diffs['W'][:2],dp=3,signed=True),cell('ci',*diffs['W'][2:],dp=3,signed=True),cell('plain',mean(base['F']),dp=3),cell('score',*diffs['F'][:2],dp=3,signed=True),cell('ci',*diffs['F'][2:],dp=3,signed=True)]
+  if study=='S1' and ds in ('yelp2018','ml-1m'):
+   paired=one(df,dataset=ds,backbone=bb,contrast='Pop-Base',metric='ndcg@20',n_seeds=3,status='COMPLETE')
+   cells.append(cell('score',float(paired['mean_x100']),float(paired['sample_sd_x100']),dp=3,signed=True))
+  else:cells.append(cell('text','--'))
   rows.append({'label':' & '.join((study,DISPLAY[ds],DISPLAY.get(bb,bb))),'cells':cells})
  tables[3]=rows
  summ=read(results/'s3/homogeneous_method_summary.csv');summ=[r for r in summ if r['analysis_family']=='matched' and r['selection_policy'] in ('native','identity_inclusive')];rows=[]
  for ds,bb in [(d,b) for d in ('yelp2018','ml-1m') for b in ('NFM','MF_BPR')]:
   for p in ('U','W','F'):
    cells=[]
-   for method,metric in [(m,'ndcg@20') for m in ('base','item_degree_ranking','original_nonparamgc','prm_principled','P','H')]+[('base','candidate_recall50'),('base','oracle_ndcg20')]:
+   for method,metric in [(m,'ndcg@20') for m in ('base','item_degree_ranking','original_nonparamgc','prm_principled','P')]+[('base','candidate_recall50'),('base','oracle_ndcg20')]:
     r=one(summ,dataset=ds,backbone=bb,protocol=p,method=method,metric=metric)
     cells.append(cell('score',float(r['mean_x100']),float(r['sample_sd_x100'])))
    rows.append({'label':' & '.join((DISPLAY[ds],DISPLAY[bb] if bb in DISPLAY else bb,p)),'cells':cells})
  tables[4]=rows
- counts=load(str(results/'s3'),'ndcg@20','identity_inclusive','0.0025');_,cc,_=summarize(counts,lambda r:classify(r,.0025,.0025))
- pair_labels={'U-W':'U--W','U-F':'U--F','W-F':'W--F','U-U_to_F':r'U$\to$F','W-W_to_F':r'W$\to$F'}
- rows=[{'label':pair_labels[pair],'cells':[cell('count',fmt(cc[(pair,c)])) for c in CELLS]} for pair in PAIRS]
- tables[5]=rows
  return tables
 
 def render(c):
